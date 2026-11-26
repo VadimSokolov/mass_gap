@@ -1,0 +1,172 @@
+\chapter{Code}\label{ch:code}
+
+All figures and numerical statements in the book were produced by short Python programs. They are not printed here. They live in a public repository at \repourl, and the version cited in the book will be archived with a DOI \repodoi. This chapter is an index: for each program it gives a one line purpose and the chapters and figures that use it.
+
+Most programs are run from the directory \texttt{code/} with Python 3, for example \texttt{python3 mk\_flow.py}, and the programs that draw a figure then write a PDF file to \texttt{../figures/}. About thirty programs (among them \texttt{book\_figs5.py} to \texttt{book\_figs11.py}, \texttt{sandwich.py}, \texttt{local\_time.py}, \texttt{u1\_ladder.py}) use paths that begin with \texttt{figures/} or \texttt{code/}, and these are run from the book root as \texttt{python3 code/name.py}. Some programs take arguments, and some need the output of another program first (usually through a file in \texttt{/tmp} or \texttt{code/}); both are stated in the entries below. The heavy runs (the Monte Carlo and lattice programs, the vertical likelihood and GBC runs) were made on a computing cluster, and the logs and outputs are in \texttt{results/} and \texttt{misc/code-round1/}. The programs use NumPy, SciPy, mpmath, SymPy, scikit learn and Matplotlib. Every stochastic program fixes the seed of its random number generator, so a rerun reproduces the numbers and figures in the book, given the same arguments. Several programs import a shared module from the same directory, and these are listed at the end.
+
+The programs are grouped by the first chapter that uses them. A reference of the form ``also Chapter'' points to later chapters that mention the same program. Programs that no chapter cites by name are listed under their figure chapter if they draw a figure of the book, and otherwise in a final group.
+
+\begingroup\small\setlength{\itemsep}{0pt}
+\paragraph{Chapter~\ref{ch:problem}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{book\_figs6.py}: Further colour figures on the spectrum and gap, Wilson laws, Brownian motion on $S^3$, reflection positivity, and four dimensional histories. Figures~\ref{fig:plaqhist}, \ref{fig:rphankel}, \ref{fig:s3bm}, \ref{fig:specgap}. Needs \texttt{su2\_4d.py} first, run for each $\beta$ shown.
+\item \texttt{figures.py}: Figures for Thorin measures and the Yang Mills mass gap. Also Chapter~\ref{ch:positivity}; Figures~\ref{fig:2dgapB}, \ref{fig:deconvB}, \ref{fig:riemannB}, \ref{fig:thorinB}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:positivity}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{book\_figures.py}: Additional figures for the book. Figures~\ref{fig:bpy}, \ref{fig:curvatureB}, \ref{fig:hklaws}, \ref{fig:mklevelsB}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:routeA}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{routeA\_tail.py}: Route A: the Yang Mills generalized gamma convolution $X_\alpha$ of a toy spectrum, simulated as a gamma convolution; its tail slope is $-\Delta$. Figure~\ref{fig:routeAtail}.
+\item \texttt{routeA\_tail.py}: Route A: the Yang Mills GGC $X_\alpha$ for the toy spectrum, simulated as a gamma convolution. Figure~\ref{fig:routeAtail}.
+\item \texttt{examples\_fig.py}: Worked examples and strong coupling figures. Figures~\ref{fig:examplesgaps}, \ref{fig:masslessrates}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:estimation}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{nested\_su2.py}: Nested sampling (Skilling) for two dimensional SU(2) lattice gauge theory on an $L\times L$ torus with Haar prior and likelihood $e^{-\beta S}$, giving $Z(\beta)$ for all $\beta$ from one run. Figure~\ref{fig:nested}.
+\item \texttt{book\_figs4.py}: Vertical likelihood summary, implied likelihood ordinate distributions, MK phase portrait, roadmap. Figures~\ref{fig:mkphase}, \ref{fig:roadmap}, \ref{fig:vlerrors}, \ref{fig:vlimplied}. Needs the output of \texttt{vl\_methods.py} for the seeds $5$, $11$ and $23$ in \texttt{results/}.
+\item \texttt{yakowitz\_ti.py}: Weighted Monte Carlo of Yakowitz, Krimmel and Szidarovszky: the trapezoid rule on sorted uniform points, with mean square error $O(n^{-4})$ against $O(n^{-1})$ for plain Monte Carlo. Figure~\ref{fig:yak}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:kac}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{book\_figs2.py}: Colour figures for the expanded book, from analytic formulas and light numerics. Figures~\ref{fig:dynstat}, \ref{fig:ehrenfest}, \ref{fig:ff}, \ref{fig:gww}.
+\item \texttt{book\_figs3.py}: Simulation figures: a Jerrum Sinclair style product estimator, Swendsen Wang against Metropolis with Madras Sokal windowing, topological freezing in two dimensional U(1), and Lee Yang and Fisher zeros. Figures~\ref{fig:leeyang}, \ref{fig:product}, \ref{fig:sw}, \ref{fig:u1}.
+\item \texttt{book\_figs3b.py}: Simulation figures: a Jerrum Sinclair style product estimator, Swendsen Wang against Metropolis with Madras Sokal windowing, topological freezing in two dimensional U(1), and Lee Yang and Fisher zeros. Figures~\ref{fig:leeyang}, \ref{fig:u1}.
+\item \texttt{book\_figs5.py}: Colour figures for the slice, Besag and progress chapters. Figures~\ref{fig:caps}, \ref{fig:decpert}, \ref{fig:mlrheat}, \ref{fig:mlrratios}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:twod}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{tour2d.py}: The guided tour of two dimensional SU(2) Yang Mills: the figure and the table of exact quantities. Figure~\ref{fig:tour2d}.
+\item \texttt{op1\_figures.py}: Figure for open problem 1. Figure~\ref{fig:2duniformB}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:strong}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{strong\_fig.py}: The leading strong coupling mass against an illustrative scaling curve. Figure~\ref{fig:strongscaling}.
+\item \texttt{mk\_figures.py}: Migdal Kadanoff flow figures. Figure~\ref{fig:mkflowB}.
+\item \texttt{mk\_flow.py}: Migdal Kadanoff flow for four dimensional SU(2) lattice gauge theory in character (Thorin level) variables.
+\item \texttt{checks.py}: Numerical checks for the Thorin and Yang Mills deck and note. Also Chapters~\ref{ch:progress}, \ref{ch:kacyang}, \ref{ch:counts}.
+\item \texttt{mk\_cover.py}: Covering verification of $R(\beta)<\beta$ on $[0.3,300]$ for the heat kernel projected Migdal Kadanoff map. Figure~\ref{fig:coverB}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:path}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{u1\_ladder.py}: The abelian control: the Migdal Kadanoff ladder for compact U(1) in four dimensions with heat kernel (Villain) laws. Figure~\ref{fig:u1ladder}.
+\item \texttt{mk\_3d.py}: Three dimensional ladder: $\beta a\sqrt{\sigma}$ as a function of $\log_2\beta$, against lattice data and Karabali Nair. Figure~\ref{fig:mk3d}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:progress}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{antipode\_scan.py}: An extended scan of the bad cap of \texttt{antipode\_radius.py}: its largest mass, the time of that maximum, the time at which the cap closes, and the mass at $\beta\ge2.2$.
+\item \texttt{heatmap\_min.py}: A check of the minimum of the mixed partial heat map drawn by \texttt{book\_figs5.py}.
+\item \texttt{antipode\_radius.py}: Finds where the bond moved heat kernel $K_t^k$ stops satisfying the total positivity condition near the antipode. Figure~\ref{fig:antipode}.
+\item \texttt{book\_figs7.py}: Colour figures: roots of the heat kernel, ladder coefficients in b, absolute string tension, particle ladder. Figures~\ref{fig:heatroots}, \ref{fig:ladderb}, \ref{fig:mksigma}, \ref{fig:particlemk}. Needs \texttt{product\_formula.py}, \texttt{ladder\_b.py}, \texttt{mk\_sigma.py} and \texttt{particle\_mk.py} first.
+\item \texttt{contract\_fig.py}: Figure for the contraction theorem: $\zeta(t,x)=-\partial_t[t\,\partial_x\log K_t]$ from the product formula, and the likelihood ratio $K_{s/k}/K_s^k$. Figure~\ref{fig:contract}.
+\item \texttt{effective\_coupling.py}: Runs the ladder and perturbation theory in Parisi's effective coupling $\beta_E=3/(4(1-\langle P\rangle))$, with $\langle P\rangle$ from $8^4$ heat bath runs, against SU(2) string tension data. Figure~\ref{fig:effcoupling}.
+\item \texttt{initial\_layer.py}: Numerical companion to the initial layer of the contraction theorem, for all $t\le 0.1$.
+\item \texttt{ladder\_b.py}: Decrement per doubling of the lattice spacing, $a(b)+c(b)/\beta$, for the ladder with general scale factor $b$. Writes a file to \texttt{/tmp}.
+\item \texttt{ladder\_certificate.py}: Certificate that $\zeta(t,x)=-\partial_t[t\,\partial_x\log K_t]>0$ on $-1\le x\le 1$ at a fixed time $t_0$, where $x=\cos\theta$ and $K_t$ is the SU(2) heat kernel. Optional arguments: the times $t_0$.
+\item \texttt{local\_time.py}: Local heat kernel time $t_f(\theta)$ of a class function law $f$ on SU(2), defined by matching the score of $K_t$ to the score of $f$, followed along the ladder from a Wilson start. Figure~\ref{fig:localtime}.
+\item \texttt{mk\_sigma.py}: Absolute string tension from the Migdal Kadanoff ladder with Wilson start, for SU(2) in $d=3$ and $d=4$, as the limit of $b^{-2m}(-\log u_2^{(m)})$. The rung loop stops at $-\log u_2=25$, with a guard against underflow. Writes files to \texttt{/tmp}.
+\item \texttt{scaling\_test.py}: Compares the Migdal Kadanoff ladder running with SU(2) string tension data for the Wilson action. Figure~\ref{fig:scaling}.
+\item \texttt{su3\_mlr.py}: Tests whether the SU(3) heat kernel has monotone likelihood ratio in time along rays from the identity in the Weyl alcove. Figure~\ref{fig:su3mlr}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:sandwich}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{sandwich.py}: The empirical sandwich: the law of the $2\times 2$ loop holonomy against two caricatures built from the measured plaquette law, independent plaquettes and Migdal Kadanoff. Figure~\ref{fig:sandwich}. Needs \texttt{su2\_loops.py} first.
+\item \texttt{sandwich2.py}: The sandwich in three and four dimensions and over two steps: plaquette to $2\times 2$ to $4\times 4$ loop laws. Figure~\ref{fig:sandwich2}. Needs \texttt{su2\_loops\_d.py} first.
+\item \texttt{kadanoff\_bound.py}: Kadanoff's variational bound: the Migdal Kadanoff ladder gives a rigorous upper bound on the pressure $P(\beta)$. Figure~\ref{fig:kadanoff}.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:kacyang}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{fisher\_zeros.py}: Fisher zeros in the complex coupling of two dimensional SU(2) lattice gauge theory, a discrete system in Kac's sense. Figure~\ref{fig:fisher}.
+\item \texttt{torus\_sector.py}: Zero free sector for two dimensional SU(2) with the heat kernel action on a torus of $A$ plaquettes: the disc $|q|\le0.83$ is proved, the sector angle is a numerical result (argument principle in floating point). Figure~\ref{fig:torussector}.
+\item \texttt{particle\_mk.py}: Particle Migdal Kadanoff: the ladder as a filter recursion on a cloud of SU(2) elements.
+\item \texttt{book\_figs9.py}: One plaquette Langevin gaps against the Bakry Emery bound, and the law of the latent count $M$. Figure~\ref{fig:langevinlatent}. Needs \texttt{spde\_extras.py} first.
+\item \texttt{continuous\_ladder.py}: The ladder in continuous scale, as a filtering equation.
+\item \texttt{spde\_extras.py}: Computations for the chapters on stochastic quantisation, filtering and the Langlands volume.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:hitting}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{book\_figs8.py}: Figures for the chapters on sufficiency, GBC and hitting times. Figures~\ref{fig:gbcgap}, \ref{fig:hitgap}, \ref{fig:suffgbc}. Needs \texttt{gbc\_exact.py}, \texttt{hitting\_gap.py} and \texttt{gbc\_gap.py} first.
+\item \texttt{gbc\_gap.py}: GBC for the gap as a parameter, compared with the effective mass. Optional argument: seed.
+\item \texttt{gbc\_match.py}: GBC for renormalization: learns the map from loop summaries of a $4^4$ lattice to the Wilson coupling that produced them. Figure~\ref{fig:gbcmatch}. Needs the \texttt{train} and \texttt{block} files of \texttt{gbc\_sim.py} first; optional argument: seed.
+\item \texttt{pl\_ladder.py}: Particle learning of the decrement of the ladder from samples of plaquettes at each rung. Figure~\ref{fig:plladder}. Optional argument: seed.
+\item \texttt{hitting\_gap.py}: The gap from a hitting time (after Roberts and Shortland's hazard rate view of boundary hitting).
+\item \texttt{mdp\_plaquette.py}: Moderate deviations of the mean plaquette (Rubin and Sethuraman).
+\item \texttt{book\_figs14.py}: Figure for the chapter on quantum Bayesian computation: the one plaquette gap and the number of levels needed. Figure~\ref{fig:quantumplaquette}.
+\item \texttt{quantum\_plaquette.py}: One plaquette in the Hamiltonian formulation, $H=\lambda\,\mathrm{Casimir}+(1-\cos\theta)/\lambda$ on class functions: gap, number of levels needed, and the ground state count; the readout is a cubic polynomial fitted by ridge regression.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:counts}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{book\_figs10.py}: The exact ladder on counts. Figure~\ref{fig:counts}. Needs \texttt{count\_ladder.py} first.
+\item \texttt{book\_figs11.py}: Figures for the chapters on counts, Kingman's coalescent and real zeros. Figures~\ref{fig:countsurn}, \ref{fig:kingman}, \ref{fig:zeros}.
+\item \texttt{book\_figs12.py}: Exact change of the mean count against $r$ for random laws of the class $L$, for the first rung theorem. Figure~\ref{fig:firstrung}.
+\item \texttt{book\_figs15.py}: Where the lattice laws sit between the heat kernel (0) and the Wilson law (1) with the same fundamental coefficient. Figure~\ref{fig:countlattice}.
+\item \texttt{count\_ladder.py}: The exact Migdal Kadanoff ladder as a process on integer counts. Optional argument: the truncation size (default 24).
+\item \texttt{count\_lattice.py}: The count $E[1/(1-\operatorname{tr}U/2)]-2$ of the plaquette and of the $2\times 2$ loop on an $8^4$ lattice, for SU(2) with the Wilson action. Usage: \texttt{beta [configs]}.
+\item \texttt{kingman\_dual.py}: Kingman's coalescent inside the SU(2) heat kernel.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:zeros}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{zeros\_checks.py}: Exact checks for the chapter on real zeros: the Gegenbauer identity to high precision and the counts of cases tested.
+\item \texttt{book\_figs13.py}: The Thorin measure of the Hartman Watson law, and its distribution function against the zeros of $K_{iy}$. Figure~\ref{fig:hwthorin}.
+\item \texttt{book\_figs16.py}: Figure for the Schur and Szeg\H o criterion: an antiderivative of $f=(1+x)(1+x/10)(1+x/10.5)$ cannot have four real zeros at most $-1$, while one of the smoothed law can. Figure~\ref{fig:szego}.
+\item \texttt{hw\_thorin.py}: The Hartman Watson law is a generalized gamma convolution, and its Thorin measure is computed from the phase of $I_{iy}(r)$.
+\item \texttt{real\_zeros.py}: Tests whether convolution on SU(2) preserves the class $L$ of densities $c\prod_m(1+x/\gamma_m)$ with $\gamma_m\ge 1$ and $x=\cos\theta$.
+\item \texttt{zeros\_adversarial.py}: Adversarial search for a counterexample to the conjecture that convolution on SU(2) preserves the class $L$.
+\end{itemize}
+\paragraph{Chapter~\ref{ch:theta}.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{book\_figs17.py}: The negative binomial estimator $M_k$ of the gap and the effective mass, for one plaquette at $\lambda=1/2$. Figure~\ref{fig:windowgap}.
+\item \texttt{frame\_lemma.py}: Random checks of the frame lemma, $\operatorname{rank}Q\ge(\operatorname{tr}Q)^2/\operatorname{tr}Q^2$, and of the layer cake bound for a mean.
+\item \texttt{window\_gap.py}: One sided windows and the gap, on a lattice of spacing a in Euclidean time.
+\end{itemize}
+\paragraph{Other scripts.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{besag\_pl.py}: Pseudolikelihood for two dimensional SU(2).
+\item \texttt{count\_blocked2.py}: The count on a four dimensional lattice, $16^4$ blocked twice. Usage: \texttt{beta [configs]}.
+\item \texttt{count\_hypergeometric.py}: The hypergeometric kernel and the drift law.
+\item \texttt{count\_logconcave.py}: Tests whether one coalescence preserves log concavity, in exact rational arithmetic with random log concave starting laws.
+\item \texttt{count\_lyapunov.py}: Tests whether the mean count is a Lyapunov function for the exact ladder.
+\item \texttt{cover\_art.py}: Cover art: laws of Brownian motion on SU(2) (heat kernel times Haar) at many times.
+\item \texttt{gap\_noise\_table.py}: Gap estimates across noise levels.
+\item \texttt{gbc\_attention.py}: Attention inside GBC.
+\item \texttt{gbc\_exact.py}: GBC against the exact posterior.
+\item \texttt{gbc\_sim.py}: Simulations for GBC matching. Usage: \texttt{train SEEDIDX NSIM [REP]} or \texttt{block SEEDIDX BETA [REP]}; files go to \texttt{\$GBC\_DIR} (default \texttt{/tmp}).
+\item \texttt{griffiths\_strong.py}: The Griffiths test at strong coupling in four dimensional SU(2). Usage: \texttt{beta}.
+\item \texttt{harmonic\_law.py}: The harmonic law for the mean count of a convolution, in exact rational arithmetic.
+\item \texttt{heatbath\_bound.py}: The heat bath bound. Usage: \texttt{beta D L}.
+\item \texttt{ladder\_expansion.py}: Weak coupling expansion of the ladder in exact arithmetic.
+\item \texttt{ladder\_expansion\_sun.py}: Weak coupling expansion for SU(N).
+\item \texttt{latent\_convolution.py}: The coalescence kernel in exact arithmetic.
+\item \texttt{latent\_mixture.py}: The latent count of the heat kernel.
+\item \texttt{mk\_projection\_check.py}: Check of the heat kernel projected Migdal Kadanoff map.
+\item \texttt{mlr\_check.py}: The likelihood ratio check.
+\item \texttt{mlr\_large\_time.py}: Large time likelihood ratio bound.
+\item \texttt{op1\_checks.py}: Two dimensional gap and Bessel bound; also prints the Thorin atoms with the continuum, for $\alpha=0$ and $\alpha=1/2$.
+\item \texttt{product\_formula.py}: Product formula for the heat kernel.
+\item \texttt{pt\_loops.py}: Lowest order perturbation theory for Wilson loops.
+\item \texttt{radial\_flow.py}: The radial flow for convolutions on SU(2), used in the Schur and Szeg\H o criterion.
+\item \texttt{su2\_4d.py}: Four dimensional SU(2) heat bath. Usage: \texttt{beta [seed]}; writes a file to \texttt{/tmp}.
+\item \texttt{su2\_loops.py}: Plaquette and loop laws in four dimensions. Usage: \texttt{beta [seed]}; writes a file to \texttt{/tmp}.
+\item \texttt{su2\_loops\_d.py}: Loop laws in three and four dimensions. Usage: \texttt{beta D L}; writes a file to \texttt{/tmp}.
+\item \texttt{su3\_mk.py}: The SU(3) decrement.
+\item \texttt{suff\_efficiency.py}: Efficiency of three estimators of the coupling.
+\item \texttt{theta\_fermion.py}: Theta kernels and fermion determinants.
+\item \texttt{tp2\_condition.py}: The total positivity condition and its direct test.
+\item \texttt{vacuum\_zeros.py}: Zeros of the one plaquette ground state in $\cos\theta$, counted by the argument principle.
+\item \texttt{vl\_methods.py}: All vertical likelihood methods (Polson and Scott 2015) plus split sampling (Birge, Chang and Polson, unpublished) on two dimensional SU(2) lattice gauge theory. Optional argument: seed (writes to \texttt{results/}).
+\item \texttt{vlmc\_su2.py}: The vertical likelihood family (Polson and Scott) on two dimensional SU(2) lattice gauge theory on a $3\times 3$ torus, with target $Z(\beta)$.
+\item \texttt{wilson\_flow\_mlr.py}: Heat flow of the Wilson law.
+\end{itemize}
+\paragraph{Helper modules.}\nopagebreak
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item \texttt{count\_blocked.py}: The count on a four dimensional lattice, $8^4$ blocked once. Usage: \texttt{beta [configs]}.
+\item \texttt{count\_observable.py}: The mean count as an observable, $E[1/(1-\cos\theta)]-2$, and the first rung against the theorem.
+\item \texttt{mcrg\_pl.py}: Blocking, pseudolikelihood and the smallest Griffiths test. Usage: \texttt{beta}.
+\item \texttt{mk\_verify.py}: The heat kernel projected Migdal Kadanoff map: $R(\beta)$, robustness, and grid verification of $R(\beta)<\beta$.
+\item \texttt{su2\_core.py}: Shared core for SU(2) in any dimension.
+\item \texttt{szego\_criterion.py}: The Schur and Szeg\H o criterion for real zeros under convolution on SU(2).
+\item \texttt{vl\_core.py}: Shared module, imported by \texttt{besag\_pl.py}: the vertical likelihood family (Polson and Scott) on two dimensional SU(2) lattice gauge theory on a $3\times 3$ torus, with target $Z(\beta)$.
+\end{itemize}
+
+\endgroup

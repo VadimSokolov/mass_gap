@@ -1,0 +1,79 @@
+\chapter{Solutions to Selected Exercises}\label{ch:solutions}
+
+\section*{Chapter~\ref{ch:kac}}
+
+\paragraph{\normalfont\scshape Variance of a sample mean (Exercise~7).} For a stationary chain with variance $\sigma^2$ and autocorrelations $\rho(\ell)$,
+\[
+\operatorname{Var}\Big(\frac1n\sum_{i=1}^nX_i\Big)=\frac{\sigma^2}{n}\Big(1+2\sum_{\ell=1}^{n-1}\Big(1-\frac \ell n\Big)\rho(\ell)\Big).
+\]
+If $\sum|\rho(\ell)|<\infty$, dominated convergence gives the bracket the limit $1+2\sum_{\ell\ge1}\rho(\ell)=2\tau_{\mathrm{int}}$.
+
+\paragraph{\normalfont\scshape Lee Yang on two sites (Exercise~9).} With weight $e^{Js_1s_2+\eta(s_1+s_2)}$ and $z=e^{-2\eta}$,
+\[
+Z=e^{J+2\eta}\big(1+2e^{-2J}z+z^2\big).
+\]
+The roots are $z=-e^{-2J}\pm i\sqrt{1-e^{-4J}}$, with $|z|^2=e^{-4J}+1-e^{-4J}=1$ for every $J\ge0$. For $J<0$ the roots are real and off the circle, which is why the theorem needs ferromagnetism.
+
+\paragraph{\normalfont\scshape Uniqueness of the pseudolikelihood estimate (Exercise~11).} The conditional density of $a_0$ is $\sqrt{1-a_0^2}\,e^{\kappa a_0}/c(\kappa)$ with $\kappa=\beta k$, an exponential family. Its mean is $(\log c)'(\kappa)=I_2(\kappa)/I_1(\kappa)$ and its variance is $(\log c)''(\kappa)>0$. The derivative of the score in $\beta$ is $-\sum k^2\operatorname{Var}_{\beta k}(a_0)<0$, so the score is strictly decreasing and has at most one zero.
+
+\paragraph{\normalfont\scshape The ICAR null space (Exercise~12).} The ICAR precision on a graph is $Q=D-A$, the graph Laplacian, with $x^\top Qx=\sum_{i\sim j}(x_i-x_j)^2$. This vanishes exactly when $x$ is constant on each connected component. A torus is connected, so the null space is spanned by the constant vector: the field has no restoring force along its mean, which is the absence of a mass.
+
+\section*{Chapter~\ref{ch:hitting}}
+
+\paragraph{\normalfont\scshape Fisher information (Exercise~4).} Since $\log p_\beta(U)=-\beta S(U)-\log Z(\beta)$, the score is $-S-\partial_\beta\log Z=\E_\beta S-S$ and its variance is $\operatorname{Var}_\beta S=\partial_\beta^2\log Z$. For one plaquette in two dimensions the law of $a_0=\frac12\operatorname{tr}U_p$ has mean $m(\beta)=I_2(\beta)/I_1(\beta)$, and the recurrences $I_2'=I_1-\frac2\beta I_2$ and $I_1'=I_2+\frac1\beta I_1$ give the information
+\[
+m'(\beta)=1-\frac{3m}{\beta}-m^2 ,
+\]
+which is $\frac14$ at $\beta=0$, where the plaquette is Haar distributed, and decays like $3/(2\beta^2)$ at weak coupling: a stiff plaquette carries little information about its own coupling.
+
+\paragraph{\normalfont\scshape No common family (Exercise~5).} Put $m_n=I_n(\kappa)/I_1(\kappa)$. A heat kernel law has $u_3=u_2^{8/3}$. For small $\kappa$, $m_3\approx\kappa^2/24$ while $m_2^{8/3}\approx(\kappa/4)^{8/3}$, which is smaller. For large $\kappa$ both are $1-4/\kappa+O(\kappa^{-2})$, the two agree to second order, and the difference $m_3-m_2^{8/3}$ is $\frac53\kappa^{-3}+O(\kappa^{-4})$, positive at third order. Numerically it is positive on the whole of $(0,200]$, with maximum $0.026$ near $\kappa=2$. So a Wilson law always has more weight in the third character than the heat kernel law with the same plaquette: it is more peaked at the identity and has less mass near the antipode, in agreement with Proposition~\ref{prop:wilsonflow}.
+
+\section*{Chapter~\ref{ch:twod}}
+
+\paragraph{\normalfont\scshape A single spin (Exercise~7).} Heat bath for one Ising spin in a field sets the spin to $+1$ with probability $p=e^h/(2\cosh h)$ whatever its current value. The kernel has rank one, eigenvalues $1$ and $0$, and spectral gap one. A single site has no dynamics to slow; all slowing down is collective.
+
+\paragraph{\normalfont\scshape Log Sobolev implies Poincar\'e (Exercise~8).} Suppose $\operatorname{Ent}_\mu(f^2)\le\frac2\kappa\int|\nabla f|^2\mathrm d\mu$. Put $f=1+\varepsilon g$ with $\int g\,\mathrm d\mu=0$. Expanding, $\operatorname{Ent}_\mu(f^2)=2\varepsilon^2\operatorname{Var}_\mu(g)+O(\varepsilon^3)$, while the right side is $\frac2\kappa\varepsilon^2\int|\nabla g|^2\mathrm d\mu$. Dividing by $2\varepsilon^2$ and letting $\varepsilon\to0$ gives $\operatorname{Var}_\mu(g)\le\frac1\kappa\int|\nabla g|^2\mathrm d\mu$.
+
+\paragraph{\normalfont\scshape Products (Exercise~9).} For $\mu=\mu_1\otimes\mu_2$, entropy is subadditive: $\operatorname{Ent}_\mu(f^2)\le\int\operatorname{Ent}_{\mu_1}(f^2)\,\mathrm d\mu_2+\int\operatorname{Ent}_{\mu_2}(f^2)\,\mathrm d\mu_1$. Apply the inequality of each factor in its own variable and add: the constant of the product is the smaller of the two, and it is attained by a function of one variable, for which the entropy term of the other factor vanishes.
+
+\paragraph{\normalfont\scshape The Ising chain (Exercise~10).} Write $e^{Kss'}=\cosh K\,(1+ss'\tanh K)$ and sum over the middle spin of three:
+\[
+\sum_{s=\pm1}(1+s_1s\,x)(1+ss_3\,x)=2\,(1+x^2s_1s_3),\qquad x=\tanh K.
+\]
+So the decimated chain has $\tanh K'=\tanh^2K$. The fixed points are $x=0$, attracting, and $x=1$, repelling. The correlation length $\xi=-1/\log x$ satisfies $\xi'=\xi/2$, as it must when the lattice spacing doubles.
+
+\paragraph{\normalfont\scshape Normalisation and matching (Exercise~16).} For $\lambda\ge2$, $\int_{-\pi}^{\pi}\frac{1}{2\pi}(1+\frac2\lambda\cos\theta)\,\mathrm d\theta=1$. For $\lambda<2$ substitute $s=\sin(\theta/2)$:
+\[
+\frac{2}{\pi\lambda}\int\cos\frac\theta2\sqrt{\frac\lambda2-\sin^2\frac\theta2}\,\mathrm d\theta=\frac{4}{\pi\lambda}\int_{-\sqrt{\lambda/2}}^{\sqrt{\lambda/2}}\sqrt{\frac\lambda2-s^2}\,\mathrm ds=\frac{4}{\pi\lambda}\cdot\frac\pi2\cdot\frac\lambda2=1 .
+\]
+At $\lambda=2$ both densities equal $\frac1\pi\cos^2(\theta/2)$.
+
+\paragraph{\normalfont\scshape The order of the transition (Exercise~17).} The mean of $\cos\theta$ is $1/\lambda$ for $\lambda\ge2$ and $1-\lambda/4$ for $\lambda<2$. At $\lambda=2$ both are $\frac12$, and both derivatives are $-\frac14$. The second derivatives are $\frac14$ and $0$. Since the mean of $\cos\theta$ is a first derivative of the free energy, the free energy has a jump in its third derivative. At finite $N$ the partition function is a finite Toeplitz determinant of Bessel functions, entire in $1/\lambda$ and positive, so its logarithm is analytic and no transition can occur.
+
+\section*{Chapter~\ref{ch:progress}}
+
+\paragraph{\normalfont\scshape The leading image (Exercise~2).} $\log(\theta e^{-\theta^2/t})=\log\theta-\theta^2/t$. The derivative in $t$ is $\theta^2/t^2$, and the derivative of that in $\theta$ is $2\theta/t^2>0$. In the product formula this is the regime in which all roots are close to one: $\gamma_m\approx1+\frac{m^2t^2}{8}$, between $C_m\approx1+\frac{(2m-1)^2t^2}{32}$ and $C_{m+1}$, and the sum over roots becomes a Riemann sum.
+
+\paragraph{\normalfont\scshape Critical points follow the zeros (Exercise~3).} Let $p$ have real zeros $x_1,\dots,x_n$ and let $\xi$ be a zero of $p'$ that is not a zero of $p$, so that $\sum_i(\xi-x_i)^{-1}=0$. Differentiating along a motion of the zeros, $\sum_i(\dot\xi-\dot x_i)(\xi-x_i)^{-2}=0$, hence $\dot\xi=\sum_iw_i\dot x_i$ with $w_i\propto(\xi-x_i)^{-2}$ positive and summing to one. If every zero moves in one direction, so does every critical point.
+
+\paragraph{\normalfont\scshape The two loop decrement (Exercise~5).} From $a\Lambda=(b_0g^2)^{-b_1/(2b_0^2)}e^{-1/(2b_0g^2)}$ and $g^2=2N/\beta$,
+\[
+\frac{\mathrm d\log a}{\mathrm d\beta}=-\frac{1}{4Nb_0}+\frac{b_1}{2b_0^2\,\beta} .
+\]
+The coupling needed to halve $a$ is $\delta=\log2/|\mathrm d\log a/\mathrm d\beta|=\log2\,(4Nb_0+8N^2b_1/\beta)+O(\beta^{-2})$. For $N=2$, $b_0=0.046439$ and $b_1=0.0018179$, which gives $0.2575+0.0403/\beta$. Under $\beta\mapsto\beta+c$, $1/\beta$ changes by $-c/\beta^2$, which is of the next order.
+
+\section*{Chapter~\ref{ch:sandwich}}
+
+\paragraph{\normalfont\scshape Two dimensions (Exercise~1).} After gauge fixing on a tree the plaquette holonomies $U_p$ are independent with a common class function law. The holonomy of a loop enclosing plaquettes $p_1,\dots,p_A$ is conjugate to an ordered product of conjugates of the $U_{p_i}$, and since each law is conjugation invariant, it has the law of a product of $A$ independent copies. Convolution multiplies character coefficients, so the loop has coefficients $u_n^A$. In particular $W_{12}=u_2^2=W_{11}^2$ and $W_{22}=W_{11}^4$: the measured and independent laws coincide, and the potential $-\log W_{RT}/T=R\,(-\log u_2)$ is linear in $R$ at every coupling.
+
+\paragraph{\normalfont\scshape The Gaussian ledger (Exercise~2).} At weak coupling a plaquette law with coupling $\beta$ has $-\log u_2=3/(4\beta)$ to leading order. Bond moving with power $k$ multiplies $\beta$ by $k$. Decimation with $b=2$ convolves four copies, which multiplies $-\log u_2$ by four. So the blocked plaquette has $-\log u_2=4\cdot3/(4k\beta)$, and the ratio to the original is $4/k$: four for independent plaquettes, $k=1$, and one for the ladder in four dimensions, $k=4$.
+
+\paragraph{\normalfont\scshape $\Z_2$ gauge theory (Exercise~3).} The plaquette variable is $\sigma_p=\prod_{\ell\in p}\sigma_\ell$, a product of spins, and the action is $\beta\sum_p\sigma_p$ with $\beta\ge0$, of Griffiths' form with the links as sites. The $2\times2$ loop is $\sigma_{p_1}\sigma_{p_2}\sigma_{p_3}\sigma_{p_4}$, because interior links appear twice. Griffiths' second inequality gives $\langle\sigma_{p_1}\sigma_{p_2}\sigma_{p_3}\sigma_{p_4}\rangle\ge\langle\sigma_{p_1}\sigma_{p_2}\rangle\langle\sigma_{p_3}\sigma_{p_4}\rangle\ge\prod_i\langle\sigma_{p_i}\rangle$.
+
+\paragraph{\normalfont\scshape Griffiths' first inequality (Exercise~4).} Expanding each factor $e^{J_{ij}\sigma_i\sigma_j}=\cosh J_{ij}\,(1+\sigma_i\sigma_j\tanh J_{ij})$ and multiplying out, $Z\langle\sigma_A\rangle$ is a sum over subsets of edges of products of $\tanh J_{ij}\ge0$ times $\sum_\sigma\sigma_A\prod\sigma_i\sigma_j$. The sum over configurations of a product of spins is $2^n$ if every spin appears an even number of times and zero otherwise. Every term is nonnegative.
+
+\section*{Chapter~\ref{ch:kacyang}}
+
+\paragraph{\normalfont\scshape The Fourier bound (Exercise~5).} Let $Q$ have density $f=\sum_{n\ge1}nu_n\chi_n$ with respect to Haar measure, $u_1=1$. The characters are orthonormal, so $\|f-1\|_2^2=\sum_{n\ge2}n^2u_n^2$. Total variation is half the $L^1$ distance, which is at most half the $L^2$ distance. Convolution multiplies $u_n$ by itself, since $\chi_n*\chi_n=\chi_n/n$. Hence $\|Q^{*m}-\mathrm{Haar}\|_{\mathrm{TV}}^2\le\frac14\sum_{n\ge2}n^2u_n^{2m}$.
+
+\paragraph{\normalfont\scshape Eleven thirds (Exercise~6).} $\dfrac{x}{\sinh x}\cdot2\cosh2x=\Big(1-\dfrac{x^2}{6}\Big)\big(2+4x^2\big)+O(x^4)=2+\Big(4-\dfrac13\Big)x^2+O(x^4)$.

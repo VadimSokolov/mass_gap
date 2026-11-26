@@ -1,0 +1,133 @@
+\chapter{A Computational Notebook}\label{ch:notebook}
+
+Every number in this book comes from a script listed in Appendix~\ref{ch:code}. This appendix lists the scripts in the order of the argument, with what each computes, the result to expect, and the approximate running time (on one core unless stated). It is meant for a reader who wants to reproduce or extend the computations.
+
+\section{Positivity and the two routes}
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{checks.py} & the $2\sin^2$ lemma, Thorin densities and decay rates for a toy spectrum & seconds \\
+\texttt{routeA\_tail.py} & tail index of the Route A law & seconds \\
+\texttt{gap\_noise\_}\allowbreak\texttt{table.py} & gap estimates by positive deconvolution across noise levels & one minute \\
+\texttt{examples\_fig.py} & exactly solvable examples of Section~\ref{ch:examples} & seconds \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Two dimensions and Monte Carlo methods}
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{nested\_su2.py} & nested sampling of $Z(\beta)$ on a two dimensional torus against the exact value & minutes \\
+\texttt{vl\_core.py}, \texttt{vl\_methods.py} & the vertical likelihood family and split sampling; $\log Z(2)=-13.8223$; root mean square errors $0.032$ (vertical likelihood), $0.057$ (power posterior), $0.117$ (prior importance), $0.140$ (split), $0.218$ (nested), $0.275$ (harmonic mean) over three seeds & minutes per seed \\
+\texttt{yakowitz\_ti.py} & thermodynamic integration with sorted random nodes; slope $-1.98$ & one minute \\
+\texttt{besag\_pl.py} & pseudolikelihood estimates of $\beta$; $1.13$, $2.12$, $3.84$, $8.44$ at $\beta=1,2,4,8$ & ten minutes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The ladder}
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{mk\_verify.py} & the projected map $R$, decrements, the $b=3$ value $8/27$ & one minute \\
+\texttt{mk\_cover.py} & the covering on $[0.3,300]$; margin $0.051$ & minutes \\
+\texttt{su3\_mk.py} & the SU(3) ladder; decrement $9/16$ & minutes \\
+\texttt{ladder\_}\allowbreak\texttt{expansion.py} & exact expansion; $\frac14+\frac1{48\beta}+\frac{7}{1152\beta^2}$ at $b=2$ & one minute \\
+\texttt{local\_time.py} & heat kernel bracket of the Wilson start; widths $2.53$, $1.107$, $1.012$ & twenty seconds \\
+\texttt{ladder\_b.py} & coefficients $a(b)$, $c(b)$; $c(2)=0.02083$ & three minutes \\
+\texttt{mk\_sigma.py} & absolute string tension in three and four dimensions & one minute \\
+\texttt{mk\_3d.py} & the three dimensional curve of Figure~\ref{fig:mk3d} & two minutes \\
+\texttt{pl\_ladder.py} & particle learning of the decrement; median $0.264$ & ten seconds \\
+\texttt{particle\_mk.py} & the ladder as a particle filter & fifteen seconds \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The heat kernel}
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{product\_}\allowbreak\texttt{formula.py} & roots $\gamma_m(t)$, check of the product formula, monotonicity of roots & one minute \\
+\texttt{mlr\_large\_}\allowbreak\texttt{time.py} & the bound $D(t)$ and its zero $3.2140$ (printed as $0.8035$, the script measuring time in units of $t/4$); grid minimum $0.67$ & seconds \\
+\texttt{wilson\_flow\_}\allowbreak\texttt{mlr.py} & the threshold $\kappa=3/2$ for the Wilson law & seconds \\
+\texttt{mlr\_check.py} & the original grid check of the likelihood ratio property & one minute \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Four dimensions}
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{su2\_4d.py} & mean plaquette on $8^4$; $0.6526$ at $\beta=2.5$ & forty seconds per coupling \\
+\texttt{scaling\_test.py} & slopes in the bare coupling; data $-3.18$ & seconds \\
+\texttt{effective\_}\allowbreak\texttt{coupling.py} & slopes in the effective coupling; data $-2.40$, ladder $-2.64$ & seconds \\
+\texttt{su2\_loops.py} & laws of the plaquette and the $2\times2$ loop; plaquette correlations & one minute per coupling \\
+\texttt{su2\_loops\_d.py}, \texttt{sandwich2.py} & loop laws for $R=1,2,4$ in three and four dimensions; positions $\lambda$ & two minutes per coupling \\
+\texttt{gbc\_sim.py}, \texttt{gbc\_match.py} & GBC matching of blocked ensembles; $\beta'=2.14$ at $\beta=2.5$ & four minutes on six cores \\
+\texttt{sandwich.py} & the three laws of Chapter~\ref{ch:sandwich} and their likelihood ratios & seconds \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Contraction, counts, zeros and Bayesian computation}
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{initial\_layer.py} & the two image model and the error bounds of the initial layer & one minute \\
+{\scriptsize\texttt{ladder\_certificate.py}} & enclosure of $\zeta>0$ at $t_0=0.002$; $7370$ boxes & one minute \\
+{\scriptsize\texttt{continuous\_ladder.py}} & the bracket $\mathcal B(t)$ and a hybrid particle run & one minute \\
+\texttt{spde\_extras.py} & one plaquette Langevin gaps; particle counts; Keilson check & one minute \\
+\texttt{latent\_mixture.py} & the latent count $M$ and an exact sampler of $K_t$ & seconds \\
+{\scriptsize\texttt{latent\_convolution.py}} & the kernel $Q$ in exact arithmetic, $a,b\le30$ & one minute \\
+\texttt{count\_ladder.py} & $Q$ exactly for $a,b\le20$; the exact ladder on counts & two minutes \\
+\texttt{kingman\_dual.py} & count law against Tavar\'e's series; heat flow as a death process & seconds \\
+\texttt{count\_lyapunov.py} & one exact rung from many starting laws & one minute \\
+\texttt{real\_zeros.py} & zeros of convolutions and of exact rungs, to $450$ digits & ten minutes \\
+{\scriptsize\texttt{zeros\_adversarial.py}} & $260$ pairs with repeated zeros; a heat kernel rung & two minutes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{p{1.3in}p{2.05in}p{0.7in}}
+\toprule
+script & computes & time \\ \midrule
+\texttt{harmonic\_law.py} & exact mean counts of convolutions against the harmonic law & seconds \\
+{\scriptsize\texttt{count\_observable.py}} & the count as $E[1/(1-\cos\theta)]-2$; first rung against the theorem & seconds \\
+\texttt{vacuum\_zeros.py} & zeros of the one plaquette ground state, by the argument principle & one minute \\
+{\scriptsize\texttt{quantum\_plaquette.py}} & one plaquette Hamiltonian; band limited readout for GBC & one minute \\
+\texttt{count\_lattice.py}, \texttt{count\_blocked.py} & the count of plaquettes, loops and blocked plaquettes on $8^4$ & ten minutes \\
+\texttt{radial\_flow.py} & the radial flow, its flat limit, interlacing along the flow, the sign criterion & four minutes \\
+{\scriptsize\texttt{szego\_criterion.py}} & the smoothed criterion for real zeros; $1500$ laws & three minutes \\
+\texttt{window\_gap.py} & negative binomial moments of a correlator against the effective mass & seconds \\
+\texttt{frame\_lemma.py} & random checks of the frame lemma and of the layer cake bound & seconds \\
+\texttt{theta\_fermion.py} & determinants, Schur functions, the matching expansion, the ellipse & seconds \\
+\texttt{hw\_thorin.py} & phase of $I_{iy}(r)$, its derivative by Neumann's formula, P\'olya's zeros & one minute \\
+{\scriptsize\texttt{count\_logconcave.py}} & log concavity after one coalescence, $400$ laws & two minutes \\
+{\tiny\texttt{count\_hypergeometric.py}} & the kernel exactly for $a,b\le25$; predicted and exact drifts & one minute \\
+\texttt{gbc\_attention.py} & pooled characters and an attention head against the exact posterior & two minutes \\
+\texttt{suff\_efficiency.py} & efficiency of maximum likelihood, pseudolikelihood and a one bit summary & two minutes \\
+\texttt{gbc\_exact.py}, \texttt{gbc\_gap.py} & GBC against the exact posterior; a generator for the gap & three minutes \\
+\texttt{hitting\_gap.py}, \texttt{mdp\_plaquette.py} & gap of SU(2) from a hitting time, $1.497\pm0.017$; moderate deviations & one minute \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Conventions}
+
+Elements of SU(2) are unit quaternions $(a_0,a_1,a_2,a_3)$ with $\frac12\operatorname{tr}U=a_0$ and $\theta=\arccos a_0$. Class function laws are stored through their character coefficients $u_n$, with $u_1=1$ and density $\sum_nnu_n\chi_n$ with respect to Haar measure. Integrals over the angle use Gauss Legendre quadrature with the Haar weight $\frac2\pi\sin^2\theta$. The Wilson coupling is $\beta=4/g^2$ in four dimensions, and the heat kernel coupling is $\beta=2/t$ with $u_2=e^{-3t/4}$. Seeds are fixed. Results labelled verified numerically are floating point; the check of Theorem~\ref{thm:scaledmlr} at six times is an enclosure with a rounding allowance, and none uses ball arithmetic.

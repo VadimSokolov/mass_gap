@@ -1,0 +1,1 @@
+python3 vl_methods.py $s > ../results/vl_methods_seed$s.log 2>&1  188.71s user 1.19s system 94% cpu 3:20.72 total

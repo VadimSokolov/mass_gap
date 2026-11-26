@@ -1,0 +1,1110 @@
+# results.yaml: the catalog of the book's results.
+# One entry per result that is new in the book, comes from the authors' own papers, or corrects one of those papers.
+# Results of other authors go in the chapter summaries, with their authors. Guide: references/repository.md.
+#
+# Fields:
+#   id          stable name: lowercase letters, digits and underscores; never reused for another result
+#   name        a short descriptive name; agents cite it together with the printed number
+#   label       the \label of the statement (LaTeX) or the id of its div (Quarto)
+#   chapter     the chapter key, as in book.yaml
+#   origin      book, paper:KEY or corrected:KEY, with KEY from related_papers in book.yaml
+#   status      proved, computed, conditional, open, counterexample or withdrawn
+#   conditions  for conditional: the statements the result assumes and the book does not prove
+#   erratum     for withdrawn: what was wrong, and the version that corrects it
+#   highlight   true for the 3 to 8 results that the README and the website feature
+#   summary     one sentence in plain words
+#   statement   the result as the book states it, with the same hypotheses, quantifiers, constants and rates; standard LaTeX only, no book macros
+#   supersedes  optional: the statement this one replaces, e.g. the version in a paper
+#
+# bookrepo.py inventory prints a stub for every labeled theorem, proposition, lemma, corollary, conjecture and open question.
+#
+# - id: adjoint_statistic_sufficient
+#   name: The adjoint statistic is sufficient
+#   label: m:lem:adjoint
+#   chapter: "15"
+#   origin: book
+#   status: proved
+#   highlight: true
+#   summary: For a linear forward map with Gaussian noise, the adjoint of the forward map applied to the data is a sufficient statistic.
+#   statement: >-
+#     Let $G$ be a bounded linear map ... Then $G^* Y$ is sufficient for $\theta$.
+
+- id: yang_mills_ggc
+  name: The Yang Mills generalized gamma convolution of an observable
+  label: prop:ymggc
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The offset spectral measure of a gauge invariant observable is a Thorin measure, so it defines a generalized gamma convolution whose Laplace transform is built from the zero momentum propagator.
+  statement: >-
+    Fix a gauge invariant observable with spectral measure \mu, gap \Delta=\inf\operatorname{supp}\mu>0, an offset \alpha>\alpha_0 with offset measure \mu_\alpha(dE)=e^{-\alpha E}\mu(dE), and offset correlation C(\alpha+r)=\int e^{-rE}\mu_\alpha(dE). Let \widehat C_\alpha(s)=\int_0^\infty e^{-sr}C(\alpha+r)\,dr=\int \mu_\alpha(dE)/(s+E). Then \varphi_\alpha(s)=\exp\big(-\int_0^s\widehat C_\alpha(r)\,dr\big)=\exp\big(-\int\log(1+s/E)\,\mu_\alpha(dE)\big) is the Laplace transform of a generalized gamma convolution X_\alpha whose Thorin measure is \mu_\alpha.
+- id: gap_as_exponential_moment_threshold
+  name: Mass gap equals the exponential moment threshold of the Yang Mills GGC
+  label: thm:abscissaB
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The mass gap of an observable is the exponential rate below which the associated generalized gamma convolution has finite exponential moments and above which it does not, so the gap is a tail index.
+  statement: >-
+    With X_\alpha the Yang Mills generalized gamma convolution of an observable with spectral measure \mu, offset \alpha>\alpha_0 and gap \Delta=\inf\operatorname{supp}\mu>0, \mathbb{E}\, e^{\lambda X_\alpha}<\infty for \lambda<\Delta and \mathbb{E}\, e^{\lambda X_\alpha}=\infty for \lambda>\Delta. Equivalently, the abscissa of convergence of the Laplace transform \varphi_\alpha is -\Delta, and the left edge of the Thorin support is the gap.
+- id: polson_2sin2_lemma
+  name: The Polson 2 sin squared lemma
+  label: lem:2sin2B
+  chapter: '3'
+  origin: paper:PS26a
+  status: proved
+  highlight: false
+  summary: >-
+    The compensated exponent of a single jump is a Thorin integral with an explicit nonnegative density built from a squared sine, the identity used to transport a Levy measure to a Thorin density.
+  statement: >-
+    For x>0, w>0 and u=w^2/2, e^{-wx}+wx-1=\int_0^\infty \log\big(1+\tfrac{u}{z}\big)\,k_x(z)\,dz, where k_x(z)=\frac{x}{\pi\sqrt{2z}}\,2\sin^2\big(x\sqrt{z/2}\big)\ge 0.
+- id: thorin_density_is_levy_exponent
+  name: The Thorin density is a Levy exponent
+  label: thm:thorinB
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The Thorin density obtained by transporting the spectrum is a Levy exponent divided by a multiple of real time: the exponent of a symmetric compound Poisson process, equal to the correlation at the offset minus the real part of the correlation continued to real time.
+  statement: >-
+    Let \mu be a nonnegative spectral measure with offset measure \mu_\alpha(dE)=e^{-\alpha E}\mu(dE), \alpha>\alpha_0, correlation C, and L_\alpha(w)=\int_0^w (C(\alpha)-C(\alpha+s))\,ds=\int (e^{-wE}+wE-1)\,\mu_\alpha(dE)/E. Then u\mapsto\exp(-L_\alpha(\sqrt{2u})) is the Laplace transform of a generalized gamma convolution whose Thorin measure has density T_\alpha(z)=\psi_\alpha(t)/(\pi t) with t=\sqrt{2z}, where \psi_\alpha(t)=\int(1-\cos tE)\,\mu_\alpha(dE)=C(\alpha)-\operatorname{Re}C(\alpha+it). Here \psi_\alpha is the Levy exponent of the symmetric compound Poisson process whose jump measure is \mu_\alpha symmetrised (jumps \pm E, each with weight \tfrac12\mu_\alpha(dE)).
+- id: gap_as_thorin_decay_rate
+  name: Mass gap is the decay rate of the Thorin densities in Euclidean time
+  label: thm:rateB
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The Thorin densities decay in Euclidean time at exactly the rate given by the gap, with a monotone local rate that decreases to the gap from above.
+  statement: >-
+    Let \mu be the spectral measure of a gauge invariant observable, \Delta=\inf\operatorname{supp}\mu, and T_\alpha(z) the Thorin density of the previous theorem at offset \alpha>\alpha_0. (i) For all z>0 and \alpha\ge\alpha'>\alpha_0, T_\alpha(z)\le e^{-\Delta(\alpha-\alpha')}T_{\alpha'}(z). (ii) For all but countably many z, \lim_{\alpha\to\infty}-\alpha^{-1}\log T_\alpha(z)=\Delta. (iii) For each z with T_\alpha(z)>0, \alpha\mapsto\log T_\alpha(z) is convex, so the local rate r_\alpha(z)=-\partial_\alpha\log T_\alpha(z) is nonincreasing, and for z outside the exceptional countable set of (ii) it decreases to \Delta.
+- id: uniform_thorin_gap_equivalences
+  name: >-
+    Uniform Thorin gap inequality is equivalent to a uniform spectral gap, with constant one
+  label: thm:equivB
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    A uniform inequality between Thorin densities at different Euclidean times is equivalent to a uniform spectral gap and to uniform exponential decay, and its constant can always be taken to be one.
+  statement: >-
+    Let {\mu^{(a)}} be nonnegative measures on (0,\infty) with \sup_a\int e^{-\alpha_0E}\mu^{(a)}(dE)<\infty, let C^{(a)} and T^{(a)}_\alpha be the correlations and Thorin densities of \mu^{(a)}, and let m>0. The following are equivalent. (a) \operatorname{supp}\mu^{(a)}\subset[m,\infty) for every a. (b) There are M' and \tau_0 with C^{(a)}(\tau)\le M'e^{-m\tau} for all \tau\ge\tau_0 and all a. (c) There is M<\infty with T^{(a)}_\alpha(z)\le M e^{-m(\alpha-\alpha')}T^{(a)}_{\alpha'}(z) for all a, all z and all \alpha\ge\alpha'>\alpha_0. (d) Statement (c) holds with M=1.
+- id: continuum_gap_from_uniform_thorin_inequality
+  name: A uniform Thorin gap inequality gives a gap in the continuum limit
+  label: cor:continuumB
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    If lattice offset measures converge weakly and satisfy the uniform Thorin gap inequality with one rate, the continuum theory has a gap at least that rate.
+  statement: >-
+    For lattice spacings a>0 let \mu^{(a)} be nonnegative lattice spectral measures on (0,\infty) in physical units, with \sup_a\int e^{-\alpha_0E}\mu^{(a)}(dE)<\infty, whose offset measures e^{-\alpha_0E}\mu^{(a)}(dE) converge weakly as a\to0 to e^{-\alpha_0E}\mu(dE), where \mu is the spectral measure of the continuum theory. For \alpha>\alpha_0 and z>0 let T^{(a)}_\alpha(z)=\frac{1}{\pi t}\int(1-\cos tE)\,e^{-\alpha E}\mu^{(a)}(dE), with t=\sqrt{2z}, be the Thorin densities. If there are \Delta_0>0 and M<\infty with T^{(a)}_\alpha(z)\le M e^{-\Delta_0(\alpha-\alpha')}T^{(a)}_{\alpha'}(z) for all a, all z>0 and all \alpha\ge\alpha'>\alpha_0 (the uniform Thorin gap inequality), then \inf\operatorname{supp}\mu\ge\Delta_0, that is, the continuum theory has a gap of at least \Delta_0.
+- id: correlator_not_ggc_two_isolated_levels
+  name: A correlator with two isolated levels is not a GGC
+  label: prop:notggcB
+  chapter: '3'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    When the spectrum has two isolated levels, the normalised correlation in Euclidean time is not a generalized gamma convolution and not hyperbolically completely monotone.
+  statement: >-
+    If \int_0^\infty C(\alpha+s)\,ds<\infty and the spectral measure \mu has atoms at E_1<E_2 with \mu((E_1,E_2))=0, then the probability density proportional to C(\alpha+\tau) in \tau is not a generalized gamma convolution, and hence not hyperbolically completely monotone.
+- id: slice_conditional_log_concave
+  name: Slice variables give log concave conditionals
+  label: prop:slicelc
+  chapter: '5'
+  origin: paper:Po96
+  status: proved
+  highlight: false
+  summary: >-
+    Slicing each quasi concave likelihood factor makes the conditional law of the parameter log concave, even when the posterior itself is multimodal.
+  statement: >-
+    Let the target be proportional to p(x) times the product over i=1,...,m of L_i(x) on R^d, with slice variables w=(w_1,...,w_m) and joint density proportional to p(x) times the product of the indicators I{0<w_i<L_i(x)}. If p is log concave and every L_i is quasi concave, meaning that its superlevel sets are convex, then for every w the conditional law of x given w is log concave.
+- id: slice_cap_log_sobolev
+  name: Log Sobolev bound for the sliced SU(2) link conditional
+  label: prop:slicecurv
+  chapter: '5'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    The book conjectures that, once the plaquette slices are cut at positive levels, the uniform law on the resulting intersection of spherical caps in SU(2) has a log Sobolev constant that does not depend on the coupling or the staples (a proof is only sketched).
+  statement: >-
+    Identify SU(2) with the unit sphere S^3. For a link U with staples V_p, p running over the plaquettes containing U, and slice levels c_p, let C(w) be the intersection over p of the caps {U : (1/2) tr(U V_p) > c_p}. Conjecture: if every slice level satisfies c_p > 0, then C(w) is geodesically convex, and the uniform law on C(w), with the reflected Brownian motion on it, satisfies a logarithmic Sobolev inequality with constant 2, independent of beta and of the staples.
+- id: op_fpras_su2_lattice_gauge
+  name: An FPRAS for the partition function of SU(2) lattice gauge theory
+  label: op:mixing1
+  chapter: '5'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    The book asks whether the partition function of SU(2) lattice gauge theory with the Wilson action can be approximated in time polynomial in the box size at every coupling.
+  statement: >-
+    Is there a fully polynomial randomized approximation scheme for the partition function of SU(2) lattice gauge theory with the Wilson action, on boxes of side L, at every coupling, with running time polynomial in L?
+- id: reflection_dirichlet_odd_sector
+  name: Gap of the odd sector as a Dirichlet eigenvalue
+  label: prop:hitreflect
+  chapter: '6'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    When a measure preserving reflection splits the state space into two halves, the lowest odd eigenvalue is the Dirichlet eigenvalue of the fixed set, which removes the factor of two in the hitting time bracket.
+  statement: >-
+    For a reversible diffusion with generator L, invariant probability mu and spectral gap lambda_1 (the bottom of the spectrum of -L on functions of mean zero), let rho be an involution of the state space that preserves mu and commutes with L, and suppose that the complement of its fixed set F has exactly two components, each connected and exchanged by rho, so that every continuous path from a point to its image meets F. Then the lowest eigenvalue of -L on functions odd under rho equals lambda_D(F), the bottom of the spectrum of -L with Dirichlet condition on F. In particular lambda_1 <= lambda_D(F), with equality when the first excited state is odd.
+- id: su2_equator_hitting_time
+  name: Exact survival law of Brownian motion on SU(2) hitting the equator
+  label: prop:equator
+  chapter: '6'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The survival probability of Brownian motion on SU(2) until it reaches the equator is an explicit series whose hazard rate tends to the spectral gap 3/2.
+  statement: >-
+    Let Brownian motion on SU(2)=S^3 have generator (1/2) times the Laplace Beltrami operator of the unit sphere, start at the identity, and let T be its first hitting time of the equator {a_0=0}, where a_0 is the real part of the group element. Then P(T>t) = (16/pi) times the sum over k>=1 of (-1)^(k+1) k^2/(4k^2-1) times exp(-(4k^2-1)t/2). So the hazard rate of T tends to 3/2, the spectral gap of this Brownian motion, with the next correction of relative size e^{-6t}.
+- id: one_plaquette_hamiltonian_gap
+  name: Gap of the one plaquette SU(2) Hamiltonian
+  label: prop:oneplaquette
+  chapter: '6'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The single plaquette Kogut Susskind Hamiltonian is a tridiagonal matrix in the character basis, with gap 3 lambda/4 at strong coupling and tending to the square root of 2 at weak coupling.
+  statement: >-
+    Consider the Hamiltonian H_lambda = -lambda Delta + (1/lambda)(1 - cos theta) of one SU(2) plaquette on class functions, where Delta is the Laplacian whose eigenvalue on the character chi_n is -(n^2-1)/4 and lambda>0 is proportional to the square of the coupling. In the orthonormal basis chi_1, chi_2, ... of class functions, H_lambda is the tridiagonal matrix with diagonal entries (1/4) lambda (n^2-1) + 1/lambda and off diagonal entries -1/(2 lambda). Its gap is (3/4) lambda + O(1/lambda^3) as lambda tends to infinity and tends to sqrt(2) as lambda tends to 0.
+- id: one_plaquette_vacuum_real_zeros
+  name: The vacuum of one plaquette has real zeros
+  label: prop:vacuumzeros
+  chapter: '6'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The ground state of the one plaquette Hamiltonian, as a function of the cosine of the angle, has only real zeros at or below minus one, so its reciprocal is a Laplace transform of a generalized gamma convolution (Thorin form).
+  statement: >-
+    Let H_lambda = -lambda Delta + (1/lambda)(1 - cos theta), with lambda > 0, be the Kogut Susskind Hamiltonian of one SU(2) plaquette on class functions, where e^{\pm i theta} are the eigenvalues of the plaquette variable and Delta is the Laplacian whose eigenvalue on the character chi_n is -(n^2-1)/4. The ground state psi_0 of H_lambda, as an entire function of x = cos(theta), has only real zeros, all in (-infinity,-1]. Hence psi_0(x) = psi_0(0) e^{ax} times the product over m of (1 + x/gamma_m), with a >= 0 and gamma_m >= 1, and psi_0(0)/psi_0(x) is the Laplace transform in x of a generalized gamma convolution with drift a and unit Thorin atoms at the gamma_m. The same holds for the vacuum density psi_0^2, with atoms of weight two.
+- id: one_plaquette_vacuum_count_log_concave
+  name: Log concave count law of the one plaquette vacuum
+  label: cor:vacuumcount
+  chapter: '6'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The vacuum density of one plaquette is a mixture of the count densities with a log concave mixing law whose mean is the count reported in the book's table.
+  statement: >-
+    Let H_lambda = -lambda Delta + (1/lambda)(1 - cos theta), with lambda > 0, be the Hamiltonian of one SU(2) plaquette on class functions (Delta the Laplacian with eigenvalue -(n^2-1)/4 on the character chi_n), and psi_0 its ground state. The vacuum density psi_0^2 is a mixture, the sum over j of pi(j) f_j, with a log concave count law pi, where f_j is the density on SU(2) for which cos^2(theta/2) has the Beta(j+3/2, 3/2) law. The mean of pi is the count E[1/(1-cos theta)] - 2 of the density psi_0^2.
+- id: two_plaquettes_real_zeros
+  name: Real zeros of the vacuum of two plaquettes sharing a link
+  label: op:twoplaquettes
+  chapter: '6'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Open whether the vacuum of two SU(2) plaquettes sharing a link, as a function of each plaquette variable, again has only real zeros below minus one.
+  statement: >-
+    Two plaquettes sharing a link, in the Hamiltonian formulation and restricted to gauge invariant states. Is the vacuum, as a function of each plaquette variable cos(theta_p) with the other held fixed, an entire function with only real zeros below -1? This is the Hamiltonian form of the conjecture that the class L of laws of real zero type is closed under convolution on SU(2); the difficulty is that the heat flow on the shared link acts on both variables at once.
+- id: register_rule_one_plaquette
+  name: Register rule for the one plaquette gap
+  label: op:registers
+  chapter: '6'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Open whether the number of characters needed for the one plaquette gap grows like the square root of the vacuum count as the coupling goes to zero.
+  statement: >-
+    Let H_lambda = -lambda Delta + (1/lambda)(1 - cos theta), with lambda > 0, be the Hamiltonian of one SU(2) plaquette on class functions (Delta the Laplacian with eigenvalue -(n^2-1)/4 on the character chi_n), with ground state psi_0. Prove that the number of characters needed to compute the gap of H_lambda to a fixed accuracy is asymptotic, as lambda tends to 0, to a constant times the square root of the count E[1/(1-cos theta)] - 2 of the vacuum density psi_0^2, and find the constant as a function of the accuracy.
+- id: vacuum_thorin_atoms_monotone
+  name: Monotonicity of the Thorin atoms of the one plaquette vacuum
+  label: op:vacuumthorin
+  chapter: '6'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Open whether each Thorin atom of the one plaquette vacuum decreases monotonically toward one as the coupling goes to zero.
+  statement: >-
+    Let psi_0 be the ground state of the one SU(2) plaquette Hamiltonian H_lambda = -lambda Delta + (1/lambda)(1 - cos theta) on class functions (Delta the Laplacian with eigenvalue -(n^2-1)/4 on the character chi_n), and let gamma_m(lambda) >= 1 be its Thorin atoms, so that psi_0(x) = psi_0(0) e^{ax} times the product over m of (1 + x/gamma_m) in x = cos(theta). The atoms decrease toward 1 as lambda tends to 0: the nearest is at 6.731, 1.206 and 1.0065 for lambda = 2, 1/2 and 1/10. Show that each gamma_m(lambda) is monotone in lambda.
+- id: two_dimensional_uniform_gap
+  name: >-
+    Uniform gap for two dimensional SU(2) lattice Yang Mills from the coarsest lattice to the continuum
+  label: thm:2dB
+  chapter: '7'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    In two dimensional SU(2) lattice Yang Mills on a cylinder the gap in physical units stays above an explicit positive multiple of the continuum gap at every lattice spacing, which gives a uniform Thorin gap inequality with constant one.
+  statement: >-
+    Consider two dimensional SU(2) lattice Yang Mills theory with Wilson action on a cylinder whose spatial circle has $L$ sites and physical length $\ell$, so that the lattice spacing is $a=\ell/L$ and the Wilson coupling is $\beta=4/(g^2a^2)$. The transfer matrix is diagonal in characters with eigenvalues $u_n(\beta)^L$, where $u_n=I_n/I_1$ is a ratio of modified Bessel functions of the first kind, the lattice gap in physical units is $\Delta(a)=-\frac{L}{a}\log u_2(\beta)$, and the continuum gap is $\Delta_{\mathrm{cont}}=3g^2\ell/8$. Let $x=3g^2a^2/8$. For every lattice spacing, $\Delta(a)\ge\Delta_{\mathrm{cont}}\,\operatorname{arcsinh}(x)/x$. Consequently, for all $L\ge1$ and every gauge invariant observable, with nonnegative spectral measure $\mu^{(a)}$ in physical units and Thorin densities $T^{(a)}_\alpha(z)=\frac{1}{\pi y}\int\big(1-\cos(yE)\big)e^{-\alpha E}\,\mu^{(a)}(\mathrm dE)$ with $y=\sqrt{2z}$, the uniform Thorin gap inequality holds with constant one: $T^{(a)}_\alpha(z)\le e^{-\Delta_0(\alpha-\alpha')}\,T^{(a)}_{\alpha'}(z)$ for every lattice spacing $a$, every $z>0$ and all $\alpha\ge\alpha'>\alpha_0$, where $\alpha_0$ is such that $\int e^{-\alpha_0E}\,\mu^{(a)}(\mathrm dE)$ is finite, $\Delta_0=\Delta_{\mathrm{cont}}\,\operatorname{arcsinh}(x_\ell)/x_\ell$ and $x_\ell=\tfrac38 g^2\ell^2$.
+- id: riemann_kernel_su2_sphere_partition_function
+  name: Riemann's kernel from the SU(2) sphere partition function
+  label: prop:riemannB
+  chapter: '7'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Riemann's kernel for the xi function is a combination of the return density of Brownian motion on the three sphere and its time derivative, that is, of the two dimensional SU(2) Yang Mills partition function on the sphere and its area derivative.
+  statement: >-
+    Let $F(A)=\sum_{n\ge1}n^2e^{-An^2/8}=e^{-A/8}Z_0(A)$, where $Z_0(A)=\sum_{n\ge1}n^2e^{-A(n^2-1)/8}$ is the partition function of two dimensional SU(2) Yang Mills theory on the sphere of area $A$. Let $\Phi(u)=\sum_{n\ge1}\big(2\pi^2n^4e^{9u/2}-3\pi n^2e^{5u/2}\big)\exp(-\pi n^2e^{2u})$ be Riemann's kernel. With $A=8\pi e^{2u}$, $\Phi(u)=-16\pi^2e^{9u/2}F'(A)-3\pi e^{5u/2}F(A)$.
+- id: op_fisher_zeros_sphere_theory
+  name: Fisher zeros of the two dimensional sphere theory and the zeros of Xi
+  label: op:exact1
+  chapter: '7'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Study the complex zeros in the area of the SU(2) sphere partition function and relate them to the zeros of the xi function through the identity with Riemann's kernel.
+  statement: >-
+    Study the zeros of Z_0(A)=\sum_{n\ge1}n^2e^{-A(n^2-1)/8}, the partition function of two dimensional SU(2) Yang Mills theory on the sphere of area A, in the complex area plane (the Fisher zeros of the sphere theory), and relate them through the identity of Riemann's kernel with the sphere partition function to the zeros of the Riemann Xi function.
+- id: op_douglas_kazakov_thorin_densities
+  name: Route B Thorin densities across the Douglas Kazakov transition
+  label: op:exact2
+  chapter: '7'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Follow the Thorin densities of the second route across the large N phase transition of two dimensional Yang Mills on the sphere, and ask for a number theoretic reading of the large N analogue of the identity with Riemann's kernel.
+  statement: >-
+    The large N limit of two dimensional Yang Mills theory on the sphere has a third order phase transition at a critical area (Douglas and Kazakov). Track the Thorin densities of the second route (the transport of the spectral measure to a generalized gamma convolution) across the transition, and ask whether the analogue for SU(N) at large N of the identity of Riemann's kernel with the SU(2) sphere partition function has a number theoretic interpretation.
+- id: mk_step_preserves_positivity
+  name: >-
+    Positivity of character coefficients is preserved by a Migdal Kadanoff step
+  label: lem:posB
+  chapter: '8'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    One step of the Migdal Kadanoff recursion keeps all character coefficients of the plaquette weight nonnegative, so the four dimensional lattice theory with the plaquette weight of any rung is reflection positive.
+  statement: >-
+    Let $f$ be a class function on SU(2) whose character coefficients are all nonnegative. Then the image of $f$ under one Migdal Kadanoff step (bond moving $f\mapsto f^{k}$ with $k=b^{d-2}$, normalised, followed by decimation, the $b^2$ fold convolution, which raises the character coefficients $u_n$ to the power $b^2$) has nonnegative character coefficients. The same holds for a general compact group.
+- id: mlr_implies_projected_map_increasing
+  name: >-
+    Monotone likelihood ratio of the heat kernel makes the projected ladder map increasing
+  label: lem:mlrB
+  chapter: '8'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    If the SU(2) heat kernel has monotone likelihood ratio in time, which the book proves elsewhere, then the one dimensional heat kernel projected Migdal Kadanoff map is increasing.
+  statement: >-
+    Let $R$ be the heat kernel projected Migdal Kadanoff map for SU(2) (start from the heat kernel law with coefficients $u_n=e^{-t(n^2-1)/4}$, $t=2/\beta$, apply one step with $b=2$ and $d=4$, read off the new second coefficient $u_2''=e^{-3t''/4}$ and set $R(\beta)=2/t''$). Suppose the SU(2) heat kernel $K_t(\theta)$ has monotone likelihood ratio in time, meaning that $\partial_\theta\log K_t(\theta)$ is increasing in $t$ for every $\theta\in(0,\pi)$. Then $R$ is increasing.
+- id: first_passage_criterion_projected_ladder
+  name: First passage criterion for the projected ladder
+  label: prop:criterionB
+  chapter: '8'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    If the projected ladder map lowers the coupling at every coupling and the decrement tends to a positive constant, every coupling reaches strong coupling in a number of steps linear in the coupling; this concerns the projected map and is not a gap theorem.
+  statement: >-
+    For the walk $\beta_{\ell+1}=R(\beta_\ell)$ of the heat kernel projected Migdal Kadanoff map $R$ for SU(2) (with $b=2$, $d=4$), let $\delta(\beta)=\beta-R(\beta)$, suppose $R$ is continuous, and suppose (A) $\delta(\beta)>0$ for every $\beta>0$, and (B) $\delta(\beta)\to\delta_\infty>0$ as $\beta\to\infty$ with $O(1/\beta)$ corrections. Then every coupling reaches the strong coupling region $\beta<\beta_*$ (with $\beta_*=0.38$) in $J(\beta)=\beta/\delta_\infty+O(\log\beta)$ steps, where $J(\beta)=\min\{\ell:\beta_\ell<\beta_*\}$.
+- id: coalescence_of_counts
+  name: Coalescence of Beta type densities under SU(2) convolution
+  label: thm:coalescence
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Convolving two of the basic densities proportional to powers of one plus cosine on SU(2) gives a strictly positive mixture of such densities, with a known mean count.
+  statement: >-
+    Let C_n be the Catalan numbers, x=\cos\theta, and f_j(x)=\frac{2^j}{C_{j+1}}(1+x)^j for j=0,1,2,\dots, probability densities with respect to Haar measure on SU(2). Convolution is on the group. For all integers a,b\ge0, f_a*f_b=\sum_{j=0}^{\min(a,b)}Q(j\mid a,b)\,f_j, where Q(\cdot\mid a,b) is a probability law on \{0,\dots,\min(a,b)\} with every weight strictly positive, and \sum_j j\,Q(j\mid a,b)=\frac{ab}{a+b+2}.
+- id: coalescence_is_hypergeometric
+  name: Hypergeometric law of coalescence
+  label: thm:hypergeometric
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    The coalescence kernel of the SU(2) convolution ladder is the hypergeometric law of the overlap of two random subsets, and its positivity is the Chu Vandermonde identity.
+  statement: >-
+    With f_j and Q as in the coalescence theorem (f_j proportional to (1+\cos\theta)^j, and f_a*f_b=\sum_j Q(j\mid a,b) f_j), for all a,b\ge0 and 0\le j\le\min(a,b), Q(j\mid a,b)=\binom aj\binom{b+2}{b - j}\Big/\binom{a+b+2}{b}. This is the hypergeometric law: Q(\cdot\mid a,b) is the law of the number of common elements of two independent uniformly random subsets, of sizes a and b, of a set of size a+b+2.
+- id: hypergeometric_kernel_consequences
+  name: >-
+    Moments, total positivity and unnormalised form of the coalescence kernel
+  label: cor:hypergeometric
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The coalescence kernel has explicit mean and variance, is totally positive of order two, has an unnormalised closed form, and is the thinning of the entrance law of Kingman's death process.
+  statement: >-
+    Let Q(j\mid a,b) be the hypergeometric kernel \binom aj\binom{b+2}{b - j}/\binom{a+b+2}{b} with f_a*f_b=\sum_jQ(j\mid a,b)f_j, f_j\propto(1+x)^j, x=\cos\theta on SU(2). (i) The mean of Q(\cdot\mid a,b) is ab/(a+b+2) and its variance is \frac{ab(a+2)(b+2)}{(a+b+2)^2(a+b+1)}. (ii) Q(j\mid a,b) is totally positive of order two in (j,a) for each b and in (j,b) for each a. (iii) Without normalisation, (1+x)^a*(1+x)^b=c(a,b)\sum_{j=0}^{\min(a,b)}\frac{2^{j-1}(1+x)^j}{(2j+1)!\,(a - j)!\,(b - j)!}, with c(a,b)=\frac{(2a+2)!\,(2b+2)!}{2^{a+b}(a+1)(b+1)(a+b+2)!}. (iv) Let A be the pure death process on the nonnegative integers jumping from m to m-1 at rate m(m+2)/2, started from a under P_a and from infinity under P_\infty. Then P_a(A(\tau)=j)=\sum_bP_\infty(A(\tau)=b)\,Q(j\mid a,b).
+- id: mixture_family_closed_under_ladder
+  name: The exact Migdal Kadanoff ladder stays in the family of count mixtures
+  label: cor:Mclosed
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Heat kernels and Wilson laws on SU(2) are mixtures of the basic densities, and the family of such mixtures is closed under products and convolutions, so every rung of the exact ladder stays in it.
+  statement: >-
+    Let \mathcal M be the set of densities \sum_j\pi(j)f_j on SU(2), with f_j\propto(1+\cos\theta)^j and \pi a probability law on the nonnegative integers. Then \mathcal M contains every SU(2) heat kernel and every Wilson law, and is closed under products followed by normalisation (for bounded densities, so that the normalisation is finite) and under convolution. Hence every rung of the exact Migdal Kadanoff ladder for SU(2) started from a heat kernel or a Wilson law, for any integer scale factor and any dimension, lies in \mathcal M.
+- id: mean_count_formula
+  name: The mean count as an expectation of a reciprocal and a character sum
+  label: cor:meancount
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The mean count of a mixture equals the average of the reciprocal of one minus cosine, less two, and for the heat kernel it is twice the inverse coupling minus seven sixths to leading order.
+  statement: >-
+    For \rho=\sum_j\pi(j)f_j in \mathcal M with f_j\propto(1+\cos\theta)^j probability densities on SU(2), \pi a probability law on the nonnegative integers, and character coefficients u_n(\rho) defined by \rho=\sum_n n\,u_n\chi_n with \chi_n the character of the n dimensional irreducible representation, \sum_jj\,\pi(j)=\Big\langle\frac1{1-\cos\theta}\Big\rangle_\rho-2=2\sum_{n\ge1}n\,u_n(\rho)-2. For the SU(2) heat kernel at time t=2/\beta, whose character coefficients are u_n=e^{-(n^2-1)t/4}, this equals 2\sum_n n\,e^{-(n^2-1)t/4}-2=2\beta-\frac76+O(1/\beta).
+- id: harmonic_law
+  name: Harmonic law for the mean count of a convolution
+  label: thm:harmonic
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    Under convolution the mean counts combine like resistances in parallel, with an explicit constant correction and an error of order one over the smallest index.
+  statement: >-
+    Fix p\ge2 and \lambda\ge1. For positive integers J_1,\dots,J_p with \max J_i\le\lambda\min J_i, put H_k=\sum_iJ_i^{-k}. The mean count of f_{J_1-1}*\cdots*f_{J_p-1} (f_j\propto(1+\cos\theta)^j on SU(2)) is \frac1{H_1}-\frac76+\frac{H_2}{2H_1^2}-\frac{H_3}{3H_1^3}+R, with |R|\le c(p,\lambda)/\min_iJ_i.
+- id: drift_from_point_mass
+  name: Drift of the mean count from a point mass over one exact rung
+  label: cor:pointdrift
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    One exact rung of the ladder started from a pure power density lowers the mean count by a constant, minus thirteen sixteenths for four copies and fourfold convolution.
+  statement: >-
+    The exact rung with k copies (bond moving, raising to the power k) and p fold convolution takes f_m\propto(1+\cos\theta)^m on SU(2) to a law with mean count \frac{km}{p}+c_p+O(1/m) as m\to\infty, where c_p=\frac3{2p}-\frac76-\frac1{3p^2}. For k=p=4 the drift is c_4=-\frac{13}{16}, and for k=p=2 it is c_2=-\frac12.
+- id: count_is_an_observable
+  name: The latent count is an observable on the group
+  label: prop:observable
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The mean of the latent count of a link law equals the expectation of the reciprocal of the Wilson action density, less two.
+  statement: >-
+    For every \rho=\sum_j\pi(j)f_j in \mathcal M (f_j\propto(1+\cos\theta)^j on SU(2)) with finite mean count, \sum_jj\,\pi(j)=E_\rho\Big[\frac1{1-\cos\theta}\Big]-2=E_\rho\Big[\frac1{2\sin^2(\theta/2)}\Big]-2.
+- id: first_rung_theorem
+  name: First rung theorem for laws with real zeros
+  label: thm:firstrung
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    For link laws in the class with real zeros, one exact ladder rung changes the mean count by a constant depending only on the ratio of variance to mean, with explicit limits for point masses and Wilson laws; the heat kernel value is not proved.
+  statement: >-
+    Let \mathcal L be the class of densities c\prod_m(1+x/\gamma_m), x=\cos\theta, with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty, together with their locally uniform limits. For \rho in \mathcal L put \Sigma_1=\sum_m\frac1{\gamma_m+1}, \Sigma_2=\sum_m\frac1{(\gamma_m+1)^2}, r=1-2\Sigma_2/\Sigma_1. One exact rung of the SU(2) ladder (k=4 copies, that is the fourth power, followed by fourfold convolution) changes the mean count (the mean of the count law \pi in \rho=\sum_j\pi(j)f_j, f_j\propto(1+x)^j) by -\frac{13}{16}+\frac{15}{16}r+o(1) as \Sigma_1\to\infty. In particular the change tends to -\frac{13}{16} from point masses and to +\frac18 from Wilson laws e^{\kappa x} as the coupling \kappa\to\infty. (The value -\frac12 for heat kernels, which needs r\to\frac13, is not proved.)
+- id: link_integrated_count_estimator
+  name: Finite variance estimator of the count on a lattice
+  label: prop:linkint
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Integrating out one link gives a bounded function of the configuration whose average is the count of a loop through that link.
+  statement: >-
+    Let W be a random element of SU(2) with class density \sum_nn\,u_n\chi_n (\chi_n the character of the n dimensional irreducible representation), where \sum_nn\,u_n<\infty, and Y a fixed element. Then E\Big[\frac1{1-\frac12\operatorname{tr}(WY)}\Big]=2\sum_{n\ge1}u_n\chi_n(Y). In a lattice gauge theory with Wilson action, a link given all the others is WV^{-1} with V the normalised sum of its staples and u_n=I_n(\kappa)/I_1(\kappa), \kappa=\beta times the norm of the staple sum. So for any loop that passes once through the link, with R the rest of the loop, the count of the loop, E[1/(1-\frac12\operatorname{tr}U)]-2 with U its holonomy, is the average of 2\sum_n\big(I_n(\kappa)/I_1(\kappa)\big)\chi_n(V^{-1}R)-2, a bounded function of the configuration.
+- id: real_zero_laws_log_concave_count
+  name: Laws with real zeros have a log concave count
+  label: prop:Llogconcave
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The latent count law of every link density with only real zeros beyond the edge of the group is log concave.
+  statement: >-
+    For every law of the class \mathcal L (densities c\prod_m(1+\cos\theta/\gamma_m) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty, and their locally uniform limits) the count law \pi in \rho=\sum_j\pi(j)f_j is log concave.
+- id: su2_heat_flow_is_wright_fisher
+  name: Brownian motion on SU(2) is a Wright Fisher diffusion
+  label: prop:wf
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    In the variable one half of one plus cosine, the class angle of Brownian motion on SU(2) is the neutral two allele Wright Fisher diffusion with total mutation rate three, started from fixation.
+  statement: >-
+    Let y=\cos^2(\theta/2)=\frac12(1+\cos\theta). On class functions on SU(2), \Delta=y(1-y)\partial_y^2+(\tfrac32-3y)\partial_y=2\mathcal G, where \mathcal G=\tfrac12y(1-y)\partial_y^2+\tfrac12(\vartheta_1(1-y)-\vartheta_2y)\partial_y with \vartheta_1=\vartheta_2=\tfrac32. So the class angle of the Brownian motion with heat kernel K_t is, in the variable y, the neutral two allele Wright Fisher diffusion with symmetric mutation and total mutation parameter 3, run for the time \tau=t/2 and started from fixation y=1. Its stationary law is Beta with parameters \frac32,\frac32, which is Haar measure.
+- id: kingman_coalescent_duality
+  name: Kingman duality for the SU(2) heat kernel
+  label: thm:kingman
+  chapter: '9'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Through the Wright Fisher form of Brownian motion on SU(2), the expansion of Griffiths and Tavare in Beta laws weighted by the ancestral process becomes an expansion of the SU(2) heat kernel in powers of one plus cosine, with Kingman's death process moving the weights.
+  statement: >-
+    Let f_j\propto(1+\cos\theta)^j on SU(2), K_t the heat kernel, and A the pure death process on the nonnegative integers jumping from m to m-1 at rate \frac12m(m+2), with P_a the law started from a and P_\infty the law started from infinity. (i) f_a*K_s=\sum_{j\le a}P_a(A(s/2)=j)\,f_j for every a\ge0 and s>0. (ii) K_t=\sum_{j\ge0}P_\infty(A(t/2)=j)\,f_j. The latent count of the heat kernel is the number of lineages of Kingman's coalescent with mutation, at time t/2.
+- id: ladder_preserves_log_concavity_problem
+  name: Does the exact ladder preserve log concavity of the count
+  label: op:logconcave
+  chapter: '9'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Open whether coalescence preserves log concavity of the latent count; true for laws of the real zero class, supported by exact computation otherwise.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, * convolution on SU(2). Show that the exact ladder preserves log concavity of the count law \nu_0 (the law of M_0 in \rho\propto E[(1+x)^{M_0}]). Sums of independent log concave counts are log concave; the question is the coalescence. Every law of the class \mathcal L has a log concave count, and exact computation supports the rest.
+- id: constant_drift_problem
+  name: Explain the constant drift of the mean count
+  label: op:drift
+  chapter: '9'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Open to prove the drift of minus one half per rung for heat kernels and at later rungs; the first rung from the real zero class is proved.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, * convolution on SU(2). Explain the constant drift of the mean count over rungs of the exact ladder. Answered to leading order: the drift is -\frac{13}{16}+\frac{15}{16}r with r=1-2\Sigma_2/\Sigma_1, \Sigma_i=\sum_m(\gamma_m+1)^{-i}, to leading order the ratio of variance to mean of the count and r\to\frac13. The first rung from any law of the class \mathcal L is proved, but r\to\frac13 for heat kernels is not proved, and later rungs wait on the closure conjecture for \mathcal L.
+- id: real_zeros_under_convolution
+  name: Real zeros are preserved by convolution and heat flow on SU(2)
+  label: thm:zeros
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    Convolution of class functions on SU(2) preserves real zeros beyond the edge of the group when one factor has such an antiderivative, and heat flow preserves the class of link densities with real zeros.
+  statement: >-
+    Let x=\cos\theta, let \mathcal L be the set of class functions c\prod_m(1+x/\gamma_m) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty, together with their locally uniform limits, and \mathcal L' the set of derivatives in x of members of \mathcal L. (i) If f\in\mathcal L and g\in\mathcal L' are polynomials with \deg f\le\deg g, then f*g\in\mathcal L. (ii) If f,g\in\mathcal L' are polynomials, then f*g\in\mathcal L'. (iii) If f\in\mathcal L and t>0, then f*K_t\in\mathcal L, where K_t is the SU(2) heat kernel: heat flow on SU(2) preserves the class. Convolution is on SU(2).
+- id: coalescence_has_real_zeros
+  name: The coalescence has real zeros
+  label: cor:coalzeros
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The convolution of two basic densities is a polynomial with only real zeros beyond the edge, so its count is a sum of independent Bernoulli variables and the kernel weights form a Polya frequency sequence.
+  statement: >-
+    For all integers a,b\ge0, f_a*f_b=c\prod_{i=1}^{\min(a,b)}\big(1+x/\gamma_i(a,b)\big) with \gamma_i(a,b)\ge1 (x=\cos\theta, f_j=\frac{2^j}{C_{j+1}}(1+x)^j the normalised densities with C_n the Catalan numbers, convolution on SU(2), and f_a*f_b=\sum_jQ(j\mid a,b)f_j). Hence the count M_0 of f_a*f_b is a sum of \min(a,b) independent Bernoulli variables, and the sequence j\mapsto Q(j\mid a,b)\,2^j/C_{j+1} is a Polya frequency sequence, in particular log concave and unimodal.
+- id: wilson_times_wilson
+  name: Two Wilson laws convolve into the real zero class
+  label: prop:wilsonwilson
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    By Gegenbauer's addition theorem the convolution of two Wilson laws on SU(2) is a normalised Bessel function of order one, so its zeros in cosine are explicit, real and beyond the edge of the group, and its count is a sum of independent Bernoulli variables.
+  statement: >-
+    For \kappa,\lambda>0 and x=\cos\theta, e^{\kappa x}*e^{\lambda x}=\frac{2I_1(r)}{r} with r^2=\kappa^2+\lambda^2+2\kappa\lambda x, where I_1 is the modified Bessel function. Its zeros in x are x_m=-\frac{\kappa^2+\lambda^2+j_{1,m}^2}{2\kappa\lambda}\le-1-\frac{j_{1,m}^2}{2\kappa\lambda}, m=1,2,\dots, with j_{1,m} the positive zeros of the Bessel function J_1. So the convolution of two Wilson laws is in the class \mathcal L of functions c\prod_m(1+x/\gamma_m) with c>0, \gamma_m\ge1 and \sum_m1/\gamma_m<\infty with \gamma_m=(\kappa^2+\lambda^2+j_{1,m}^2)/(2\kappa\lambda), and its count is a sum of independent Bernoulli variables with parameters 2\kappa\lambda/(\kappa^2+\lambda^2+j_{1,m}^2).
+- id: thorin_form_hartman_watson
+  name: Thorin form of the Hartman Watson law
+  label: thm:hwggc
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    The Hartman Watson law is a generalized gamma convolution with no drift, and its Thorin distribution function is minus the phase of the Bessel function of imaginary order divided by pi.
+  statement: >-
+    Fix r>0 and let \Xi_r be the Hartman Watson law, with \int e^{-s\xi}\,\Xi_r(d\xi)=I_{\sqrt{2s}}(r)/I_0(r). Let \phi_r(y)=\arg I_{iy}(r), y\ge0, \phi_r(0)=0, be the continuous phase of the Bessel function of imaginary order. For every r>0 and y\ge0, \phi_r'(y)=-\frac{2}{\pi|I_{iy}(r)|^2}\int_0^{\pi/2}K_0(2r\cos a)\cosh(2ya)\,da<0, and \Xi_r is a generalized gamma convolution without drift: \frac{I_{\sqrt{2s}}(r)}{I_0(r)}=\exp\Big(-\int_0^\infty\log\Big(1+\frac sq\Big)U_r(dq)\Big) with U_r([0,\tfrac12y^2])=-\phi_r(y)/\pi.
+- id: wilson_action_thorin_mixture_of_heat_kernels
+  name: The Wilson action is a Thorin mixture of heat kernels
+  label: cor:wilsonthorin
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The Wilson law on SU(2) is a mixture of heat kernels over a random time that is a generalized gamma convolution, with Thorin measure the Hartman Watson one shifted by one half.
+  statement: >-
+    The mixing law \tilde\Xi_\kappa in e^{\kappa x}/Z(\kappa)=\int K_{2\xi}\,\tilde\Xi_\kappa(d\xi) (x=\cos\theta on SU(2), Z the normalising constant, K_t the SU(2) heat kernel with character coefficients e^{-(n^2-1)t/4}, and \tilde\Xi_\kappa the Hartman Watson law \Xi_\kappa, \int e^{-s\xi}\Xi_\kappa(d\xi)=I_{\sqrt{2s}}(\kappa)/I_0(\kappa), tilted by e^{-\xi/2}) is a generalized gamma convolution, with Thorin measure that of the Hartman Watson law \Xi_\kappa moved to the right by \frac12: \frac{I_n(\kappa)}{I_1(\kappa)}=\exp\Big(\frac1\pi\int_0^\infty\log\Big(1+\frac{n^2-1}{1+y^2}\Big)\phi_\kappa'(y)\,dy\Big), where \phi_\kappa(y)=\arg I_{iy}(\kappa). Its Thorin measure is supported on [\frac12,\infty), so \tilde\Xi_\kappa has exponential moments of every order below \frac12.
+- id: smoothed_criterion_real_zeros
+  name: Smoothed criterion for real zeros of a convolution
+  label: thm:szegocriterion
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The convolution of two polynomial laws with real zeros has real zeros whenever one of them convolved with the basic density of the other's degree has an antiderivative with real zeros.
+  statement: >-
+    Let f,g\in\mathcal L be polynomials of degrees d and D (class \mathcal L of densities c\prod_m(1+x/\gamma_m), \gamma_m\ge1, x=\cos\theta on SU(2); \mathcal L' the set of x derivatives of members of \mathcal L; f_D\propto(1+x)^D). If f*f_D\in\mathcal L', or if g*f_d\in\mathcal L', then f*g\in\mathcal L.
+- id: smoothing_conjecture
+  name: Smoothing conjecture for real zeros
+  label: conj:smoothing
+  chapter: '10'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Conjecturally, smoothing a polynomial law with real zeros by a basic density of no larger degree gives a law with a real zeroed antiderivative; it would imply closure of the class under convolution for polynomials.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, \mathcal L' the set of derivatives in x of members of \mathcal L, f_d\propto(1+x)^d, and * convolution on SU(2). If g\in\mathcal L is a polynomial and d\le\deg g, then g*f_d\in\mathcal L': the convolution of g with (1+\cos\theta)^d has an antiderivative in \cos\theta with only real zeros, all at most -1.
+- id: radial_flow_identities
+  name: Radial flow identities for SU(2) convolution
+  label: thm:radialflow
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Convolution on SU(2) is a running average over the radius of convolutions on the circle of dilated laws, with explicit identities linking the two.
+  statement: >-
+    For class functions f,g of x=\cos\theta, let \mathcal D_sf(x)=f(sx), Ef=xf'(x), and (f\circledast g)(\cos\theta)=\frac1{2\pi}\int_0^{2\pi}f(\cos\psi)g(\cos(\theta-\psi))\,d\psi the convolution on the circle. For 0<s\le1, s^2(\mathcal D_sf*\mathcal D_sg)=\int_0^s2\varrho(\mathcal D_\varrho f\circledast\mathcal D_\varrho g)\,d\varrho and \frac{d}{ds}[s^2(\mathcal D_sf*\mathcal D_sg)]=2s(\mathcal D_sf\circledast\mathcal D_sg), and f\circledast g=f*g+\frac12(Ef)*g+\frac12f*(Eg), where * is convolution on SU(2). If f=\prod_{i\le d}(1+x/\gamma_i) and g=\prod_{k\le D}(1+x/\delta_k), and f_{\setminus i}, g_{\setminus k} denote the products with one factor removed, then (1+\frac{d+D}2)f*g=f\circledast g+\frac12\sum_{i=1}^df_{\setminus i}*g+\frac12\sum_{k=1}^Df*g_{\setminus k}.
+- id: closure_from_no_common_zero
+  name: Closure follows from the absence of a common zero along the flow
+  label: thm:flowclosure
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Convolution of two polynomial laws with real zeros has real zeros if the SU(2) and circle convolutions of their dilations never share a zero.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, * convolution on SU(2), (f\circledast g)(\cos\theta)=\frac1{2\pi}\int_0^{2\pi}f(\cos\psi)g(\cos(\theta-\psi))\,d\psi convolution on the circle, and \mathcal D_sf(x)=f(sx). Let f,g\in\mathcal L be polynomials, and suppose the polynomial Q of the flat limit (Q(y)=\sum_k\frac{f_kg_k}{k+1}(y/2)^k, where f=\sum_kf_kx^k and g=\sum_kg_kx^k) has simple zeros. If for no s\in(0,1] do \mathcal D_sf*\mathcal D_sg and \mathcal D_sf\circledast\mathcal D_sg have a common zero, then f*g\in\mathcal L, and the zeros of f\circledast g strictly interlace those of f*g, each zero of f*g lying to the left of the corresponding zero of f\circledast g. In that case the zeros of \mathcal D_sf*\mathcal D_sg increase strictly with s.
+- id: sign_criterion_real_zeros
+  name: A criterion by signs for real zeros of a convolution
+  label: thm:signcriterion
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Real zeros of the convolution follow if all lower convolutions have alternating signs at the zeros of the circle convolution.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, * convolution on SU(2), (f\circledast g)(\cos\theta)=\frac1{2\pi}\int_0^{2\pi}f(\cos\psi)g(\cos(\theta-\psi))\,d\psi convolution on the circle, and \mathcal D_sf(x)=f(sx). Let f,g\in\mathcal L be polynomials of degrees d and D, n=\min(d,D), and \psi_1>\dots>\psi_n the zeros of the circle convolution f\circledast g, assumed simple. If each of the d+D lower convolutions f_{\setminus i}*g and f*g_{\setminus k} (one factor removed) has the sign (-1)^{j-1} at \psi_j, for j=1,\dots,n, then f*g has n real zeros, one in each interval (\psi_{j+1},\psi_j) and one to the left of \psi_n; in particular f*g\in\mathcal L.
+- id: interlacing_conjecture
+  name: Interlacing conjecture for circle and SU(2) convolution
+  label: conj:interlacing
+  chapter: '10'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Conjecturally the zeros of the circle convolution strictly interlace those of the SU(2) convolution; it would imply closure of the class under convolution.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, * convolution on SU(2), (f\circledast g)(\cos\theta)=\frac1{2\pi}\int_0^{2\pi}f(\cos\psi)g(\cos(\theta-\psi))\,d\psi convolution on the circle, and \mathcal D_sf(x)=f(sx). For polynomials f,g\in\mathcal L the zeros of the circle convolution f\circledast g strictly interlace those of the SU(2) convolution f*g, each zero of f*g lying to the left of the corresponding zero of f\circledast g.
+- id: class_l_closed_under_convolution
+  name: Conjecture that real zero laws are closed under convolution on SU(2)
+  label: conj:Lclosed
+  chapter: '10'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Conjecturally (supported by numerical evidence, not proved) the class of link laws with only real zeros beyond the edge of the group is closed under convolution, so the exact ladder has a Lee Yang property at every rung.
+  statement: >-
+    The class \mathcal L of densities c\prod_m(1+\cos\theta/\gamma_m), c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty (with their locally uniform limits) is closed under convolution on SU(2). Hence it is preserved by the exact Migdal Kadanoff ladder: at every rung, from a heat kernel or a Wilson law, the density of a link is a product \prod_m(1+\cos\theta/\gamma_m) with \gamma_m\ge1.
+- id: malo_type_theorem_problem
+  name: A Malo type theorem for the SU(2) pairing
+  label: op:malo
+  chapter: '10'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Open problem to prove the smoothing or interlacing conjecture, or a Malo type theorem for the pairing of the circle lemma when neither factor has an antiderivative in the class.
+  statement: >-
+    Let x=\cos\theta, \mathcal L the class of functions c\prod_m(1+x/\gamma_m) on SU(2) with c>0, \gamma_m\ge1, \sum_m1/\gamma_m<\infty and their locally uniform limits, * convolution on SU(2), (f\circledast g)(\cos\theta)=\frac1{2\pi}\int_0^{2\pi}f(\cos\psi)g(\cos(\theta-\psi))\,d\psi convolution on the circle, and \mathcal D_sf(x)=f(sx). Prove the smoothing conjecture or the interlacing conjecture, or directly a theorem of Malo type for the pairing of Laurent coefficients by which convolution on SU(2) is a Hadamard product when neither factor has an antiderivative in \mathcal L: if f=\sum a_n\chi_n (\chi_n the character of the n dimensional irreducible representation) and g=\sum b_n\chi_n have only negative zeros in z=e^{i\theta}, then \sum_{n\ne0}\operatorname{sgn}(n)\,a_{|n|}b_{|n|}z^n/|n| vanishes only at \pm1 and on the negative axis.
+- id: su2_convolution_as_hadamard_product
+  name: Convolution on SU(2) as a Hadamard product of Laurent coefficients
+  label: lem:circle
+  chapter: '10'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Convolution of class functions on SU(2) is a Hadamard product of the Laurent coefficients of one function multiplied by z minus its inverse and of an antiderivative of the other, which brings theorems on real zeros of Hadamard products to the group.
+  statement: >-
+    Let x=\cos\theta, z=e^{i\theta}, \chi_n the character of the n dimensional irreducible representation of SU(2), and * convolution on SU(2). Let f=\sum_na_n\chi_n and g=\sum_nb_n\chi_n be class functions and let G be any antiderivative of g in x. Write \tilde f(z)=f\cdot(z - z^{-1})=\sum_{n\ne0}\operatorname{sgn}(n)\,a_{|n|}z^n and G=\sum_n\hat G_nz^n. Then \hat G_n=b_{|n|}/(2|n|) for n\ne0, and \widetilde{f*g}(z)=2\sum_{n\ne0}\tilde f_n\,\hat G_n\,z^n. If also f=F', then f*g is a constant multiple of the derivative in x of the convolution of F and G on the circle.
+- id: laws_with_real_zeros_are_determinants
+  name: Laws with real zeros are products of SU(2) fermion determinants
+  label: prop:determinant
+  chapter: '11'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    A plaquette law of the real zero class is a product of one flavour fermion determinants with real hopping parameters.
+  statement: >-
+    For U in SU(2) with eigenvalues e^{\pm i\theta} and 0<\alpha\le 1, \det(1+\alpha U)=1+2\alpha\cos\theta+\alpha^2=2\alpha(\gamma+\cos\theta) with \gamma=(\alpha+\alpha^{-1})/2\ge 1. Hence the polynomials in \cos\theta of the class \mathcal L of laws with real zeros (all zeros of the form -\gamma\le -1) are exactly the functions c\prod_{m=1}^d \det(1+\alpha_m U) with 0<\alpha_m\le 1; in z=e^{i\theta} the zeros are -\alpha_m^{\pm 1}, and the densities f_j\propto(1+\cos\theta)^j are \det(1+U)^j normalised.
+- id: characters_from_flavour_group
+  name: Characters of a determinant law from the flavour group (Howe duality)
+  label: prop:howe
+  chapter: '11'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The character coefficients of a product of fermion determinants are positive combinations of Schur functions of the hopping parameters.
+  statement: >-
+    Let f=\prod_{m=1}^d \det(1+\alpha_m U)=\sum_n a_n\chi_n on SU(2), with \chi_n the character of dimension n. Then a_n=\sum_{j\ge 0}s_{(2^j,1^{n-1})}(\alpha_1,\dots,\alpha_d)=\sum_{q\ge 0}e_q(\alpha)\big(e_{q+n-1}(\alpha)-e_{q+n+1}(\alpha)\big), with s the Schur functions and e_q the elementary symmetric functions of \alpha_1,\dots,\alpha_d. In particular every a_n is a positive combination of characters of the flavour group evaluated at the hopping parameters.
+- id: convolution_ellipse_average
+  name: Convolution of class functions on SU(2) as an average over an ellipse
+  label: lem:ellipse
+  chapter: '11'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The convolution of two class functions on SU(2) at cos theta equal to x is an area average over an ellipse in the plane of two cosines.
+  statement: >-
+    For class functions f,\psi on SU(2) and -1<x<1, the convolution (f*\psi)(x) is the average of f(y_1)\psi(y_2) over the ellipse y_1^2+y_2^2-2xy_1y_2\le 1-x^2, with respect to area.
+- id: matching_expansion_of_decimation
+  name: Matching expansion for the convolution of determinant laws
+  label: thm:matching
+  chapter: '11'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The convolution of two products of fermion determinants on SU(2) is an explicit sum over matchings of the flavours, a new exact formula for decimation.
+  statement: >-
+    Let f=\prod_{m=1}^d \det(1+\alpha_m U) and \psi=\prod_{k=1}^D \det(1+\kappa_k U) on SU(2), and write a_1,\dots,a_{d+D} for the hopping parameters of both. Then (f*\psi)(x)=\sum_M \frac{2^{|M|}}{(|M|+1)!}\prod_{i\notin M}(1+a_i^2)\prod_{\{i,j\}\in M}a_ia_j\; x^{c(M)}, where x=\cos\theta, the sum is over all matchings M of the complete graph on the d+D flavours, |M| is the number of pairs of M and c(M) is the number of pairs that join a flavour of f to a flavour of \psi.
+- id: windows_for_the_gap
+  name: One sided windows and a monotone upper bound estimator for the gap
+  label: prop:windowgap
+  chapter: '11'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Adapting the window criterion of an unpublished account of the Riemann hypothesis argument, for a positive spectral measure a decay bound on a sparse set of times bounds the gap, and a negative binomial estimator gives monotone rigorous upper bounds.
+  statement: >-
+    Let C(\tau)=\int_{[0,\infty)}e^{-E\tau}\,d\rho(E) with \rho a positive measure and E_0=\inf\operatorname{supp}\rho. (i) If for every \eta>0 there are arbitrarily large \tau with C(\tau)\le e^{-(m-\eta)\tau}, then E_0\ge m. (ii) On a lattice of spacing a in time, for 0<q<e^{E_0a} put A_k(q)=\sum_{j\ge 0}C(ja)\binom{j+k}{k}q^j. Then A_k(q)=\int d\rho(E)/(1-qe^{-Ea})^{k+1}, and M_k(q)=-\frac1a\log\frac{1-A_{k-1}(q)/A_k(q)}{q} decreases to E_0 as k\to\infty. Every M_k(q) is an upper bound for E_0 and the sequence is nonincreasing in k.
+- id: frame_lemma_sharp_form
+  name: >-
+    A sharp form of the frame lemma from an exposition of the Alpoge argument
+  label: prop:framesharp
+  chapter: '11'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    A sharpened constant in the frame lemma for sums of images of subspaces, attained for tight frames of isometries.
+  statement: >-
+    Let J_i:V_i\to H be linear maps of finite dimensional complex inner product spaces, D=\dim H, W=\sum_i\dim V_i, c_i>0, K_i=c_iJ_i^*J_i, Q=\sum_i c_iJ_iJ_i^*, with \sum_i\|K_i-1\|_2^2\le eW, e<1 and \operatorname{tr}(Q^2)\le(1+\eta)(\operatorname{tr}Q)^2/D, and let U_i\subset V_i be subspaces with \sum_i(\dim V_i-\dim U_i)\le\alpha W. Put \rho=(\alpha+\sqrt{\alpha e})/(1-\sqrt e). Then \operatorname{codim}\sum_i J_iU_i\le\frac14(\sqrt\eta+\sqrt{\eta+4\rho})^2 D\le(\eta+2\rho)D. For a tight frame of isometries, e=\eta=0, the bound is \alpha D and it is attained.
+- id: op_type_m_inequality_for_ladder
+  name: An inequality of type (M) for the Migdal Kadanoff ladder
+  label: op:MYM
+  chapter: '11'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Show that the exact blocked plaquette count stays below the ladder count plus a small error, until strong coupling is reached.
+  statement: >-
+    For SU(2) lattice gauge theory in four dimensions at coupling \beta, let c_n be the count E[1/(1-\frac12\operatorname{tr}U)]-2 of the plaquette of the lattice blocked n times with scale factor 2, and \ell_n the count after n exact rungs of the ladder from the law of the fine plaquette. Prove c_n\le\ell_n+E_n with an error E_n small enough that \ell_n+E_n still falls below the threshold of the strong coupling expansion after a number of blockings proportional to \beta. Only an upper bound is asked, and only along the sequence of scales 2^n.
+- id: op_symplectic_colour_flavour
+  name: Colour flavour transformation for SU(2) as a symplectic group
+  label: op:symplectic
+  chapter: '11'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Carry out the colour flavour transformation for SU(2) with its inner pairs and identify the mixing law.
+  statement: >-
+    Write the colour flavour transformation for SU(2) as a symplectic group, with the inner pairs, and identify the law of the masses \lambda_i(Z) of the mixture over the symplectic variable Z. For all hopping parameters equal to 1 the answer is the hypergeometric law of the count, the law \pi in \rho=\sum_j\pi(j)f_j with f_j\propto(1+\cos\theta)^j.
+- id: op_slopes_error_per_rung
+  name: Bound the error per rung of the ladder below the drift
+  label: op:slopes
+  chapter: '11'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Bound the error per blocking step below the drift one half of the count, which with a bound on the first error would give the type (M) inequality.
+  statement: >-
+    Bound the error per rung e_1 below the drift 1/2 of the count, where c_n\le\ell_n+e_0+e_1n, with c_n the count of the plaquette blocked n times and \ell_n that of n rungs of the ladder, for some blocking of the four dimensional lattice and all \beta large. By the budget of the ladder this, with any bound on the error e_0 made once and the drift 1/2 at every rung (a numerical observation, with the first rung theorem covering only point masses and Wilson laws), would give the type (M) inequality for the ladder. At weak coupling the true count falls about twice as fast as the ladder's, so the bound is expected with room to spare; nothing is proved.
+- id: thorin_sandwich
+  name: Thorin sandwich for the four dimensional flow
+  label: op:sandwichB
+  chapter: '12'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Find two Migdal Kadanoff type maps whose flows bracket the true spectral measures, with a decrement inequality for the lower one.
+  statement: >-
+    Construct maps R_-\le R_+ on positive definite class functions, of Migdal Kadanoff type, whose flows bracket the true four dimensional spectral measures in the sense of the uniform Thorin gap inequality (there are m>0 and M<\infty with T_\alpha(z)\le Me^{-m(\alpha-\alpha')}T_{\alpha'}(z) for all z>0 and \alpha\ge\alpha'>\alpha_0, where T_\alpha is the Thorin density of the offset spectral measure e^{-\alpha E}\mu(dE)), with the order R_-\le R_+ read in the likelihood ratio order on laws of the rotation angle. Then prove the decrement inequality for R_-, that is R_-(\beta)<\beta for the coupling map of R_-.
+- id: op_explicit_decrement_remainder
+  name: Explicit remainder for the decrement of the Migdal Kadanoff ladder
+  label: op:path1
+  chapter: '12'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Bound explicitly the first correction to the leading decrement of the four dimensional SU(2) Migdal Kadanoff ladder, using the variance of the Biane, Pitman and Yor variable.
+  statement: >-
+    For the SU(2) heat kernel action at coupling \beta, one Migdal Kadanoff step with scale factor b in four dimensions maps \beta to \beta''=\beta-(1-b^{-2})\,\mathbb E S_{\mathrm{BPY}}+O(1/\beta)=\beta-\frac{b^2-1}{3b^2}+O(1/\beta), where S_{\mathrm{BPY}} is the Biane, Pitman and Yor variable, with Laplace transform \sqrt{2\lambda}/\sinh\sqrt{2\lambda} and mean 1/3. Bound the O(1/\beta) remainder explicitly using the variance of S_{\mathrm{BPY}}.
+- id: op_likelihood_ratio_su3
+  name: Likelihood ratio property and monotonicity of the ladder for SU(3)
+  label: op:path2
+  chapter: '12'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Prove the monotone likelihood ratio in time of the heat kernel analytically and extend the monotonicity and covering arguments of the ladder to SU(3); the SU(2) half is solved in Chapter 13.
+  statement: >-
+    Prove the likelihood ratio property of the SU(2) heat kernel K_t analytically for all times, that is \partial_t\partial_\theta\log K_t(\theta)\ge 0 for t>0 and \theta\in(0,\pi), for instance from the image sum, and extend the monotonicity and covering arguments for the heat kernel projected Migdal Kadanoff map to SU(3). The book records that the SU(2) half is solved, by a product formula and not from the image sum, and that the SU(3) half is open.
+- id: op_glueball_gap_estimator
+  name: Bayesian gap estimator for lattice glueball correlators
+  label: op:path4
+  chapter: '12'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Apply the book's Bayesian estimator of the mass gap to published lattice glueball correlators and test the Migdal Kadanoff ladder against them at intermediate couplings.
+  statement: >-
+    Build the Bayesian estimator of the mass gap from Euclidean correlators developed in the book's chapter on estimation for published lattice glueball correlators, and test the predictions of the Migdal Kadanoff ladder against them at intermediate couplings.
+- id: op_strong_coupling_thorin_gap
+  name: >-
+    Uniform Thorin gap inequality at strong coupling with explicit constants
+  label: op:path5
+  chapter: '12'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Prove from the cluster expansion, with explicit constants, the uniform decay inequality for Thorin densities that is equivalent to a uniform spectral gap, and push it toward the crossover.
+  statement: >-
+    For lattice gauge theory at strong coupling, prove with explicit constants, directly from the cluster expansion, the uniform Thorin gap inequality: there are m>0 and M<\infty with T^{(a)}_\alpha(z)\le M e^{-m(\alpha-\alpha')}T^{(a)}_{\alpha'}(z) for all lattice spacings a, all z and all \alpha\ge\alpha'>\alpha_0, where T^{(a)}_\alpha are the Thorin densities at level \alpha of the spectral measure of a gauge invariant observable; and extend it as far as possible toward the crossover.
+- id: op_three_dimensional_gap
+  name: >-
+    Mass gap of order one over beta for three dimensional SU(2) by bracketing
+  label: op:path7
+  chapter: '12'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Prove a mass gap at least a constant over beta for three dimensional SU(2) lattice gauge theory at every coupling, by bracketing one block spin step between two contracting Migdal Kadanoff maps.
+  statement: >-
+    Prove that three dimensional SU(2) lattice gauge theory with the Wilson action has a mass gap m(\beta)\ge c_0/\beta in lattice units for all \beta, with c_0>0, by bracketing one block spin step between two contracting Migdal Kadanoff type maps.
+- id: product_formula
+  name: Product formula for the SU(2) heat kernel
+  label: thm:product
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    The SU(2) heat kernel is a product of linear factors in cos theta whose real roots all lie beyond the edge of the group and move monotonically in time.
+  statement: >-
+    Let K_t(\theta)=\sum_{n\ge 1}n e^{-(n^2-1)t/4}\frac{\sin n\theta}{\sin\theta} be the SU(2) heat kernel and C_n(t)=\cosh((2n-1)t/4). For every t>0, K_t(\theta)=K_t(\pi/2)\prod_{m\ge 1}\big(1+\frac{\cos\theta}{\gamma_m(t)}\big), where \gamma_1<\gamma_2<\cdots are the roots of \sum_{n\ge 1}\frac{1}{C_n(t)-\gamma}=0 with C_m(t)<\gamma_m(t)<C_{m+1}(t). In particular every \gamma_m(t) exceeds one. Each \gamma_m is strictly increasing in t, with \gamma_m'(t)=\sum_{n\ge1}w_{mn}C_n'(t) and w_{mn}=(C_n-\gamma_m)^{-2}/\sum_l (C_l-\gamma_m)^{-2}.
+- id: likelihood_ratio_property
+  name: Monotone likelihood ratio in time for the SU(2) heat kernel
+  label: cor:mlrall
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The SU(2) heat kernel has strictly monotone likelihood ratio in time at every time, so the projected Migdal Kadanoff map is increasing at every coupling.
+  statement: >-
+    For every t>0 and \theta\in(0,\pi), \partial_t\partial_\theta\log K_t(\theta)=\sin\theta\sum_{m\ge1}\frac{\gamma_m'(t)}{(\gamma_m(t)+\cos\theta)^2}>0, with K_t the SU(2) heat kernel and \gamma_m its roots in cos theta. The SU(2) heat kernel has strictly monotone likelihood ratio in time, and the projected Migdal Kadanoff map R (bond moving followed by decimation, acting on heat kernel laws) is increasing at every coupling and for every scale factor b.
+- id: heat_kernel_log_concavity
+  name: >-
+    Strict log concavity of the SU(2) heat kernel and its powers in cos theta
+  label: cor:logconc
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The heat kernel, and every plaquette law made from it by bond moving, is strictly log concave as a function of the cosine of the angle.
+  statement: >-
+    For every t>0 the SU(2) heat kernel is strictly log concave as a function of c=\cos\theta on [-1,1], with \partial_c^2\log K_t=-\sum_m(\gamma_m+c)^{-2}. The same holds for every power K_t^k, hence for every plaquette law produced by bond moving from a heat kernel law.
+- id: elementary_bound_large_time
+  name: Elementary proof of monotone likelihood ratio at large time
+  label: thm:mlrlarge
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    A direct bound on the character series shows the time monotonicity of the score for all times beyond 3.2140.
+  statement: >-
+    With \varepsilon_n(t)=n e^{-(n^2-1)t/4}, let \Phi(t)=6\varepsilon_2-\sum_{n\ge3}\frac{(n^2-1)(n^3-n)}{3}\varepsilon_n-\frac{\big(\sum_{n\ge2}(n^2-1)n\varepsilon_n\big)\big(\sum_{m\ge2}\frac{m^3-m}{3}\varepsilon_m\big)}{1-\sum_{n\ge2}n\varepsilon_n}. Then 4\partial_t\partial_\theta\log K_t(\theta)\ge\Phi(t)\sin\theta/K_t(\theta) for the SU(2) heat kernel K_t whenever the denominator is positive, and \Phi(t)>0 for all t\ge 3.2140.
+- id: wilson_law_likelihood_ratio_in_time
+  name: Monotone likelihood ratio of the heat flow of the Wilson law
+  label: prop:wilsonflow
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The heat flow of the Wilson plaquette law has monotone likelihood ratio in time exactly when the coupling parameter is at most three halves.
+  statement: >-
+    Let \rho_0(\theta)\propto e^{\kappa\cos\theta} be the Wilson plaquette law on SU(2) and \rho_t its heat flow. At t=0, 4\partial_t\partial_\theta\log\rho_t=\kappa\sin\theta(3+2\kappa\cos\theta). Hence the family (\rho_t)_{t\ge0} has monotone likelihood ratio in time if and only if \kappa\le 3/2.
+- id: weak_coupling_expansion_ladder
+  name: Weak coupling expansion of the SU(2) projected ladder
+  label: thm:expansion
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The projected ladder map and the decrement of the coupling have an explicit weak coupling expansion, giving one quarter plus one over 48 beta at scale factor two.
+  statement: >-
+    Let bond moving have power k and decimation power D, and let t=2/\beta be the heat kernel time. For SU(2) the projected ladder map is, as t\to0, t'=\frac Dk t\Big[1+\big(1-\frac1k\big)\big(\frac t6+\frac{t^2}{36}\big)+\frac{(k-1)(2k^2+2k-3)}{432k^3}t^3+O(t^4)\Big]. In four dimensions, k=D=b^2, the decrement is \beta - R(\beta)=\frac{b^2-1}{3b^2}+\frac{b^2-1}{9b^4}\frac1\beta+\frac{(b^2-1)(2b^2-1)}{54b^6}\frac1{\beta^2}+O(\beta^{-3}), which for b=2 is \frac14+\frac1{48\beta}+\frac{7}{1152\beta^2}.
+- id: weak_coupling_expansion_sun
+  name: Weak coupling expansion of the projected ladder for SU(N)
+  label: thm:expansionN
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    For every N the first two orders of the ladder decrement are given in closed form, with two loop ratio N over 12 b squared.
+  statement: >-
+    For every N\ge2 the projected ladder map of SU(N), with bond moving power k and decimation power D, is t'=\frac Dk t\Big[1+\big(1-\frac1k\big)\Big(\frac{Nt}{12}+\big(\frac{Nt}{12}\big)^2\Big)+O(t^3)\Big], so that in four dimensions, with k=D=b^2, \beta - R(\beta)=\frac{N^2}{12}\big(1-\frac1{b^2}\big)+\frac{N^4}{144b^2}\big(1-\frac1{b^2}\big)\frac1\beta+O(\beta^{-2}), and the two loop ratio of the ladder is \rho_{\mathrm{ladder}}=N/(12b^2).
+- id: local_heat_kernel_time_bracket
+  name: >-
+    Bracketing a plaquette law between heat kernels in likelihood ratio order
+  label: prop:localtime
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Any class function law with negative score lies between two heat kernel laws in likelihood ratio order, and the bracket survives bond moving and heat convolution.
+  statement: >-
+    Let f be a class function law on SU(2) with negative score \partial_\theta\log f, and let t_f(\theta) be the unique t with \partial_\theta\log K_t(\theta)=\partial_\theta\log f(\theta). Let t_-=\inf_\theta t_f(\theta) and t_+=\sup_\theta t_f(\theta). Then K_{t_-}\le_{lr}f\le_{lr}K_{t_+} (likelihood ratio order of the angle), these are the tightest heat kernel bounds in this order, and f is a heat kernel law exactly when t_f is constant. Bond moving preserves the bracket, with t_\pm computed for the powers. Convolution with a heat kernel preserves the likelihood ratio order between class function laws.
+- id: total_positivity_of_convolution
+  name: Total positivity of order two of convolution on SU(2)
+  label: thm:tp2
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    A condition on the radial Laplacian ratio of a class function density makes convolution with it preserve likelihood ratio order.
+  statement: >-
+    Let f be a class function density on SU(2), as a function of the angle \alpha\in(0,\pi), such that w=f\sin is positive and twice differentiable on (0,\pi), and put Q(\alpha)=w''(\alpha)/w(\alpha)=\frac{\Delta f}{f}(\alpha)-1, where \Delta=\partial_\alpha^2+2\cot\alpha\,\partial_\alpha is the radial Laplacian of the three sphere. Let F(x,y)=\int_{|x - y|}^{\min(x+y,2\pi - x - y)}w(\alpha)\,d\alpha. If Q is nondecreasing on (0,\pi), then F is totally positive of order two, and convolution with f preserves the likelihood ratio order between class function laws. If Q is nonincreasing, F is reverse regular of order two. Equality holds throughout exactly when w''=\lambda w for a constant \lambda.
+- id: tp2_heat_kernel_wilson
+  name: >-
+    Heat kernels and Wilson laws satisfying the total positivity hypothesis
+  label: cor:tp2
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Heat kernels always, and Wilson laws exactly up to kappa three halves, have totally positive convolution kernels, and the class is closed under convolution.
+  statement: >-
+    On SU(2): (i) every heat kernel K_t satisfies the hypothesis of the total positivity theorem (Q=(\Delta f/f)-1 nondecreasing for f=K_t), which gives an independent proof, from the product formula, of the total positivity of order two of the radial heat semigroup on SU(2). (ii) The Wilson law e^{\kappa\cos\theta} satisfies it if and only if \kappa\le 3/2. (iii) The hypothesis is preserved by the heat flow, and the class of laws whose convolution kernels are totally positive of order two is closed under convolution, because such kernels compose.
+- id: near_hemisphere_total_positivity
+  name: Total positivity of bond moved heat kernel laws on the near hemisphere
+  label: thm:hemisphere
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Convolution with a bond moved heat kernel law has a totally positive kernel on angles whose sum is at most a right angle.
+  statement: >-
+    For every t>0 and every k\ge1 the bond moved law K_t^k on SU(2) satisfies the hypothesis of the total positivity theorem (w''/w nondecreasing for w=K_t^k\sin) on (0,\pi/2]. Consequently the kernel of convolution with K_t^k is totally positive of order two on the set of pairs of angles (\theta',\psi) with \theta'+\psi\le\pi/2.
+- id: truncated_monotonicity
+  name: Truncated monotonicity of a kernel that is totally positive on a box
+  label: prop:truncated
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    Failure of total positivity outside a box costs an error bounded by the mass outside the box.
+  statement: >-
+    Let q(\theta',\psi)\le M be a transition density that is totally positive of order two on [0,A]\times[0,L], and let f_1\le_{lr}f_2 be probability densities on [0,\pi] with masses \varepsilon_1,\varepsilon_2 beyond A. Then for \psi_1<\psi_2\le L, (qf_2)(\psi_2)(qf_1)(\psi_1)-(qf_2)(\psi_1)(qf_1)(\psi_2)\ge -M^2(\varepsilon_1+\varepsilon_2+\varepsilon_1\varepsilon_2), where (qf)(\psi)=\int f(\theta')q(\theta',\psi)\,d\theta'.
+- id: time_scaled_likelihood_ratio
+  name: Time scaled likelihood ratio of the SU(2) heat kernel
+  label: thm:scaledmlr
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The heat kernel score multiplied by time is strictly decreasing in time at every point, the key inequality behind the contraction of the ladder.
+  statement: >-
+    For the SU(2) heat kernel K_t, with u_2=e^{-3t/4} its second character coefficient, the function t\,\partial_x\log K_t(x) is strictly decreasing in t on t>0, for every x\in[-1,1], where x=\cos\theta.
+- id: the_ladder_contracts
+  name: The projected ladder contracts at every coupling
+  label: cor:contracts
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    For the heat kernel projection of the Migdal Kadanoff map the coupling strictly decreases at every rung, for every coupling and scale factor in four dimensions.
+  statement: >-
+    Let k>1 and t>0 and let K_t be the SU(2) heat kernel. Then K_{t/k}/K_t^k is strictly increasing in \cos\theta: the bond moved law K_t^k lies strictly above the heat kernel at time t/k in the likelihood ratio order of the angle. Consequently \int\cos\theta K_t^k/\int K_t^k<e^{-3t/(4k)}, and the heat kernel projected Migdal Kadanoff map with scale factor b in dimension d, where k=b^{d-2} (bond moving power k, decimation power b^2), sends the time t to t'>b^{4-d}t. In four dimensions R(\beta)<\beta for every \beta>0 and every b, where t=2/\beta. In three dimensions t'>bt.
+- id: string_tension_on_hierarchical_lattice_exists
+  name: Existence of the string tension of the ladder
+  label: prop:sigmaexists
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    If the ladder reaches strong coupling with geometrically bounded higher coefficients, the rescaled string tension limit exists and is positive.
+  statement: >-
+    Let u_2^{(m)} be the second character coefficient after m steps of the SU(2) ladder with bond moving power k and decimation power b^2. If u_2^{(m)}\to0 and 0\le u_n^{(m)}\le(u_2^{(m)})^{n-1} for every n\ge2 and every m, then \sigma a^2=\lim_{m\to\infty}b^{-2m}(-\log u_2^{(m)}) exists, the convergence is geometric, and the limit is positive.
+- id: heat_kernel_thorin_form
+  name: Thorin form of the SU(2) heat kernel
+  label: cor:thorinform
+  chapter: '13'
+  origin: book
+  status: proved
+  highlight: true
+  summary: >-
+    The reciprocal of the SU(2) heat kernel, as a function of the cosine of the angle, is the Laplace transform of a generalized gamma convolution with unit atoms at the roots of the product formula.
+  statement: >-
+    Let K_t(\theta)=\sum_{n\ge1}n e^{-(n^2-1)t/4}\frac{\sin n\theta}{\sin\theta} be the SU(2) heat kernel, x=\cos\theta, and \gamma_1(t)<\gamma_2(t)<\cdots the roots of \sum_{n\ge1}1/(\cosh((2n-1)t/4)-\gamma)=0, so that K_t(\theta)=K_t(\pi/2)\prod_{m\ge1}(1+x/\gamma_m(t)) with every \gamma_m(t)>1. For every t>0, K_t(\pi/2)/K_t(\theta)=\prod_{m\ge1}\frac{\gamma_m(t)}{\gamma_m(t)+x}=\mathbb E\,e^{-xT_t}, with T_t=\sum_{m\ge1}E_m/\gamma_m(t) and E_m independent standard exponential variables. So the reciprocal of the heat kernel, as a function of x, is the Laplace transform of a generalized gamma convolution whose Thorin measure \sum_m\delta_{\gamma_m(t)} has integer masses and is supported on (1,\infty), with atoms moving to the right as t grows.
+- id: weak_coupling_sandwich_conjecture
+  name: Weak coupling sandwich for the 2x2 and 4x4 Wilson loops
+  label: prop:weaksandwich
+  chapter: '14'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    The book conjectures that at weak coupling the logarithms of the 2x2 and 4x4 Wilson loops lie strictly between the independent plaquette value and the Migdal Kadanoff value, a statement supported by four numerical cases and not proved.
+  statement: >-
+    To leading order at weak coupling, in three and four dimensions and for every gauge group, the logarithm of the $2\times2$ and $4\times4$ Wilson loops lies strictly between the values given by independent plaquettes (the logarithm of the plaquette expectation multiplied by the number of plaquettes in the loop) and by the Gaussian ledger of the Migdal Kadanoff ladder (the same multiplied by $R^2/k^{\log_2R}$ for the $R\times R$ loop, where $k=2^{d-2}$ is the bond moving power of the ladder with scale factor two: that is $1$ for both loops in four dimensions, and $2$ for the $2\times2$ and $4$ for the $4\times4$ loop in three dimensions).
+- id: op_likelihood_ratio_sandwich_2x2
+  name: Likelihood ratio sandwich for the 2x2 Wilson loop
+  label: op:ineq1
+  chapter: '14'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Prove that the law of the 2x2 loop holonomy dominates the Migdal Kadanoff law built from the plaquette law in the likelihood ratio order, and that both ends of the sandwich hold in that order.
+  statement: >-
+    Prove that in SU(2) lattice gauge theory with the Wilson action the law of the 2\times2 loop holonomy dominates, in the likelihood ratio order, the Migdal Kadanoff law built from the plaquette law, and that both halves of the sandwich (the independent end and the Migdal Kadanoff end) hold in the likelihood ratio order.
+- id: op_bare_migdal_kadanoff_end
+  name: Bare Migdal Kadanoff end of the Wilson loop sandwich
+  label: op:ineq2
+  chapter: '14'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Prove that the expectation of the 2x2 Wilson loop in SU(2) lattice gauge theory is at most the fourth power of a Bessel ratio at the bond moving coupling, in every dimension and at every coupling.
+  statement: >-
+    Prove the bare form of the Migdal Kadanoff end of the sandwich: for SU(2) with the Wilson action in d dimensions and every \beta\ge0, W_{22}(\beta)\le\Big(\frac{I_2(2^{d-2}\beta)}{I_1(2^{d-2}\beta)}\Big)^4, where W_{22}(\beta) is the expectation of the normalised trace of the 2\times2 Wilson loop and I_\nu are modified Bessel functions of the first kind.
+- id: frullani_bridge
+  name: Frullani bridge between Lee Yang zeros and Thorin form
+  label: thm:frullani
+  chapter: '15'
+  origin: paper:Po26b
+  status: proved
+  highlight: false
+  summary: >-
+    For an even entire function of order one, real zeros are equivalent to Polya's operator preserving real zeros and to the reciprocal of its rotated form being the Laplace transform of a generalized gamma convolution.
+  statement: >-
+    Let $G$ be an even entire function of order one, real on the real axis, with $G(0)\ne0$. The following are equivalent: all zeros of $G$ are real; for every $\nu>0$ the zeros of $z\mapsto e^{iz}G(z-i\nu)+e^{-iz}G(z+i\nu)$ are real; and $s\mapsto G(0)/G(i\sqrt s)$ is the Laplace transform of a generalized gamma convolution that extends without zeros to the plane cut along the negative real axis.
+- id: plaquette_hitting_time
+  name: One plaquette partition function as a Brownian hitting time
+  label: prop:hitting
+  chapter: '15'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The reciprocal of the one plaquette SU(2) partition function in the squared coupling is the Laplace transform of the time Brownian motion in four dimensions takes to reach the unit sphere, a generalized gamma convolution with Thorin atoms at the Bessel zeros.
+  statement: >-
+    For $\lambda>0$, \[ \frac{1}{Z(\sqrt{2\lambda})}=\frac{\sqrt{2\lambda}}{2I_1(\sqrt{2\lambda})}=\prod_{n\ge1}\Big(1+\frac{2\lambda}{j_{1,n}^2}\Big)^{-1}=\mathbb E\,e^{-\lambda T}, \] where $Z(\beta)=\int e^{\beta\cos\theta}\,\mathrm d\mathrm{Haar}=2I_1(\beta)/\beta$ is the partition function of one plaquette of SU(2) lattice gauge theory, $I_1$ is the modified Bessel function, $j_{1,n}$ are the positive zeros of the Bessel function $J_1$, and $T$ is the first time that Brownian motion in $\mathbb R^4$ started at the origin hits the unit sphere $S^3$, which is the group SU(2). The law of $T$ is a generalized gamma convolution with Thorin measure $\sum_n\delta_{j_{1,n}^2/2}$.
+- id: zeros_on_fixed_rays
+  name: Zeros of the heat kernel torus partition function on fixed rays
+  label: thm:sector
+  chapter: '15'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    For two dimensional SU(2) with the heat kernel action on a torus, the zeros in complex time lie on the same rays for every area, determined by the zeros of one theta type series, which has none in the disc of radius 0.83; the width of the zero free sector is only computed.
+  statement: >-
+    Let $\mathcal G(q)=\sum_{n\ge1}q^{n^2-1}=1+q^3+q^8+q^{15}+\cdots$, let $q_1,q_2,\dots$ be the zeros of $\mathcal G$ in the unit disc and let $s_j=-\log q_j$ with the principal logarithm. For two dimensional SU(2) lattice gauge theory with the heat kernel action of time $t$ on a torus of $A$ plaquettes, the partition function is $Z_A(t)=\mathcal G(e^{-At/4})$, and its zeros in the complex time $t$ with $\operatorname{Re}t>0$ are exactly $t=4(s_j+2\pi ik)/A$ for $j\ge1$ and $k\in\mathbb Z$. They lie on the same rays for every $A$, and $\mathcal G$ has no zeros in $|q|\le0.83$. (The value $\phi_*=82.9^\circ$ of the half angle of the zero free sector around the positive axis is a floating point computation and is not part of the theorem.)
+- id: projected_ladder_continuous_scale
+  name: The projected Migdal Kadanoff ladder in continuous scale
+  label: prop:contladder
+  chapter: '15'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    In continuous scale the Migdal Kadanoff ladder projected on the SU(2) heat kernel has a beta function given by a covariance, which is positive at every coupling.
+  statement: >-
+    Consider the Migdal Kadanoff ladder in $d$ dimensions for SU(2) with scale factor $b=1+d\varsigma$ (bond moving with power $b^{d-2}$ followed by decimation with convolution power $b^2$), and after each infinitesimal step project the link law onto the heat kernel family $K_t$ (the SU(2) heat kernel at time $t$, with fundamental character coefficient $u_2=e^{-3t/4}$) by matching $u_2$. Then \[ \frac{dt}{d\varsigma}=(4-d)\,t+(d-2)\,\mathcal B(t),\qquad\mathcal B(t)=t-\tfrac43e^{3t/4}\operatorname{Cov}_{K_t}\!\big(\cos\theta,\log K_t\big), \] where the covariance is taken under the law $K_t\,\mathrm d\mathrm{Haar}$ of the class angle $\theta$. Moreover $\mathcal B(t)>0$ for every $t>0$.
+- id: passage_times_on_representations
+  name: Passage times of the walk on SU(2) representations
+  label: prop:reppassage
+  chapter: '15'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The first passage time to the representation of dimension N for the continuous time walk on the representations of SU(2) is a generalized gamma convolution with explicit atoms and mean (N^2-1)/3.
+  statement: >-
+    Consider the continuous time walk at rate one on the irreducible representations of SU(2), labelled by dimension $n$, which moves from $n$ to $n\pm1$ with probability $(n\pm1)/(2n)$ (tensoring with the fundamental representation, weighted by dimension), started at the trivial representation. The first passage time $T_N$ to the representation of dimension $N$ has the law of $\sum_{j=1}^{N-1}E_j/(1-\cos(j\pi/N))$ with $E_j$ independent standard exponential variables. It is a generalized gamma convolution with Thorin atoms $1-\cos(j\pi/N)$, and its mean is $(N^2-1)/3$, which is $\frac43$ of the Casimir $(N^2-1)/4$ of the target.
+- id: latent_count_heat_kernel
+  name: Latent count representation of the SU(2) heat kernel
+  label: prop:latentcount
+  chapter: '15'
+  origin: book
+  status: proved
+  highlight: false
+  summary: >-
+    The SU(2) heat kernel is a mixture of powers of one plus cosine with a sum of independent Bernoulli variables as exponent, so that given a latent count the half angle cosine squared is Beta distributed.
+  statement: >-
+    Let $K_t$ be the SU(2) heat kernel at time $t>0$ as a function of the class angle $\theta$, with the product formula $K_t(\theta)=K_t(\pi/2)\prod_{m\ge1}\big(1+\cos\theta/\gamma_m(t)\big)$ with every $\gamma_m(t)>1$. Let $M_0=\sum_m\xi_m$ with independent Bernoulli variables $\xi_m$ of parameters $p_m=1/\gamma_m(t)$. Then $K_t(\theta)/K_t(\pi/2)=\mathbb E\big[(1+\cos\theta)^{M_0}\big]$. Consequently, if $\theta$ has the heat kernel law, there is a latent count $M$ with $P(M=m)\propto P(M_0=m)\,C_{m+1}2^{-m}$, where $C_n$ are the Catalan numbers, such that given $M$ the variable $y=\cos^2(\theta/2)$ has the Beta law with parameters $M+\frac32$ and $\frac32$. In particular $\mathbb E[\cos\theta\mid M]=M/(M+3)$, so that $e^{-3t/4}=\mathbb E\big[M/(M+3)\big]$.
+- id: op_zero_free_sector_tori
+  name: >-
+    Zero free sector for the Wilson action on tori and hierarchical lattices
+  label: op:neigh1
+  chapter: '15'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Prove a zero free sector around the positive coupling axis, uniform in the volume, for two dimensional tori and for hierarchical lattices.
+  statement: >-
+    Prove a zero free sector around the positive axis, uniform in the volume, for the partition function of the Wilson action on two dimensional tori, and for the partition function on hierarchical lattices, where the Migdal Kadanoff recursion acts on the zeros as Polya's operator acts in Kac's proof.
+- id: op_decrement_four_minus_third
+  name: Why the ladder decrement reproduces the background field coefficient
+  label: op:neigh2
+  chapter: '15'
+  origin: book
+  status: open
+  highlight: false
+  summary: >-
+    Explain why the Migdal Kadanoff decrement built from the mean one third reproduces, at scale factor two, a coefficient that the background field computation writes as four minus one third.
+  statement: >-
+    Explain why the Migdal Kadanoff decrement, built from \mathbb E S_{\mathrm{BPY}}=1/3 alone, reproduces at b=2, to three percent, a coefficient that the background field computation writes as 4-\frac13. Is there a version of the ladder in which the terms 4 and -\frac13 appear separately, and does it have the correct two loop coefficient?

@@ -1,0 +1,213 @@
+\chapter{Notation, Glossary and Dictionary}\label{ch:notation}
+
+This appendix has three parts: the notation of the book, a glossary of terms, and a dictionary between the vocabularies of statistics and physics. Where a symbol has more than one meaning, the table says so.
+
+\section{Notation}
+
+Conventions that hold throughout: $\theta$ is only the rotation angle of a group element, $\Theta$ is the time reflection, $\vartheta$ denotes Jacobi theta functions; $\Lambda$ is the dynamical scale and $B$ (or $B_L$) a finite lattice box; $S$ is the action and $S_{\mathrm{BPY}}$ the Biane Pitman Yor variable; $g$ is the coupling and $h$ a genus; $\beta$ is only the coupling; $t=2/\beta$ is the heat kernel time; $J$ is the first passage time of the renormalization walk.
+
+\begingroup\scriptsize
+\begin{longtable}{lp{0.68\linewidth}}
+\toprule
+symbol & meaning \\ \midrule
+\endhead
+$G$, $\SU(N)$ & compact gauge group; special unitary group \\
+$U_\ell$, $U_p$ & link variable; plaquette holonomy \\
+$\omega_x$ & gauge transformation at a site (Chapter~\ref{ch:problem}) \\
+$\mathcal E(B)$ & edge set of a lattice box ($E$ is an energy) \\
+$\beta$, $g$ & lattice coupling, $\beta=2N/g^2$ for SU(N) ($\beta=4/g^2$ for SU(2)); $g$ is the coupling, and also a Stieltjes function in Chapter~\ref{ch:positivity} and a class function in Chapter~\ref{ch:zeros} \\
+$a$, $\Lambda$ & lattice spacing; dynamical scale of Yang Mills \\
+$B$, $B_L$ & finite lattice box; $b$ is the Migdal Kadanoff scale factor; $B$ also names the bound in Estimate B (Chapter~\ref{ch:theta}) \\
+$H$, $\mathcal T$ & Hamiltonian; transfer matrix $e^{-aH}$, with eigenvalue $\eta$ (Chapter~\ref{ch:problem}); $\eta$ is also the Ising external field (Section~\ref{ch:sokal}), a floor in the vertical likelihood weight (Chapter~\ref{ch:estimation}), the parameter in $\gamma=\cosh\eta$ (Chapter~\ref{ch:zeros}), a slack in the window theorem (Chapter~\ref{ch:theta}), the distance from the antipode (Chapter~\ref{ch:progress}) and a plaquette law (Chapter~\ref{ch:kacyang}) \\
+$\Theta$ & time reflection \\ $\sigma$ & string tension; also a Stieltjes measure (Chapter~\ref{ch:positivity}, Appendix~\ref{ch:aux}), Ising spins $\sigma_i$ (Chapters~\ref{ch:routeA} and~\ref{ch:sandwich}), a standard deviation (Chapters~\ref{ch:kac} and~\ref{ch:counts}), and a real variable in Chapters~\ref{ch:zeros}, \ref{ch:theta} and~\ref{ch:kacyang} \\
+$\theta$, $\vartheta$ & rotation angle of a group element; Jacobi theta function; $\theta_{\mathrm m}=3$ is the mutation parameter in Chapter~\ref{ch:counts} \\
+$O$, $C(\tau)$ & gauge invariant observable; its connected Euclidean correlation, $\tau$ the lattice time ($\tau$ is also Langevin time in Chapter~\ref{ch:kacyang}) \\
+$\mu$, $\mu_\alpha$ & spectral measure; offset measure $e^{-\alpha E}\mu$ ($\mu$ is also a direction index and the measure of Chapter~\ref{ch:positivity}; $\mu(A)$ uses a Borel set $A$) \\
+$\kappa$, $\nu$, $M$ & Clebsch Gordan indices and multiplicities $M^\lambda_{\kappa\nu}$ (Chapter~\ref{ch:problem}); $\kappa$ is also the Thorin density variable $\sqrt{2z}$ (Chapter~\ref{ch:strong}) and a hopping parameter (Chapter~\ref{ch:theta}); $\kappa$ is also the parameter of the Wilson law $e^{\kappa\cos\theta}$ (Chapters~\ref{ch:counts}, \ref{ch:zeros} and~\ref{ch:progress}), a lower bound on Ricci curvature (Chapter~\ref{ch:kac}, Appendix~\ref{ch:aux}), a ratio in Chapter~\ref{ch:hitting} and a diffusion constant in Chapter~\ref{ch:kacyang} \\
+$\Delta$, $\Delta_O$ & mass gap of the theory; gap of an observable; $\Delta$ acting on a function is the Laplacian \\
+$\alpha$, $\alpha'$ & Euclidean time offset, the level parameter of Route B; $\alpha'$ is the lower offset in Chapter~\ref{ch:routeA}; $\alpha$ is also an angle in Chapters~\ref{ch:hitting} and~\ref{ch:progress}, and $\alpha$, $\alpha_m$ are hopping parameters in Chapter~\ref{ch:theta} \\
+$U$, $T_\alpha(z)$ & Thorin measure (not the link variable $U_\ell$); Thorin density of Route B \\
+$\psi_\alpha$, $\Psi$ & L\'evy exponent $\int(1-\cos tE)\mu_\alpha(\mathrm dE)$ (Chapter~\ref{ch:routeA}); a state \\
+$y$, $t$ & real time is $y$ in Chapter~\ref{ch:twod}, while in Chapter~\ref{ch:routeA} the argument of $\psi_\alpha$ is written $t$, equivalently the Thorin variable $\sqrt{2z}$; $t$ is otherwise the heat kernel time, and also a Thorin rate and a Stieltjes variable in Chapters~\ref{ch:positivity} and~\ref{ch:routeA} \\
+$Y_j$ & jumps of the gamma process in Bondesson's shot noise (Chapters~\ref{ch:positivity} and~\ref{ch:routeA}) \\
+$X_\alpha$ & Yang Mills GGC of Route A \\
+$\chi_\lambda$, $d_\lambda$, $C_2(\lambda)$ & character, dimension, quadratic Casimir of the irreducible representation $\lambda$; $\lambda$ is also the 't Hooft coupling in Section~\ref{ch:largeN}, the exponential moment parameter in Chapter~\ref{ch:routeA}, and the Laplace variable in $\E e^{-\lambda S_{\mathrm{BPY}}}$; $\lambda$ is also the coupling of the one plaquette Hamiltonian $H_\lambda$ (Chapters~\ref{ch:hitting} and~\ref{ch:theta}) \\
+$u_n$, $u_\lambda$ & normalised character coefficients (Thorin levels); $u_n(t)=e^{-t(n^2-1)/4}$ for the heat kernel \\
+$K_t$ & heat kernel, the law of Brownian motion on the group at time $t$ \\
+$\nu_t$ & law of the heat kernel family in Chapter~\ref{ch:strong}; $\rho$ is a Gaussian precision there, $w$ an atom weight, $\ell$ the step index of the walk \\
+$S$ & lattice action $S(U)$ \\
+$S_{\mathrm{BPY}}$ & Biane Pitman Yor variable, $\E e^{-\lambda S_{\mathrm{BPY}}}=\sqrt{2\lambda}/\sinh\sqrt{2\lambda}$, with $\E S_{\mathrm{BPY}}=1/3$ \\
+$b$, $k$ & Migdal Kadanoff scale factor; bond moving power $b^{d-2}$; $k$ is also the renormalization group scale (Chapter~\ref{ch:problem}) and a momentum (Appendix~\ref{ch:aux}); in Chapter~\ref{ch:kac} the summed staple of a link is $kV$ \\
+$R(\beta)$ & heat kernel projected Migdal Kadanoff map; $R\times T$ is the size of a Wilson loop \\
+$\delta(\beta)$ & decrement $\beta-R(\beta)$; in Chapter~\ref{ch:positivity} $\delta$ is a lattice step \\
+$J(\beta)$ & first passage time of the renormalization walk (not the $N$ of SU(N)); $N(s)$ is a density of states; $J$, $J_{ij}$ are Ising couplings in Chapter~\ref{ch:sandwich} and Appendix~\ref{ch:solutions} \\
+$V_\ell$ & staple sum around a link (Chapters~\ref{ch:hitting} and~\ref{ch:sandwich}); $V$ also names a plaquette potential in Chapter~\ref{ch:hitting} \\
+$\xi$ & mixing parameter in the Dinwoodie Zabell envelope (Chapter~\ref{ch:hitting}); also the Hartman Watson variable (Chapter~\ref{ch:zeros}) and a bracket position (Chapter~\ref{ch:sandwich}); $\xi=1/\Delta$ is the correlation length in Chapters~\ref{ch:problem}, \ref{ch:kac} and~\ref{ch:strong} \\
+$\mathcal G$, $\mathcal L$, $\mathcal C$ & Wright Fisher generator (Chapter~\ref{ch:counts}); class functions with only real zeros in $\cos\theta$, all at most $-1$ (Chapter~\ref{ch:zeros}); a generator in Chapter~\ref{ch:kacyang}; $\mathcal G(q)$ is also a torus function there \\
+$\Sigma_1$, $\Sigma_2$ & sums over zeros (Chapter~\ref{ch:counts}); the analogous sums of Chapter~\ref{ch:progress} are written $S_1$, $S_2$ \\
+$\phi_r$, $\Xi_r$, $q$ & Bessel phase, Hartman Watson law, Thorin variable of Chapter~\ref{ch:zeros}; $q$ is also the nome $e^{-t/4}$ and a window parameter (Chapter~\ref{ch:theta}), the torus variable (Chapter~\ref{ch:kacyang}), a noise variance (Chapter~\ref{ch:hitting}), the degree of a graph (Chapters~\ref{ch:hitting}, \ref{ch:progress} and~\ref{ch:kacyang}), and $q_m$ are Bernoulli parameters (Chapter~\ref{ch:counts}) \\
+$\omega$, $\psi$ & window bound and convolution functions of Chapter~\ref{ch:theta} \\
+$\Lambda_{\mathrm{vM}}$, $\gamma_{\mathrm E}$ & von Mangoldt function; Euler's constant (Chapter~\ref{ch:theta}); $\gamma_m(t)$ are the Thorin atoms of the product formula (Chapter~\ref{ch:progress}) \\
+$\varsigma$ & Hamilton time in Chapter~\ref{ch:progress} and the scale of the continuous ladder in Chapter~\ref{ch:kacyang} \\
+$\mathcal B(t)$ & bracket of the continuous ladder (Chapter~\ref{ch:kacyang}); $F$ is the background field there \\
+$\Phi$, $\Xi$ & Riemann's kernel and its cosine transform; $\Phi(t)$ is also a bound in Chapter~\ref{ch:progress} \\
+$Z_h(A)$ & two dimensional Yang Mills partition function, genus $h$, area $A$; $h$ is also a function in the cone of Chapter~\ref{ch:sandwich} \\
+$H_1$, $H_2$, $H_3$ & harmonic sums in the mean count of a convolution of $f_j$ (Theorem~\ref{thm:harmonic}, Chapter~\ref{ch:counts}) \\
+$J$, $M$ & in Chapter~\ref{ch:counts}, $J=j+1$ for the count $j$ (elsewhere $J$ is the first passage time); $M$ is both the mean count of $\pi_M$ and the latent count of the mixture, which are distinct uses \\
+$\mathcal D_s$ & dilation by $s$ of a function in Chapter~\ref{ch:zeros}; $\varrho$ is the radius there \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Conventions}
+
+For SU(2) the representation of dimension $n$ has character $\sin n\theta/\sin\theta$ and Casimir $(n^2-1)/4$, and the heat kernel is $\sum_nn\,e^{-t(n^2-1)/4}\chi_n$. The Wilson action for SU(2) is $\beta\cos\theta$ per plaquette, with normalised coefficients $I_n(\beta)/I_1(\beta)$, and at weak coupling it matches the heat kernel with $t=2/\beta$. For SU(N) the Wilson weight is $\exp(\frac\beta N\operatorname{Re}\operatorname{tr}U)$. Laplace transforms are $\int e^{-sx}\nu(\mathrm dx)$, and Thorin measures are normalised so that the Laplace transform of a GGC is $\exp(-\int\log(1+s/z)U(\mathrm dz))$.
+
+\section{Glossary}\label{ch:glossary}
+
+Terms are listed once; notation is in the table above.
+
+\begin{description}
+\item[Area law] Decay of a Wilson loop expectation like $e^{-\sigma A}$ in the area $A$ of the loop; the signature of confinement.
+\item[Asymptotic freedom] Decrease of the coupling at short distances, at the rate fixed by the coefficient $b_0=11N/(48\pi^2)$ for SU(N) without matter; in lattice terms, linear growth of $\beta$ in the logarithm of the inverse lattice spacing.
+\item[Bond moving] The step of the Migdal Kadanoff recursion that replaces $b^{d-2}$ parallel plaquettes by one with the product of their weights.
+\item[Bracket] A pair of caricatures between which the true block spin law lies in a stochastic order.
+\item[Caricature] In Kac's sense, a simplified model that can be solved and that keeps the mechanism of the hard one.
+\item[Casimir] The eigenvalue of the Laplacian on the matrix entries of an irreducible representation; the Laplace exponent of Brownian motion on the group.
+\item[Character coefficients] The Fourier coefficients $u_n$ of a class function law on SU(2), normalised so that $u_1=1$.
+\item[Class function] A function on a group that is constant on conjugacy classes; on SU(2), a function of the rotation angle.
+\item[Cluster expansion] A convergent expansion of a lattice measure in small parameters, used to prove exponential clustering at strong coupling.
+\item[Confinement] An area law for large Wilson loops, equivalently a linearly rising potential between static charges; here, positivity of the string tension.
+\item[Correlation length] The inverse of the mass gap, the length scale over which correlations decay.
+\item[Crossover] The range of couplings, near $\beta=2.2$ for SU(2) in four dimensions, between the weak and strong coupling regimes.
+\item[Decimation] The step of a renormalization recursion that integrates out interior variables; on plaquette laws, a convolution.
+\item[Decrement] The amount by which one renormalization step lowers the coupling $\beta$.
+\item[Density of states] The law of the action under the Haar prior; its Laplace transform is the partition function.
+\item[Effective coupling] A coupling defined from a measured quantity, such as Parisi's $\beta_E$ from the plaquette.
+\item[Generalized gamma convolution] A limit of convolutions of gamma laws; its Laplace exponent is $\int\log(1+s/z)\,U(\mathrm dz)$.
+\item[Generative Bayesian computation] Inference by a trained map from a statistic and a uniform variable to the parameter, learned from simulated pairs.
+\item[Glueball] A bound state of the pure gauge theory; the lightest has the mass that is the gap.
+\item[Haar measure] The unique invariant probability measure on a compact group.
+\item[Heat kernel law] The law of Brownian motion on the group at a fixed time; closed under convolution.
+\item[Hierarchical lattice] A lattice built by repeatedly replacing each bond by a fixed motif; the Migdal Kadanoff recursion is exact on it.
+\item[Holonomy] The ordered product of link variables around a closed path.
+\item[Ladder] The sequence of plaquette laws produced by iterating a renormalization map.
+\item[Laguerre P\'olya class] Entire functions that are limits of polynomials with only real zeros.
+\item[Likelihood ratio order] The stochastic order in which the ratio of densities is monotone.
+\item[Log Sobolev inequality] A bound of entropy by a Dirichlet form; it implies a spectral gap and Gaussian concentration.
+\item[Mass gap] The infimum of the spectrum of the Hamiltonian above the vacuum.
+\item[Matching] Choosing a coupling so that a small lattice reproduces the loop expectations of a blocked large one; a likelihood equation.
+\item[Offset] A Euclidean time shift $\alpha$ that tilts a spectral measure by $e^{-\alpha E}$ and makes it finite.
+\item[Particle learning] A particle filter that carries conditional sufficient statistics for static parameters and redraws the parameters at each step.
+\item[Plaquette] An elementary square of the lattice; also the holonomy around it.
+\item[Reflection positivity] Positivity of the Euclidean inner product, the form $\langle\Theta F,F\rangle$ for functions $F$ of the fields at positive times.
+\item[Renormalized trajectory] The curve of lattice theories that describes one continuum theory at different lattice spacings.
+\item[Route A, Route B] The two ways of reading a spectral measure as a Thorin measure: directly, and through the $2\sin^2$ lemma.
+\item[Sandwich] The statement that the truth lies between the two caricatures of a bracket.
+\item[Slice variable] An auxiliary uniform variable below a likelihood factor; given it, the factor becomes an indicator.
+\item[Spectral measure] The positive measure whose Laplace transform is a Euclidean correlation.
+\item[Staple] The product of the three other links of a plaquette containing a given link.
+\item[String tension] The coefficient $\sigma$ of the area in the area law.
+\item[Sufficient statistic] A function of the data through which alone the likelihood depends on the parameter; for the Wilson measure, the total action.
+\item[Thorin measure] The measure $U$ in the representation of a generalized gamma convolution.
+\item[Transfer matrix] The operator that advances the lattice theory by one time step; its logarithm is minus $a$ times the Hamiltonian.
+\item[Wilson loop] The trace of a holonomy; its expectation is the basic observable of lattice gauge theory.
+\end{description}
+
+\section{A Dictionary for Statisticians and Physicists}\label{ch:dictionary}\index{dictionary}
+
+The same objects carry different names in the two literatures. This section lists the correspondences used in the book.
+
+\subsection{Models}
+\begin{center}
+\small
+\begin{tabular}{p{1.95in}p{2.2in}}
+\toprule
+physics & statistics \\ \midrule
+lattice gauge field & Markov random field on edges, cliques on plaquettes \\
+action $S$ & negative log likelihood \\
+lattice coupling $\beta$ & likelihood power, inverse temperature \\
+Haar measure & reference prior on the group \\
+partition function $Z(\beta)$ & marginal likelihood, evidence \\
+free energy $-\log Z$ & negative log evidence \\
+density of states & prior law of the likelihood ordinate \\
+Wilson plaquette weight & von Mises Fisher likelihood on $S^3$ \\
+heat kernel action & wrapped Gaussian likelihood on the group \\
+character expansion & Fourier series of a class function density \\
+massless free field & intrinsic conditional autoregression \\
+mass term & proper CAR precision shift \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Structure}
+\begin{center}
+\small
+\begin{tabular}{p{1.95in}p{2.2in}}
+\toprule
+physics & statistics \\ \midrule
+reflection positivity & positive semidefinite Hankel kernel; conditional independence across a time slice \\
+spectral measure & mixing measure of a mixture of exponentials \\
+mass gap & lower endpoint of the support of the mixing measure \\
+transfer matrix & one step Markov kernel in the time direction \\
+correlation length & reciprocal of the spectral gap \\
+block spin transformation & marginalisation to a coarse summary \\
+effective action & negative log marginal density \\
+bond moving & product of likelihoods, a Bayes update \\
+decimation & convolution, a predictive step \\
+running coupling & hyperparameter at a given level of a hierarchy \\
+irrelevant operator & nuisance parameter that washes out \\
+asymptotic freedom & precision growing linearly in the number of levels \\
+confinement & posterior reverting to the prior at coarse scales \\
+phase transition & nonanalytic evidence as a function of $\beta$ \\
+Lee Yang zeros & zeros of the moment generating function \\
+Schwinger Dyson equations & score equations, integration by parts identities \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Computation}
+\begin{center}
+\small
+\begin{tabular}{p{1.95in}p{2.2in}}
+\toprule
+physics & statistics \\ \midrule
+heat bath & Gibbs sampler \\
+checkerboard update & Besag's coding method \\
+Kennedy Pendleton & rejection sampler for a tilted semicircle \\
+overrelaxation & antithetic, energy preserving reflection \\
+hybrid Monte Carlo & Hamiltonian Monte Carlo \\
+cluster algorithm & auxiliary variable, data augmentation sampler \\
+critical slowing down & vanishing spectral gap of the sampler \\
+topological freezing & multimodality, the witch's hat \\
+multicanonical, Wang Landau & vertical likelihood with weight $1/N(s)$ \\
+simulated tempering & power posterior ladder \\
+thermodynamic integration & path sampling \\
+multilevel algorithm & Rao Blackwellisation by conditional independence \\
+inverse Monte Carlo & pseudolikelihood, score matching \\
+two lattice matching & method of moments; amortised by a GBC generator \\
+assumed plaquette action at each scale & assumed density filtering \\
+Monte Carlo renormalization group & fitting a coarse model to blocked data \\
+smearing & smoothing kernel, variance reduction \\
+variational method for masses & generalised eigenvalue, canonical correlation \\
+autocorrelation time & inefficiency factor \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{This book}
+\begin{center}
+\small
+\begin{tabular}{p{1.95in}p{2.2in}}
+\toprule
+object & probabilistic reading \\ \midrule
+offset spectral measure & Thorin measure of a generalized gamma convolution \\
+Route B Thorin density & L\'evy exponent of a compound Poisson process, divided by $\pi t$ \\
+Migdal Kadanoff step & filter recursion: update by $f^{k-1}$, predict by convolution \\
+curvature correction & Biane, Pitman and Yor variable $S_{\mathrm{BPY}}$, $\E S_{\mathrm{BPY}}=1/3$ \\
+correlation length on the ladder & $b$ to a first passage time \\
+heat kernel in $\cos\theta$ & Laguerre P\'olya density with roots moving outward \\
+sliced link conditional & uniform law on a convex subset of $S^3$ (a log Sobolev constant of $2$ for it is Conjecture~\ref{prop:slicecurv}, not a theorem) \\
+\bottomrule
+\end{tabular}
+\end{center}

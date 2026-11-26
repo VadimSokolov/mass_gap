@@ -1,0 +1,215 @@
+\documentclass[11pt,twoside,openany]{book}
+% 7 x 10 in, no bleed: the digital edition, also the KDP paperback interior (inside margin: KDP minimum for the page count plus 0.1 in, or more)
+\usepackage[paperwidth=7in,paperheight=10in,inner=0.8in,outer=0.65in,top=0.8in,bottom=0.8in,headsep=0.2in,footskip=0.35in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\makeindex
+\usepackage[hidelinks]{hyperref}
+\input{bookmeta}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\-}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+\emergencystretch=3em
+\linespread{1.0}
+
+% headings: small caps, no bold
+\titleformat{\chapter}[display]{\normalfont\scshape\centering}{\large Chapter \thechapter}{0.6em}{\LARGE}
+\titlespacing*{\chapter}{0pt}{0pt}{2.2em}
+\titleformat{\section}{\normalfont\large\scshape}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\normalfont\normalsize\scshape}{\thesubsection}{0.8em}{}
+\renewcommand{\cftchapfont}{\normalfont\scshape}
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\cftpartfont}{\normalfont\scshape}
+\renewcommand{\cftpartpagefont}{\normalfont}
+\setcounter{tocdepth}{1}
+\setlength{\cftbeforechapskip}{0.55em}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\LARGE\scshape}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\normalfont\LARGE\scshape}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\normalfont\scshape #1}
+
+% italic running heads
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LE]{\small\itshape The Mass Gap}
+\fancyhead[RO]{\small\itshape\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}}
+
+% theorem styles without bold
+\newtheoremstyle{plainsc}{6pt}{6pt}{\itshape}{}{\scshape}{.}{ }{}
+\newtheoremstyle{defsc}{6pt}{6pt}{}{}{\scshape}{.}{ }{}
+\theoremstyle{plainsc}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{defsc}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}{Open problem}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\repourl}{\url{https://github.com/VadimSokolov/mass_gap}}
+\newcommand{\repodoi}{\textit{(assigned at release)}}
+
+\newcommand{\lstfont}{\ttfamily\scriptsize\hyphenpenalty=50\relax\exhyphenpenalty=50\relax}
+\lstset{basicstyle=\lstfont,breaklines=true,breakatwhitespace=false,columns=flexible,keepspaces=true,frame=none,showstringspaces=false,keywordstyle=\lstfont,commentstyle=\lstfont\itshape,stringstyle=\lstfont,postbreak=\mbox{\hspace{1em}}}
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+\begin{titlepage}
+\centering
+\vspace*{1.2in}
+{\Huge\scshape The Mass Gap\par}
+\vspace{0.8em}
+{\color[rgb]{0.72,0.56,0.2}\rule{2.4in}{0.6pt}\par}
+\vspace{0.8em}
+{\large\itshape Thorin Measures, Brownian Motion\\ and Yang Mills\par}
+\vfill
+{\large\scshape Nick Polson\par}
+\vspace{0.4em}
+{\large\scshape Vadim Sokolov\par}
+\vspace{1.2in}
+\end{titlepage}
+
+\newpage
+\vspace*{\fill}
+{\small
+\noindent The Mass Gap: Thorin Measures, Brownian Motion and Yang Mills\\[0.5em]
+\noindent Copyright \copyright\ \BookYear\ Nick Polson and Vadim Sokolov.\\[0.5em]
+\noindent First edition, November 2026.%
+\ifx\BookISBNline\empty\else\\[0.5em]\noindent\BookISBNline\fi
+\ifx\BookDOIline\empty\else\\[0.5em]\noindent\BookDOIline\fi
+\\[0.5em]\noindent License: distributed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}: you may copy, share and adapt this book for any purpose, provided you credit the authors. The code is released under the MIT License.\\[0.5em]
+\noindent Typeset by the authors in \LaTeX. Figures and numbers were computed with the code indexed in the appendix.\\[0.5em]
+\noindent Independently published.\par}
+
+\cleardoublepage
+\vspace*{2in}
+\begin{center}
+\itshape For the probabilists who taught us that positivity is a gift,\\ and for the physicists who taught us where it comes from.\\[0.8em] And in memory of Mark Kac, who stood in both camps.
+\end{center}
+
+\cleardoublepage
+\pagestyle{fancy}
+\tableofcontents
+
+\input{chapters/preface}
+
+\clearpage
+\thispagestyle{plain}
+\section*{\normalfont\large\scshape A note to the reader}
+The book can be read in three ways. A reader who wants the argument should read Chapters~\ref{ch:problem} to~\ref{ch:routeA}, then Chapters~\ref{ch:twod}, \ref{ch:strong} and~\ref{ch:path}, and finish with Chapter~\ref{ch:programme}. A reader who wants the computations should add Chapters~\ref{ch:estimation} to~\ref{ch:hitting}, with the notebook in Appendix~\ref{ch:notebook}. A reader who wants the open problems should go to Chapters~\ref{ch:path} to~\ref{ch:sandwich} and the list in Chapter~\ref{ch:programme}.
+
+Statements are labelled by their status. A theorem, proposition, lemma or corollary is proved in the text or in Appendix~\ref{ch:aux}, unless it is quoted from the literature with a citation. A leading order derivation is an expansion without a remainder. A numerical result is a floating point computation, reproducible from the code in Appendix~\ref{ch:code}, and is never called a proof. A conjecture or an open problem is open. Where we were wrong in an earlier chapter and found out in a later one, the later chapter says so.
+
+Couplings are $\beta=4/g^2$ for SU(2) and $\beta=2N/g^2$ for SU(N); the heat kernel time is $t=2/\beta$; angles are rotation angles $\theta\in[0,\pi]$ of group elements, with Haar density $\frac2\pi\sin^2\theta$.
+
+\clearpage
+\thispagestyle{plain}
+\section*{\normalfont\large\scshape A map of the chapters}
+\begin{description}\itemsep2pt
+\item[\normalfont\scshape The problem.] Chapters~\ref{ch:problem} and~\ref{ch:positivity}: the statement, gauge fields for probabilists, positivity and the Thorin toolkit.
+\item[\normalfont\scshape Routes and estimation.] Chapters~\ref{ch:routeA} to~\ref{ch:hitting}: Route A, Route B and the $2\sin^2$ lemma, examples, the gap as an estimation problem, Markov chains and slice variables, hitting times, learning the gap, and quantum Bayesian computation with the one plaquette vacuum (Section~\ref{ch:quantum}).
+\item[\normalfont\scshape Exact models.] Chapter~\ref{ch:twod}: two dimensions, Riemann's kernel on the sphere, dynamics, renormalisation, the free field and large $N$.
+\item[\normalfont\scshape The ladder.] Chapters~\ref{ch:strong} to~\ref{ch:theta}: strong coupling, Migdal and Kadanoff and the verification of the ladder, the ladder on counts and Kingman's coalescent, real zeros and theta kernels.
+\item[\normalfont\scshape Open problems.] Chapters~\ref{ch:path} to~\ref{ch:sandwich}: the path and what it may miss, progress on the open problems, and inequalities between the ladder and the lattice.
+\item[\normalfont\scshape Neighbours.] Chapter~\ref{ch:kacyang}: Kac and Yang, Hilbert's sixth problem, stochastic quantisation, filtering, and the Langlands and Riemann volumes.
+\item[\normalfont\scshape Summing up.] Chapter~\ref{ch:programme}: the programme, the history and the list of results.
+\end{description}
+\clearpage
+\thispagestyle{plain}
+\section*{\normalfont\large\scshape How the computations were done}
+Every number in this book that is not quoted from the literature was produced by a script listed in Appendix~\ref{ch:code} and summarised in Appendix~\ref{ch:notebook}. The scripts are short, use only standard numerical libraries, fix their random seeds, and run in minutes on a laptop.
+
+Three kinds of computation occur and the text keeps them apart. Exact computations are done in rational arithmetic or by computer algebra: the weak coupling expansion of the ladder and the coalescence kernel of the latent count are of this kind. Enclosures bound a quantity on a whole interval with an explicit allowance for rounding: one, in Chapter~\ref{ch:progress}, checks the contraction of the ladder, which is proved there without it. Everything else is floating point quadrature or Monte Carlo, and is reported with its error where that is known.
+
+No deep learning library was used. The generators of the chapters on Bayesian computation are gradient boosted trees and one attention head written out by hand, with a ridge regression readout on Peter Weyl features in one place.
+
+Lattice simulations are small, $16^4$ at most, and are used to test inequalities and to illustrate, never to extrapolate to the continuum.
+\clearpage
+\thispagestyle{plain}
+\section*{\normalfont\large\scshape What is proved and what is not}
+The mass gap in four dimensions is not proved in this book, and nothing here should be read as a claim that it is. What the book contains is of four kinds, and each statement in the text says which kind it is.
+
+Theorems, with proofs in the text or in Appendix~\ref{ch:aux}. The chief ones are the product formula for the heat kernel on SU(2) and its Thorin form (Corollary~\ref{cor:thorinform}), the contraction of the projected ladder at every coupling, the hypergeometric law of coalescence for the latent count, the duality with Kingman's coalescent in the form of Griffiths and Tavar\'e, the harmonic law and the first rung theorem for the mean count (for laws with real zeros, in terms of the ratio of variance to mean; its heat kernel value is a numerical observation), the Thorin form of the Hartman Watson law, and the preservation of real zeros by the heat flow on the group and in the vacuum of one plaquette.
+
+Conjectures, with evidence. The chief one is that the class of link densities with real zeros beyond the edge is closed under convolution; it is reduced in the text to a statement about one function at a time, which has held in every case tried.
+
+Asymptotic laws, obtained by expansion and checked by computation but not proved, such as the drift of the mean count beyond the first rung.
+
+Numerical observations, reported with their errors and with the script that produced them.
+
+The gap between the ladder, where much is now proved, and the lattice $\mathbb{Z}^4$, where little beyond correlation inequalities is, is the subject of the chapters on open problems. It remains open.
+\mainmatter
+\part{The Problem}
+\input{chapters/c01_problem}
+\input{chapters/c02_positivity}
+\part{Routes and Estimation}
+\input{chapters/c03_routes}
+\input{chapters/c04_estimation}
+\input{chapters/c05_mixing}
+\input{chapters/c06_learning}
+\part{Exact Models}
+\input{chapters/c07_exact}
+\part{The Ladder}
+\input{chapters/c08_ladder}
+\input{chapters/c09_counts}
+\input{chapters/c10_zeros}
+\input{chapters/c11_theta}
+\part{Open Problems}
+\input{chapters/c12_path}
+\input{chapters/c13_progress}
+\input{chapters/c14_inequalities}
+\part{Neighbours}
+\input{chapters/c15_neighbours}
+\part{Summing Up}
+\input{chapters/c16_results}
+
+\appendix
+\input{chapters/a1_code}
+\input{chapters/a2_proofs}
+\input{chapters/a3_notation}
+\input{chapters/a4_solutions}
+\input{chapters/a5_notebook}
+
+\backmatter
+\input{chapters/further}
+\input{chapters/bibliography}
+\input{chapters/authors}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

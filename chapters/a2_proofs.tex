@@ -1,0 +1,167 @@
+\chapter{Proofs}\label{ch:aux}
+
+This appendix collects proofs and statements of classical results used in the text, in the forms we need, followed by three longer arguments that the text used in outline (the last one, on the sliced link, is incomplete, as stated there).
+
+\section{Bernstein's theorem}
+
+\begin{theorem}[Bernstein]
+A function $C$ on $(0,\infty)$ is completely monotone, meaning $(-1)^kC^{(k)}\ge0$ for all $k$, if and only if $C(\tau)=\int_{[0,\infty)}e^{-\tau E}\mu(\mathrm dE)$ for a unique nonnegative measure $\mu$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+The Laplace transform of a nonnegative measure is completely monotone by differentiation under the integral. For the converse, Widder's inversion formula
+\[
+\mu_k(\mathrm dE)=\frac{(-1)^k}{k!}\Big(\frac kE\Big)^{k+1}C^{(k)}\Big(\frac kE\Big)\,\mathrm dE
+\]
+defines nonnegative measures by complete monotonicity, and they converge vaguely to a measure whose Laplace transform is $C$. Uniqueness follows from the Stone Weierstrass theorem applied to the exponentials $e^{-\tau E}$.
+\end{proof}
+
+\section{Stieltjes inversion}
+
+\begin{proposition}
+Let $F(s)=\int\sigma(\mathrm dt)/(s+t)$ with $\sigma\ge0$ and $\int(1+t)^{-1}\sigma(\mathrm dt)<\infty$. For $a<b$ with no atoms of $\sigma$ at $a$ or $b$,
+\[
+\sigma((a,b))=\lim_{\varepsilon\downarrow0}\frac1\pi\int_a^b\operatorname{Im}F(-x-i\varepsilon)\,\mathrm dx .
+\]
+In particular, if $F$ continues analytically across an open segment $(-b,-a)$ of the negative axis, then $\sigma((a,b))=0$.
+\end{proposition}
+
+\begin{proof}
+$\operatorname{Im}\frac{1}{-x-i\varepsilon+t}=\frac{\varepsilon}{(t-x)^2+\varepsilon^2}$, which is $\pi$ times the Poisson kernel of width $\varepsilon$ centred at $t$. Integrating over $x\in(a,b)$ and letting $\varepsilon\downarrow0$ gives the indicator of $(a,b)$ at continuity points. If $F$ is analytic across the segment, its boundary values from above and below agree and are real on the segment, so the imaginary part tends to zero locally uniformly on the segment; applying the formula on closed subintervals and letting them increase to $(a,b)$ gives $\sigma((a,b))=0$.
+\end{proof}
+
+\section{Laplace asymptotics}
+
+\begin{proposition}
+Let $\nu\ge0$ be a nonzero measure on $[0,\infty)$ with $\int e^{-\alpha_0x}\nu(\mathrm dx)<\infty$, and let $m=\inf\operatorname{supp}\nu$. Then $\lim_{\alpha\to\infty}-\alpha^{-1}\log\int e^{-\alpha x}\nu(\mathrm dx)=m$.
+\end{proposition}
+
+\begin{proof}
+The upper bound $\int e^{-\alpha x}\mathrm d\nu\le e^{-(\alpha-\alpha_0)m}\int e^{-\alpha_0x}\mathrm d\nu$ gives $\liminf\ge m$. For any $\varepsilon>0$, $c=\nu([m,m+\varepsilon])>0$, and $\int e^{-\alpha x}\mathrm d\nu\ge c\,e^{-\alpha(m+\varepsilon)}$ gives $\limsup\le m+\varepsilon$.
+\end{proof}
+
+\section{Log convexity of Laplace transforms}
+
+\begin{proposition}
+The Laplace transform of a nonnegative measure is log convex on the interval where it is finite.
+\end{proposition}
+
+\begin{proof}
+For $\alpha=\lambda\alpha_1+(1-\lambda)\alpha_2$, H\"older's inequality with exponents $1/\lambda$ and $1/(1-\lambda)$ gives $\int e^{-\alpha x}\mathrm d\nu\le\big(\int e^{-\alpha_1x}\mathrm d\nu\big)^\lambda\big(\int e^{-\alpha_2x}\mathrm d\nu\big)^{1-\lambda}$.
+\end{proof}
+
+\section{The Goldie and Steutel theorem}
+
+\begin{theorem}
+Every mixture of exponential distributions is infinitely divisible.
+\end{theorem}
+
+The theorem is quoted without proof in Section~\ref{sec:first}. The classical proof shows that the logarithm of the Laplace transform of a completely monotone density is minus a complete Bernstein function, $-\log\E e^{-sX}=\int_0^\infty\big(\frac1u-\frac1{u+s}\big)w(u)\,\mathrm du$ with $0\le w\le1$, and that infinite divisibility follows from this representation. The measure $\mathrm dw$ that would play the role of a Thorin measure is signed in general, because $w$ need not be monotone. Proposition~\ref{prop:notggcB} shows that such a density is in general not a generalized gamma convolution: mixtures of exponentials are infinitely divisible without being generalized gamma convolutions.
+
+\section{Amos's inequalities for Bessel ratios}
+
+\begin{theorem}[Amos~\cite{Am74}]
+For $\nu\ge0$ and $x>0$,
+\[
+\frac{x}{\nu+1+\sqrt{x^2+(\nu+1)^2}}\le\frac{I_{\nu+1}(x)}{I_\nu(x)}\le\frac{x}{\nu+\frac12+\sqrt{x^2+(\nu+\frac12)^2}} .
+\]
+\end{theorem}
+
+The proof uses the continued fraction for the ratio, which follows from the three term recurrence $I_{\nu-1}(x)-I_{\nu+1}(x)=\frac{2\nu}{x}I_\nu(x)$, together with the Riccati equation satisfied by $r_\nu=I_{\nu+1}/I_\nu$, namely $r_\nu'=1-\frac{2\nu+1}{x}r_\nu-r_\nu^2$. The bounds are the solutions of the comparison equations obtained by freezing the coefficient; the details are in~\cite{Am74}. At $\nu=1$ the upper bound gives Lemma~\ref{lem:amosB}, and the lower bound gives $-\log u_2(\beta)\le\operatorname{arcsinh}(2/\beta)$, so the two dimensional lattice gap is pinned between two explicit functions of the coupling.
+
+\section{The SU(2) heat kernel image sum}
+
+\begin{proposition}
+With $u_n=e^{-t(n^2-1)/4}$, for $\theta\in(0,\pi)$,
+\[
+\sum_{n\ge1}n\,u_n\frac{\sin n\theta}{\sin\theta}=\frac{2\sqrt\pi\,e^{t/4}}{t^{3/2}\sin\theta}\sum_{m\in\Z}(\theta+2\pi m)\,e^{-(\theta+2\pi m)^2/t}.
+\]
+\end{proposition}
+
+\begin{proof}
+Jacobi's identity gives $\sum_{n\in\Z}e^{-tn^2/4+in\theta}=\sqrt{4\pi/t}\sum_me^{-(\theta+2\pi m)^2/t}$. Differentiate in $\theta$. By symmetry in $n$ the derivative of the left side is real and equals $-2\sum_{n\ge1}n\,e^{-tn^2/4}\sin n\theta$, while the right side gives $-\sqrt{4\pi/t}\,\frac2t\sum_m(\theta+2\pi m)e^{-(\theta+2\pi m)^2/t}$. Hence $\sum_{n\ge1}n\,e^{-tn^2/4}\sin n\theta=\frac{2\sqrt\pi}{t^{3/2}}\sum_m(\theta+2\pi m)e^{-(\theta+2\pi m)^2/t}$, and multiplying by $e^{t/4}/\sin\theta$ gives the formula.
+\end{proof}
+
+The image sum converges extremely fast for small $t$ and the character series for large $t$; Section~\ref{ch:verification} uses each in its own range.
+
+\section{The mean of the Biane Pitman Yor variable}
+
+\begin{proposition}
+If $\E e^{-\lambda S_{\mathrm{BPY}}}=\sqrt{2\lambda}/\sinh\sqrt{2\lambda}$, then $\E S_{\mathrm{BPY}}=\frac13$ and $\operatorname{Var}S_{\mathrm{BPY}}=\frac{2}{45}$.
+\end{proposition}
+
+\begin{proof}
+With $x=\sqrt{2\lambda}$, $\log\frac{x}{\sinh x}=-\frac{x^2}{6}+\frac{x^4}{180}-\dots$, so $\log\E e^{-\lambda S_{\mathrm{BPY}}}=-\frac\lambda3+\frac{\lambda^2}{45}-\dots$. The cumulants are read off from $\log\E e^{-\lambda S_{\mathrm{BPY}}}=-\kappa_1\lambda+\kappa_2\lambda^2/2-\dots$, giving $\kappa_1=\frac13$ and $\kappa_2=\frac{2}{45}$.
+\end{proof}
+
+The variance controls the next correction to the Migdal Kadanoff decrement through the fourth order term of the curvature factor, which is one of the open problems of Chapter~\ref{ch:path}.
+
+\section{Laguerre's theorem for the theta product}
+
+Let $C_1<C_2<\cdots$ be positive with $\sum_nC_n^{-1}<\infty$, and $P(c)=\prod_n(1+c/C_n)$, and suppose that $P$ has order zero, as it does when $C_n$ grows geometrically. The product converges locally uniformly, $P$ is entire of genus zero, and its zeros are the points $-C_n$.
+
+\begin{proposition}
+$P'$ has only real, simple zeros $-\gamma_m$, exactly one in each interval $(-C_{m+1},-C_m)$ and none elsewhere, and $P'(c)=P'(0)\prod_m(1+c/\gamma_m)$.
+\end{proposition}
+
+\begin{proof}
+The logarithmic derivative is $P'/P=\sum_n(c+C_n)^{-1}$, with locally uniform convergence away from the poles. For $c=x+iy$ with $y\ne0$,
+\[
+\operatorname{Im}\frac{P'(c)}{P(c)}=-y\sum_n\frac{1}{(x+C_n)^2+y^2}\ne0,
+\]
+so $P'$ has no zeros off the real axis. On the real axis, in an interval $(-C_{m+1},-C_m)$, the function $P'/P$ is continuous and strictly decreasing, since its derivative is $-\sum_n(x+C_n)^{-2}<0$, and it runs from $+\infty$ at the left end to $-\infty$ at the right end. It has exactly one zero there, and the zero is simple. For $x>-C_1$ every term of the sum is positive and there is no zero. Finally the zeros of $P'$ interlace those of $P$, so $\sum_m\gamma_m^{-1}<\infty$; and $P'$ has the same order as $P$, which is zero when $C_n$ grows geometrically, as it does for $C_n=\cosh((2n-1)t/4)$. Hadamard's theorem then gives the product with no exponential factor.
+\end{proof}
+
+For the theta function, $\prod_n(1+a_n^2+2a_nc)=\prod_n(1+a_n^2)\cdot\prod_n(1+c/C_n)$ with $C_n=(1+a_n^2)/(2a_n)$, so the proposition applies and gives Theorem~\ref{thm:product}.
+
+\section{The equation for the mixed partial}\label{ch:proofs2}
+
+Let $\rho(t,\theta)>0$ be smooth on $[0,T]\times[0,\pi]$, even about both ends as a function on the sphere, and solve $4\partial_t\rho=\rho''+p\rho'$ with $p=2\cot\theta$, primes denoting derivatives in $\theta$. Put $w=\log\rho$, $v=w'$ and $z=\partial_tv$.
+
+Dividing the equation by $\rho$ gives $4\partial_tw=w''+w'^2+pw'$. Differentiating in $\theta$,
+\[
+4\partial_tv=v''+2vv'+pv'+p'v .
+\]
+Differentiating in $t$,
+\[
+4\partial_tz=z''+(2v+p)z'+(2v'+p')z .
+\]
+Because $\rho$ is even about $\theta=0$ and $\theta=\pi$, $v$ vanishes at both ends for every $t$, and so does $z$. The coefficient $2v'+p'=2v'-2/\sin^2\theta$ is bounded above on $[0,T]\times(0,\pi)$ by some constant $4C$, since $v'$ is bounded and $p'<0$.
+
+\begin{proposition}
+If $z(0,\theta)\ge0$ on $(0,\pi)$, then $z(t,\theta)\ge0$ on $[0,T]\times(0,\pi)$.
+\end{proposition}
+
+\begin{proof}
+Put $y=e^{-Ct}z+\varepsilon t$ with $\varepsilon>0$. Then
+\[
+4\partial_ty=y''+(2v+p)y'+c_0\,(y-\varepsilon t)+4\varepsilon,\qquad c_0=2v'+p'-4C\le0 .
+\]
+Suppose $y$ is negative somewhere on $[0,T]\times[0,\pi]$, and let its minimum, a negative number, be attained at $(t_0,\theta_0)$. Since $y\ge0$ at $t=0$ and at both ends, $t_0>0$ and $\theta_0\in(0,\pi)$, where the coefficients are finite. At that point $y'=0$, $y''\ge0$ and $\partial_ty\le0$. But $y-\varepsilon t_0<0$ and $c_0\le0$, so the right side is at least $4\varepsilon>0$, a contradiction. Hence $y\ge0$ for every $\varepsilon>0$, and letting $\varepsilon\to0$ gives $z\ge0$.
+\end{proof}
+
+For the Wilson law the initial condition is computed in Proposition~\ref{prop:wilsonflow}. For the heat kernel itself the initial datum is singular, and Theorem~\ref{thm:product} is the cleaner route.
+
+\section{Lowest order perturbation theory for a Wilson loop}
+
+Write $U_\mu(x)=\exp(igA_\mu(x))$ and expand the Wilson action to second order in $A$. In Feynman gauge the field is Gaussian with covariance $\langle A^a_\mu(k)A^b_\nu(-k)\rangle=\delta^{ab}\delta_{\mu\nu}/\hat k^2$, where $\hat k_\rho=2\sin(k_\rho/2)$ and $\hat k^2=\sum_\rho\hat k_\rho^2$. To this order the group is effectively abelian, and for a loop $\Gamma$,
+\[
+-\log W(\Gamma)=\frac{g^2C_F}{2}\,\Big\langle\Big(\sum_{\ell\in\Gamma}A_\ell\Big)^2\Big\rangle ,
+\]
+with $C_F$ the Casimir of the fundamental representation, $3/4$ for SU(2). By the lattice Stokes theorem the sum of $A$ around a planar loop is the sum of the lattice field strengths $F_{\mu\nu}(x)=A_\mu(x)+A_\nu(x+\hat\mu)-A_\mu(x+\hat\nu)-A_\nu(x)$ over the plaquettes it encloses. In momentum space $|F_{\mu\nu}(k)|^2$ has expectation $(\hat k_\mu^2+\hat k_\nu^2)/\hat k^2$, and the sum over an $R\times T$ rectangle has the form factor
+\[
+\Big|\sum_{x=0}^{R-1}\sum_{y=0}^{T-1}e^{i(k_\mu x+k_\nu y)}\Big|^2=\frac{\sin^2(k_\mu R/2)}{\sin^2(k_\mu/2)}\,\frac{\sin^2(k_\nu T/2)}{\sin^2(k_\nu/2)} .
+\]
+Multiplying and integrating over the Brillouin zone gives the formula of Chapter~\ref{ch:sandwich}. For the plaquette the form factor is one and the integral of $(\hat k_\mu^2+\hat k_\nu^2)/\hat k^2$ is $2/d$ by symmetry, so $-\log W_{11}=g^2C_F/d$, which is $3/(4\beta)$ for SU(2) in four dimensions with $\beta=4/g^2$.
+
+The comparison with the two caricatures is then immediate. Independent plaquettes would give $R^2$ times the plaquette value. For a large loop the form factor concentrates at small momenta and the integral grows like the perimeter, not the area, so the ratio to the plaquette is far below $R^2$. And it exceeds the Gaussian ledger value of the ladder, which keeps the logarithm of the loop equal to that of the plaquette in four dimensions.
+
+\section{Convexity and curvature for the sliced link}
+
+A spherical cap $\{U:\langle U,V\rangle>c\}$ in the unit sphere $S^3\subset\R^4$ with $c>0$ is contained in an open hemisphere. Two points of an open hemisphere are joined by a unique minimising geodesic, an arc of a great circle of length less than $\pi$, and along that arc the function $\langle\,\cdot\,,V\rangle$ is of the form $A\cos(s-s_0)$, which on an arc where it is positive at both ends and the arc is shorter than $\pi$ stays above the smaller of its two end values. Hence the cap is geodesically convex. Two points of an intersection of such caps lie in each cap, their minimising geodesic is unique, and it lies in each cap; so the intersection is geodesically convex.
+
+On a geodesically convex domain $\Omega$ with smooth boundary in a manifold with $\mathrm{Ric}\ge\kappa$, the Neumann Laplacian satisfies the curvature dimension condition with constant $\kappa$: in Bochner's formula
+\[
+\tfrac12\Delta|\nabla f|^2-\langle\nabla f,\nabla\Delta f\rangle=|\nabla^2f|^2+\mathrm{Ric}(\nabla f,\nabla f),
+\]
+the boundary term that arises on integration is the second fundamental form of $\partial\Omega$ applied to $\nabla f$, which is nonnegative when $\Omega$ is convex. The Bakry \'Emery criterion then gives the logarithmic Sobolev inequality with constant $\kappa$ for the normalised volume on $\Omega$; we have no reference for the version with a Neumann boundary. For the unit three sphere $\kappa=2$. An intersection of caps has corners, so the last step needs an approximation by smooth convex domains, which we do not carry out. So this section proves that an intersection of caps in $S^3$ is geodesically convex, and that for a smooth convex domain the Bochner argument gives the curvature dimension condition with $\kappa=2$. It does not prove the logarithmic Sobolev inequality with constant $2$ for the normalised volume on an intersection of caps: the Neumann version of the Bakry \'Emery criterion and the approximation by smooth convex domains are both missing, and the argument is therefore incomplete.

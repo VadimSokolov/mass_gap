@@ -1,0 +1,1279 @@
+{
+ "edition": "1",
+ "pdf": {
+  "bytes": 8883535,
+  "file": "pdf/mass_gap.pdf",
+  "pages": 363,
+  "parts": [
+   {
+    "first_page": "i",
+    "key": "",
+    "last_page": "xvi",
+    "pages": 16,
+    "title": "Front matter"
+   },
+   {
+    "first_page": "2",
+    "key": "1",
+    "last_page": "15",
+    "pages": 14,
+    "title": "Chapter 1. The Problem"
+   },
+   {
+    "first_page": "16",
+    "key": "2",
+    "last_page": "28",
+    "pages": 13,
+    "title": "Chapter 2. Positivity and the Thorin Toolkit"
+   },
+   {
+    "first_page": "30",
+    "key": "3",
+    "last_page": "41",
+    "pages": 12,
+    "title": "Chapter 3. Two Routes to the Gap"
+   },
+   {
+    "first_page": "42",
+    "key": "4",
+    "last_page": "57",
+    "pages": 16,
+    "title": "Chapter 4. Estimating the Gap"
+   },
+   {
+    "first_page": "58",
+    "key": "5",
+    "last_page": "74",
+    "pages": 17,
+    "title": "Chapter 5. Markov Chains, Mixing and Slice Variables"
+   },
+   {
+    "first_page": "75",
+    "key": "6",
+    "last_page": "97",
+    "pages": 23,
+    "title": "Chapter 6. Hitting Times and Learning the Gap"
+   },
+   {
+    "first_page": "99",
+    "key": "7",
+    "last_page": "120",
+    "pages": 22,
+    "title": "Chapter 7. Two Dimensions and Other Exact Models"
+   },
+   {
+    "first_page": "122",
+    "key": "8",
+    "last_page": "138",
+    "pages": 17,
+    "title": "Chapter 8. Strong Coupling and the Migdal Kadanoff Ladder"
+   },
+   {
+    "first_page": "139",
+    "key": "9",
+    "last_page": "162",
+    "pages": 24,
+    "title": "Chapter 9. The Ladder on Counts and Kingman's Coalescent"
+   },
+   {
+    "first_page": "163",
+    "key": "10",
+    "last_page": "179",
+    "pages": 17,
+    "title": "Chapter 10. Real Zeros"
+   },
+   {
+    "first_page": "180",
+    "key": "11",
+    "last_page": "194",
+    "pages": 15,
+    "title": "Chapter 11. Theta Kernels, Fermion Determinants and Howe Duality"
+   },
+   {
+    "first_page": "196",
+    "key": "12",
+    "last_page": "212",
+    "pages": 17,
+    "title": "Chapter 12. A Path to the Mass Gap"
+   },
+   {
+    "first_page": "213",
+    "key": "13",
+    "last_page": "238",
+    "pages": 26,
+    "title": "Chapter 13. Progress on the Open Problems"
+   },
+   {
+    "first_page": "239",
+    "key": "14",
+    "last_page": "255",
+    "pages": 17,
+    "title": "Chapter 14. Inequalities Between the Ladder and the Lattice"
+   },
+   {
+    "first_page": "257",
+    "key": "15",
+    "last_page": "278",
+    "pages": 22,
+    "title": "Chapter 15. Neighbouring Problems"
+   },
+   {
+    "first_page": "280",
+    "key": "16",
+    "last_page": "296",
+    "pages": 17,
+    "title": "Chapter 16. The Programme, the History and the Results"
+   },
+   {
+    "first_page": "297",
+    "key": "A",
+    "last_page": "302",
+    "pages": 6,
+    "title": "Appendix A. Code"
+   },
+   {
+    "first_page": "303",
+    "key": "B",
+    "last_page": "308",
+    "pages": 6,
+    "title": "Appendix B. Proofs"
+   },
+   {
+    "first_page": "309",
+    "key": "C",
+    "last_page": "317",
+    "pages": 9,
+    "title": "Appendix C. Notation, Glossary and Dictionary"
+   },
+   {
+    "first_page": "318",
+    "key": "D",
+    "last_page": "321",
+    "pages": 4,
+    "title": "Appendix D. Solutions to Selected Exercises"
+   },
+   {
+    "first_page": "322",
+    "key": "E",
+    "last_page": "325",
+    "pages": 4,
+    "title": "Appendix E. A Computational Notebook"
+   },
+   {
+    "first_page": "326",
+    "key": "",
+    "last_page": "327",
+    "pages": 2,
+    "title": "Further Reading"
+   },
+   {
+    "first_page": "328",
+    "key": "",
+    "last_page": "340",
+    "pages": 13,
+    "title": "Bibliography"
+   },
+   {
+    "first_page": "341",
+    "key": "",
+    "last_page": "341",
+    "pages": 1,
+    "title": "About the Authors"
+   },
+   {
+    "first_page": "342",
+    "key": "",
+    "last_page": "344",
+    "pages": 3,
+    "title": "List of Figures"
+   },
+   {
+    "first_page": "345",
+    "key": "",
+    "last_page": "347",
+    "pages": 3,
+    "title": "Index"
+   }
+  ],
+  "sha256": "255f326e9b9d94731ce0c3e0d2088d1cb19bd640871e826c1ea98b02ea6cfd27"
+ },
+ "results": {
+  "characters_from_flavour_group": {
+   "environment": "proposition",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "1ef733f202ae",
+   "label": "prop:howe",
+   "number": "11.2",
+   "page": "181",
+   "printed": "Proposition 11.2",
+   "verified_fingerprint": "1ef733f202ae",
+   "verified_on": "2026-11-25"
+  },
+  "class_l_closed_under_convolution": {
+   "environment": "conjecture",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "2b104064b256",
+   "label": "conj:Lclosed",
+   "number": "10.17",
+   "page": "177",
+   "printed": "Conjecture 10.17",
+   "verified_fingerprint": "2b104064b256",
+   "verified_on": "2026-11-25"
+  },
+  "closure_from_no_common_zero": {
+   "environment": "theorem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "6c156290c642",
+   "label": "thm:flowclosure",
+   "number": "10.14",
+   "page": "175",
+   "printed": "Theorem 10.14",
+   "verified_fingerprint": "6c156290c642",
+   "verified_on": "2026-11-25"
+  },
+  "coalescence_has_real_zeros": {
+   "environment": "corollary",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "707fe4266058",
+   "label": "cor:coalzeros",
+   "number": "10.5",
+   "page": "165",
+   "printed": "Corollary 10.5",
+   "verified_fingerprint": "707fe4266058",
+   "verified_on": "2026-11-25"
+  },
+  "coalescence_is_hypergeometric": {
+   "environment": "theorem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "c678a4be96f5",
+   "label": "thm:hypergeometric",
+   "number": "9.4",
+   "page": "141",
+   "printed": "Theorem 9.4",
+   "verified_fingerprint": "c678a4be96f5",
+   "verified_on": "2026-11-25"
+  },
+  "coalescence_of_counts": {
+   "environment": "theorem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "ff47793bdbfa",
+   "label": "thm:coalescence",
+   "number": "9.1",
+   "page": "139",
+   "printed": "Theorem 9.1",
+   "verified_fingerprint": "ff47793bdbfa",
+   "verified_on": "2026-11-25"
+  },
+  "constant_drift_problem": {
+   "environment": "problem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "50c0fefe8957",
+   "label": "op:drift",
+   "number": "9",
+   "page": "155",
+   "printed": "Open problem 9",
+   "verified_fingerprint": "50c0fefe8957",
+   "verified_on": "2026-11-25"
+  },
+  "continuum_gap_from_uniform_thorin_inequality": {
+   "environment": "corollary",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "ae6dcd0946bf",
+   "label": "cor:continuumB",
+   "number": "3.9",
+   "page": "36",
+   "printed": "Corollary 3.9",
+   "verified_fingerprint": "ae6dcd0946bf",
+   "verified_on": "2026-11-25"
+  },
+  "convolution_ellipse_average": {
+   "environment": "lemma",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "fa742f61c5b3",
+   "label": "lem:ellipse",
+   "number": "11.3",
+   "page": "182",
+   "printed": "Lemma 11.3",
+   "verified_fingerprint": "fa742f61c5b3",
+   "verified_on": "2026-11-25"
+  },
+  "correlator_not_ggc_two_isolated_levels": {
+   "environment": "proposition",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "2fb0af719f3c",
+   "label": "prop:notggcB",
+   "number": "3.10",
+   "page": "37",
+   "printed": "Proposition 3.10",
+   "verified_fingerprint": "2fb0af719f3c",
+   "verified_on": "2026-11-25"
+  },
+  "count_is_an_observable": {
+   "environment": "proposition",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "2616f73f611d",
+   "label": "prop:observable",
+   "number": "9.11",
+   "page": "148",
+   "printed": "Proposition 9.11",
+   "verified_fingerprint": "2616f73f611d",
+   "verified_on": "2026-11-25"
+  },
+  "drift_from_point_mass": {
+   "environment": "corollary",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "2c6a7705e49c",
+   "label": "cor:pointdrift",
+   "number": "9.9",
+   "page": "148",
+   "printed": "Corollary 9.9",
+   "verified_fingerprint": "2c6a7705e49c",
+   "verified_on": "2026-11-25"
+  },
+  "elementary_bound_large_time": {
+   "environment": "proposition",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "ef50c834d8d4",
+   "label": "thm:mlrlarge",
+   "number": "13.5",
+   "page": "215",
+   "printed": "Proposition 13.5",
+   "verified_fingerprint": "ef50c834d8d4",
+   "verified_on": "2026-11-25"
+  },
+  "first_passage_criterion_projected_ladder": {
+   "environment": "proposition",
+   "file": "chapters/c08_ladder.tex",
+   "fingerprint": "a8ed10f1e2e8",
+   "label": "prop:criterionB",
+   "number": "8.9",
+   "page": "136",
+   "printed": "Proposition 8.9",
+   "verified_fingerprint": "a8ed10f1e2e8",
+   "verified_on": "2026-11-25"
+  },
+  "first_rung_theorem": {
+   "environment": "theorem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "24dad4f1b614",
+   "label": "thm:firstrung",
+   "number": "9.13",
+   "page": "150",
+   "printed": "Theorem 9.13",
+   "verified_fingerprint": "24dad4f1b614",
+   "verified_on": "2026-11-25"
+  },
+  "frame_lemma_sharp_form": {
+   "environment": "proposition",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "82f3f3333394",
+   "label": "prop:framesharp",
+   "number": "11.7",
+   "page": "187",
+   "printed": "Proposition 11.7",
+   "verified_fingerprint": "82f3f3333394",
+   "verified_on": "2026-11-25"
+  },
+  "frullani_bridge": {
+   "environment": "theorem",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "968c2b64e188",
+   "label": "thm:frullani",
+   "number": "15.1",
+   "page": "259",
+   "printed": "Theorem 15.1",
+   "verified_fingerprint": "968c2b64e188",
+   "verified_on": "2026-11-25"
+  },
+  "gap_as_exponential_moment_threshold": {
+   "environment": "theorem",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "b0102b0c551d",
+   "label": "thm:abscissaB",
+   "number": "3.2",
+   "page": "31",
+   "printed": "Theorem 3.2",
+   "verified_fingerprint": "b0102b0c551d",
+   "verified_on": "2026-11-25"
+  },
+  "gap_as_thorin_decay_rate": {
+   "environment": "theorem",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "2aa736d1fb9c",
+   "label": "thm:rateB",
+   "number": "3.7",
+   "page": "35",
+   "printed": "Theorem 3.7",
+   "verified_fingerprint": "2aa736d1fb9c",
+   "verified_on": "2026-11-25"
+  },
+  "harmonic_law": {
+   "environment": "theorem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "f6865958bcfb",
+   "label": "thm:harmonic",
+   "number": "9.8",
+   "page": "147",
+   "printed": "Theorem 9.8",
+   "verified_fingerprint": "f6865958bcfb",
+   "verified_on": "2026-11-25"
+  },
+  "heat_kernel_log_concavity": {
+   "environment": "corollary",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "db2c9df7b2e3",
+   "label": "cor:logconc",
+   "number": "13.3",
+   "page": "214",
+   "printed": "Corollary 13.3",
+   "verified_fingerprint": "db2c9df7b2e3",
+   "verified_on": "2026-11-25"
+  },
+  "heat_kernel_thorin_form": {
+   "environment": "corollary",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "abf4c8291a10",
+   "label": "cor:thorinform",
+   "number": "13.4",
+   "page": "214",
+   "printed": "Corollary 13.4",
+   "verified_fingerprint": "abf4c8291a10",
+   "verified_on": "2026-11-25"
+  },
+  "hypergeometric_kernel_consequences": {
+   "environment": "corollary",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "8678339a0dff",
+   "label": "cor:hypergeometric",
+   "number": "9.5",
+   "page": "142",
+   "printed": "Corollary 9.5",
+   "verified_fingerprint": "8678339a0dff",
+   "verified_on": "2026-11-25"
+  },
+  "interlacing_conjecture": {
+   "environment": "conjecture",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "fb1d650379cc",
+   "label": "conj:interlacing",
+   "number": "10.16",
+   "page": "176",
+   "printed": "Conjecture 10.16",
+   "verified_fingerprint": "fb1d650379cc",
+   "verified_on": "2026-11-25"
+  },
+  "kingman_coalescent_duality": {
+   "environment": "theorem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "49e04d0868af",
+   "label": "thm:kingman",
+   "number": "9.17",
+   "page": "157",
+   "printed": "Theorem 9.17",
+   "verified_fingerprint": "49e04d0868af",
+   "verified_on": "2026-11-25"
+  },
+  "ladder_preserves_log_concavity_problem": {
+   "environment": "problem",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "be4b26be70b3",
+   "label": "op:logconcave",
+   "number": "8",
+   "page": "155",
+   "printed": "Open problem 8",
+   "verified_fingerprint": "be4b26be70b3",
+   "verified_on": "2026-11-25"
+  },
+  "latent_count_heat_kernel": {
+   "environment": "proposition",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "0042ccd2f44b",
+   "label": "prop:latentcount",
+   "number": "15.7",
+   "page": "276",
+   "printed": "Proposition 15.7",
+   "verified_fingerprint": "0042ccd2f44b",
+   "verified_on": "2026-11-25"
+  },
+  "laws_with_real_zeros_are_determinants": {
+   "environment": "proposition",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "5cbeb8055ace",
+   "label": "prop:determinant",
+   "number": "11.1",
+   "page": "180",
+   "printed": "Proposition 11.1",
+   "verified_fingerprint": "5cbeb8055ace",
+   "verified_on": "2026-11-25"
+  },
+  "likelihood_ratio_property": {
+   "environment": "corollary",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "ec30f281b1bb",
+   "label": "cor:mlrall",
+   "number": "13.2",
+   "page": "214",
+   "printed": "Corollary 13.2",
+   "verified_fingerprint": "ec30f281b1bb",
+   "verified_on": "2026-11-25"
+  },
+  "link_integrated_count_estimator": {
+   "environment": "proposition",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "bb83b75d1e61",
+   "label": "prop:linkint",
+   "number": "9.14",
+   "page": "151",
+   "printed": "Proposition 9.14",
+   "verified_fingerprint": "bb83b75d1e61",
+   "verified_on": "2026-11-25"
+  },
+  "local_heat_kernel_time_bracket": {
+   "environment": "proposition",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "ba1677aa1d04",
+   "label": "prop:localtime",
+   "number": "13.9",
+   "page": "227",
+   "printed": "Proposition 13.9",
+   "verified_fingerprint": "ba1677aa1d04",
+   "verified_on": "2026-11-25"
+  },
+  "malo_type_theorem_problem": {
+   "environment": "problem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "be33bb6b6fad",
+   "label": "op:malo",
+   "number": "10",
+   "page": "178",
+   "printed": "Open problem 10",
+   "verified_fingerprint": "be33bb6b6fad",
+   "verified_on": "2026-11-25"
+  },
+  "matching_expansion_of_decimation": {
+   "environment": "theorem",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "2bfa81a8d1c1",
+   "label": "thm:matching",
+   "number": "11.4",
+   "page": "182",
+   "printed": "Theorem 11.4",
+   "verified_fingerprint": "2bfa81a8d1c1",
+   "verified_on": "2026-11-25"
+  },
+  "mean_count_formula": {
+   "environment": "corollary",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "6e281e99090a",
+   "label": "cor:meancount",
+   "number": "9.7",
+   "page": "145",
+   "printed": "Corollary 9.7",
+   "verified_fingerprint": "6e281e99090a",
+   "verified_on": "2026-11-25"
+  },
+  "mixture_family_closed_under_ladder": {
+   "environment": "corollary",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "38444d5c8908",
+   "label": "cor:Mclosed",
+   "number": "9.6",
+   "page": "143",
+   "printed": "Corollary 9.6",
+   "verified_fingerprint": "38444d5c8908",
+   "verified_on": "2026-11-25"
+  },
+  "mk_step_preserves_positivity": {
+   "environment": "lemma",
+   "file": "chapters/c08_ladder.tex",
+   "fingerprint": "9660788bd353",
+   "label": "lem:posB",
+   "number": "8.3",
+   "page": "128",
+   "printed": "Lemma 8.3",
+   "verified_fingerprint": "9660788bd353",
+   "verified_on": "2026-11-25"
+  },
+  "mlr_implies_projected_map_increasing": {
+   "environment": "lemma",
+   "file": "chapters/c08_ladder.tex",
+   "fingerprint": "1075f088df0f",
+   "label": "lem:mlrB",
+   "number": "8.7",
+   "page": "134",
+   "printed": "Lemma 8.7",
+   "verified_fingerprint": "1075f088df0f",
+   "verified_on": "2026-11-25"
+  },
+  "near_hemisphere_total_positivity": {
+   "environment": "theorem",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "0f59649ee717",
+   "label": "thm:hemisphere",
+   "number": "13.12",
+   "page": "230",
+   "printed": "Theorem 13.12",
+   "verified_fingerprint": "0f59649ee717",
+   "verified_on": "2026-11-25"
+  },
+  "one_plaquette_hamiltonian_gap": {
+   "environment": "proposition",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "095fdb70b27f",
+   "label": "prop:oneplaquette",
+   "number": "6.6",
+   "page": "91",
+   "printed": "Proposition 6.6",
+   "verified_fingerprint": "095fdb70b27f",
+   "verified_on": "2026-11-25"
+  },
+  "one_plaquette_vacuum_count_log_concave": {
+   "environment": "corollary",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "8769eea72b96",
+   "label": "cor:vacuumcount",
+   "number": "6.9",
+   "page": "94",
+   "printed": "Corollary 6.9",
+   "verified_fingerprint": "8769eea72b96",
+   "verified_on": "2026-11-25"
+  },
+  "one_plaquette_vacuum_real_zeros": {
+   "environment": "proposition",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "1bcac717845c",
+   "label": "prop:vacuumzeros",
+   "number": "6.7",
+   "page": "92",
+   "printed": "Proposition 6.7",
+   "verified_fingerprint": "1bcac717845c",
+   "verified_on": "2026-11-25"
+  },
+  "op_bare_migdal_kadanoff_end": {
+   "environment": "problem",
+   "file": "chapters/c14_inequalities.tex",
+   "fingerprint": "6fa5ec37a70f",
+   "label": "op:ineq2",
+   "number": "24",
+   "page": "251",
+   "printed": "Open problem 24",
+   "verified_fingerprint": "6fa5ec37a70f",
+   "verified_on": "2026-11-25"
+  },
+  "op_decrement_four_minus_third": {
+   "environment": "problem",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "f931a9846bd4",
+   "label": "op:neigh2",
+   "number": "26",
+   "page": "270",
+   "printed": "Open problem 26",
+   "verified_fingerprint": "f931a9846bd4",
+   "verified_on": "2026-11-25"
+  },
+  "op_douglas_kazakov_thorin_densities": {
+   "environment": "problem",
+   "file": "chapters/c07_exact.tex",
+   "fingerprint": "35d0e9f7e93c",
+   "label": "op:exact2",
+   "number": "6",
+   "page": "109",
+   "printed": "Open problem 6",
+   "verified_fingerprint": "35d0e9f7e93c",
+   "verified_on": "2026-11-25"
+  },
+  "op_explicit_decrement_remainder": {
+   "environment": "problem",
+   "file": "chapters/c12_path.tex",
+   "fingerprint": "043e3fa1939b",
+   "label": "op:path1",
+   "number": "16",
+   "page": "200",
+   "printed": "Open problem 16",
+   "verified_fingerprint": "043e3fa1939b",
+   "verified_on": "2026-11-25"
+  },
+  "op_fisher_zeros_sphere_theory": {
+   "environment": "problem",
+   "file": "chapters/c07_exact.tex",
+   "fingerprint": "cc5278c68d66",
+   "label": "op:exact1",
+   "number": "5",
+   "page": "109",
+   "printed": "Open problem 5",
+   "verified_fingerprint": "cc5278c68d66",
+   "verified_on": "2026-11-25"
+  },
+  "op_fpras_su2_lattice_gauge": {
+   "environment": "problem",
+   "file": "chapters/c05_mixing.tex",
+   "fingerprint": "73b3132a5337",
+   "label": "op:mixing1",
+   "number": "1",
+   "page": "63",
+   "printed": "Open problem 1",
+   "verified_fingerprint": "73b3132a5337",
+   "verified_on": "2026-11-25"
+  },
+  "op_glueball_gap_estimator": {
+   "environment": "problem",
+   "file": "chapters/c12_path.tex",
+   "fingerprint": "b9258324c174",
+   "label": "op:path4",
+   "number": "19",
+   "page": "200",
+   "printed": "Open problem 19",
+   "verified_fingerprint": "b9258324c174",
+   "verified_on": "2026-11-25"
+  },
+  "op_likelihood_ratio_sandwich_2x2": {
+   "environment": "problem",
+   "file": "chapters/c14_inequalities.tex",
+   "fingerprint": "97e49c58df13",
+   "label": "op:ineq1",
+   "number": "23",
+   "page": "245",
+   "printed": "Open problem 23",
+   "verified_fingerprint": "97e49c58df13",
+   "verified_on": "2026-11-25"
+  },
+  "op_likelihood_ratio_su3": {
+   "environment": "problem",
+   "file": "chapters/c12_path.tex",
+   "fingerprint": "e192f4e0445b",
+   "label": "op:path2",
+   "number": "17",
+   "page": "200",
+   "printed": "Open problem 17",
+   "verified_fingerprint": "e192f4e0445b",
+   "verified_on": "2026-11-25"
+  },
+  "op_slopes_error_per_rung": {
+   "environment": "problem",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "192b38548e1a",
+   "label": "op:slopes",
+   "number": "14",
+   "page": "193",
+   "printed": "Open problem 14",
+   "verified_fingerprint": "192b38548e1a",
+   "verified_on": "2026-11-25"
+  },
+  "op_strong_coupling_thorin_gap": {
+   "environment": "problem",
+   "file": "chapters/c12_path.tex",
+   "fingerprint": "24429806685b",
+   "label": "op:path5",
+   "number": "20",
+   "page": "200",
+   "printed": "Open problem 20",
+   "verified_fingerprint": "24429806685b",
+   "verified_on": "2026-11-25"
+  },
+  "op_symplectic_colour_flavour": {
+   "environment": "problem",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "f8e8d2391077",
+   "label": "op:symplectic",
+   "number": "13",
+   "page": "193",
+   "printed": "Open problem 13",
+   "verified_fingerprint": "f8e8d2391077",
+   "verified_on": "2026-11-25"
+  },
+  "op_three_dimensional_gap": {
+   "environment": "problem",
+   "file": "chapters/c12_path.tex",
+   "fingerprint": "ce50a0e3c8dd",
+   "label": "op:path7",
+   "number": "22",
+   "page": "212",
+   "printed": "Open problem 22",
+   "verified_fingerprint": "ce50a0e3c8dd",
+   "verified_on": "2026-11-25"
+  },
+  "op_type_m_inequality_for_ladder": {
+   "environment": "problem",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "13e335a98f46",
+   "label": "op:MYM",
+   "number": "11",
+   "page": "191",
+   "printed": "Open problem 11",
+   "verified_fingerprint": "13e335a98f46",
+   "verified_on": "2026-11-25"
+  },
+  "op_zero_free_sector_tori": {
+   "environment": "problem",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "859f5a86c65a",
+   "label": "op:neigh1",
+   "number": "25",
+   "page": "262",
+   "printed": "Open problem 25",
+   "verified_fingerprint": "859f5a86c65a",
+   "verified_on": "2026-11-25"
+  },
+  "passage_times_on_representations": {
+   "environment": "proposition",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "02e05812fe92",
+   "label": "prop:reppassage",
+   "number": "15.6",
+   "page": "275",
+   "printed": "Proposition 15.6",
+   "verified_fingerprint": "02e05812fe92",
+   "verified_on": "2026-11-25"
+  },
+  "plaquette_hitting_time": {
+   "environment": "proposition",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "ac8f4e430c8b",
+   "label": "prop:hitting",
+   "number": "15.2",
+   "page": "260",
+   "printed": "Proposition 15.2",
+   "verified_fingerprint": "ac8f4e430c8b",
+   "verified_on": "2026-11-25"
+  },
+  "polson_2sin2_lemma": {
+   "environment": "lemma",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "f79e7f896147",
+   "label": "lem:2sin2B",
+   "number": "3.5",
+   "page": "33",
+   "printed": "Lemma 3.5",
+   "verified_fingerprint": "f79e7f896147",
+   "verified_on": "2026-11-25"
+  },
+  "product_formula": {
+   "environment": "theorem",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "e8321828529e",
+   "label": "thm:product",
+   "number": "13.1",
+   "page": "213",
+   "printed": "Theorem 13.1",
+   "verified_fingerprint": "e8321828529e",
+   "verified_on": "2026-11-25"
+  },
+  "projected_ladder_continuous_scale": {
+   "environment": "proposition",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "b3f36f6272d6",
+   "label": "prop:contladder",
+   "number": "15.4",
+   "page": "267",
+   "printed": "Proposition 15.4",
+   "verified_fingerprint": "b3f36f6272d6",
+   "verified_on": "2026-11-25"
+  },
+  "radial_flow_identities": {
+   "environment": "theorem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "81ea891bd1fc",
+   "label": "thm:radialflow",
+   "number": "10.12",
+   "page": "174",
+   "printed": "Theorem 10.12",
+   "verified_fingerprint": "81ea891bd1fc",
+   "verified_on": "2026-11-25"
+  },
+  "real_zero_laws_log_concave_count": {
+   "environment": "proposition",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "bc62860df0bf",
+   "label": "prop:Llogconcave",
+   "number": "9.15",
+   "page": "154",
+   "printed": "Proposition 9.15",
+   "verified_fingerprint": "bc62860df0bf",
+   "verified_on": "2026-11-25"
+  },
+  "real_zeros_under_convolution": {
+   "environment": "theorem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "57b5c65c7479",
+   "label": "thm:zeros",
+   "number": "10.4",
+   "page": "164",
+   "printed": "Theorem 10.4",
+   "verified_fingerprint": "57b5c65c7479",
+   "verified_on": "2026-11-25"
+  },
+  "reflection_dirichlet_odd_sector": {
+   "environment": "proposition",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "22e63f1b0578",
+   "label": "prop:hitreflect",
+   "number": "6.2",
+   "page": "76",
+   "printed": "Proposition 6.2",
+   "verified_fingerprint": "22e63f1b0578",
+   "verified_on": "2026-11-25"
+  },
+  "register_rule_one_plaquette": {
+   "environment": "problem",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "819bc2850400",
+   "label": "op:registers",
+   "number": "3",
+   "page": "96",
+   "printed": "Open problem 3",
+   "verified_fingerprint": "819bc2850400",
+   "verified_on": "2026-11-25"
+  },
+  "riemann_kernel_su2_sphere_partition_function": {
+   "environment": "proposition",
+   "file": "chapters/c07_exact.tex",
+   "fingerprint": "aae055f88c63",
+   "label": "prop:riemannB",
+   "number": "7.3",
+   "page": "107",
+   "printed": "Proposition 7.3",
+   "verified_fingerprint": "aae055f88c63",
+   "verified_on": "2026-11-25"
+  },
+  "sign_criterion_real_zeros": {
+   "environment": "theorem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "93441a03e295",
+   "label": "thm:signcriterion",
+   "number": "10.15",
+   "page": "176",
+   "printed": "Theorem 10.15",
+   "verified_fingerprint": "93441a03e295",
+   "verified_on": "2026-11-25"
+  },
+  "slice_cap_log_sobolev": {
+   "environment": "conjecture",
+   "file": "chapters/c05_mixing.tex",
+   "fingerprint": "68bb04ff6e8d",
+   "label": "prop:slicecurv",
+   "number": "5.3",
+   "page": "70",
+   "printed": "Conjecture 5.3",
+   "verified_fingerprint": "68bb04ff6e8d",
+   "verified_on": "2026-11-25"
+  },
+  "slice_conditional_log_concave": {
+   "environment": "proposition",
+   "file": "chapters/c05_mixing.tex",
+   "fingerprint": "47b057f907c0",
+   "label": "prop:slicelc",
+   "number": "5.2",
+   "page": "69",
+   "printed": "Proposition 5.2",
+   "verified_fingerprint": "47b057f907c0",
+   "verified_on": "2026-11-25"
+  },
+  "smoothed_criterion_real_zeros": {
+   "environment": "theorem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "ba598060607b",
+   "label": "thm:szegocriterion",
+   "number": "10.10",
+   "page": "172",
+   "printed": "Theorem 10.10",
+   "verified_fingerprint": "ba598060607b",
+   "verified_on": "2026-11-25"
+  },
+  "smoothing_conjecture": {
+   "environment": "conjecture",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "eacbf11b18d0",
+   "label": "conj:smoothing",
+   "number": "10.11",
+   "page": "173",
+   "printed": "Conjecture 10.11",
+   "verified_fingerprint": "eacbf11b18d0",
+   "verified_on": "2026-11-25"
+  },
+  "string_tension_on_hierarchical_lattice_exists": {
+   "environment": "proposition",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "179f96109168",
+   "label": "prop:sigmaexists",
+   "number": "13.18",
+   "page": "236",
+   "printed": "Proposition 13.18",
+   "verified_fingerprint": "179f96109168",
+   "verified_on": "2026-11-25"
+  },
+  "su2_convolution_as_hadamard_product": {
+   "environment": "lemma",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "a84e8af23c48",
+   "label": "lem:circle",
+   "number": "10.2",
+   "page": "163",
+   "printed": "Lemma 10.2",
+   "verified_fingerprint": "a84e8af23c48",
+   "verified_on": "2026-11-25"
+  },
+  "su2_equator_hitting_time": {
+   "environment": "proposition",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "9e683175c461",
+   "label": "prop:equator",
+   "number": "6.3",
+   "page": "76",
+   "printed": "Proposition 6.3",
+   "verified_fingerprint": "9e683175c461",
+   "verified_on": "2026-11-25"
+  },
+  "su2_heat_flow_is_wright_fisher": {
+   "environment": "proposition",
+   "file": "chapters/c09_counts.tex",
+   "fingerprint": "34d2bd439d55",
+   "label": "prop:wf",
+   "number": "9.16",
+   "page": "156",
+   "printed": "Proposition 9.16",
+   "verified_fingerprint": "34d2bd439d55",
+   "verified_on": "2026-11-25"
+  },
+  "the_ladder_contracts": {
+   "environment": "corollary",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "8591df06bc08",
+   "label": "cor:contracts",
+   "number": "13.17",
+   "page": "235",
+   "printed": "Corollary 13.17",
+   "verified_fingerprint": "8591df06bc08",
+   "verified_on": "2026-11-25"
+  },
+  "thorin_density_is_levy_exponent": {
+   "environment": "theorem",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "7dff22615e84",
+   "label": "thm:thorinB",
+   "number": "3.6",
+   "page": "34",
+   "printed": "Theorem 3.6",
+   "verified_fingerprint": "7dff22615e84",
+   "verified_on": "2026-11-25"
+  },
+  "thorin_form_hartman_watson": {
+   "environment": "theorem",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "fe37e767b23e",
+   "label": "thm:hwggc",
+   "number": "10.7",
+   "page": "168",
+   "printed": "Theorem 10.7",
+   "verified_fingerprint": "fe37e767b23e",
+   "verified_on": "2026-11-25"
+  },
+  "thorin_sandwich": {
+   "environment": "problem",
+   "file": "chapters/c12_path.tex",
+   "fingerprint": "631b0739b0af",
+   "label": "op:sandwichB",
+   "number": "15",
+   "page": "197",
+   "printed": "Open problem 15",
+   "verified_fingerprint": "631b0739b0af",
+   "verified_on": "2026-11-25"
+  },
+  "time_scaled_likelihood_ratio": {
+   "environment": "theorem",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "1e5472dc9460",
+   "label": "thm:scaledmlr",
+   "number": "13.14",
+   "page": "232",
+   "printed": "Theorem 13.14",
+   "verified_fingerprint": "1e5472dc9460",
+   "verified_on": "2026-11-25"
+  },
+  "total_positivity_of_convolution": {
+   "environment": "theorem",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "16ddfadc18bc",
+   "label": "thm:tp2",
+   "number": "13.10",
+   "page": "228",
+   "printed": "Theorem 13.10",
+   "verified_fingerprint": "16ddfadc18bc",
+   "verified_on": "2026-11-25"
+  },
+  "tp2_heat_kernel_wilson": {
+   "environment": "corollary",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "0ee86c4d0b95",
+   "label": "cor:tp2",
+   "number": "13.11",
+   "page": "229",
+   "printed": "Corollary 13.11",
+   "verified_fingerprint": "0ee86c4d0b95",
+   "verified_on": "2026-11-25"
+  },
+  "truncated_monotonicity": {
+   "environment": "proposition",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "dc97318e4036",
+   "label": "prop:truncated",
+   "number": "13.13",
+   "page": "231",
+   "printed": "Proposition 13.13",
+   "verified_fingerprint": "dc97318e4036",
+   "verified_on": "2026-11-25"
+  },
+  "two_dimensional_uniform_gap": {
+   "environment": "theorem",
+   "file": "chapters/c07_exact.tex",
+   "fingerprint": "5972ec2d5e49",
+   "label": "thm:2dB",
+   "number": "7.2",
+   "page": "102",
+   "printed": "Theorem 7.2",
+   "verified_fingerprint": "5972ec2d5e49",
+   "verified_on": "2026-11-25"
+  },
+  "two_plaquettes_real_zeros": {
+   "environment": "problem",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "b797d818c69c",
+   "label": "op:twoplaquettes",
+   "number": "2",
+   "page": "96",
+   "printed": "Open problem 2",
+   "verified_fingerprint": "b797d818c69c",
+   "verified_on": "2026-11-25"
+  },
+  "uniform_thorin_gap_equivalences": {
+   "environment": "theorem",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "14b1e6b3656d",
+   "label": "thm:equivB",
+   "number": "3.8",
+   "page": "35",
+   "printed": "Theorem 3.8",
+   "verified_fingerprint": "14b1e6b3656d",
+   "verified_on": "2026-11-25"
+  },
+  "vacuum_thorin_atoms_monotone": {
+   "environment": "problem",
+   "file": "chapters/c06_learning.tex",
+   "fingerprint": "e9c9956ae634",
+   "label": "op:vacuumthorin",
+   "number": "4",
+   "page": "96",
+   "printed": "Open problem 4",
+   "verified_fingerprint": "e9c9956ae634",
+   "verified_on": "2026-11-25"
+  },
+  "weak_coupling_expansion_ladder": {
+   "environment": "theorem",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "c35f269475e2",
+   "label": "thm:expansion",
+   "number": "13.7",
+   "page": "223",
+   "printed": "Theorem 13.7",
+   "verified_fingerprint": "c35f269475e2",
+   "verified_on": "2026-11-25"
+  },
+  "weak_coupling_expansion_sun": {
+   "environment": "theorem",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "68505aba6743",
+   "label": "thm:expansionN",
+   "number": "13.8",
+   "page": "225",
+   "printed": "Theorem 13.8",
+   "verified_fingerprint": "68505aba6743",
+   "verified_on": "2026-11-25"
+  },
+  "weak_coupling_sandwich_conjecture": {
+   "environment": "conjecture",
+   "file": "chapters/c14_inequalities.tex",
+   "fingerprint": "7c4516a034cb",
+   "label": "prop:weaksandwich",
+   "number": "14.1",
+   "page": "243",
+   "printed": "Conjecture 14.1",
+   "verified_fingerprint": "7c4516a034cb",
+   "verified_on": "2026-11-25"
+  },
+  "wilson_action_thorin_mixture_of_heat_kernels": {
+   "environment": "corollary",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "30b49290a820",
+   "label": "cor:wilsonthorin",
+   "number": "10.8",
+   "page": "169",
+   "printed": "Corollary 10.8",
+   "verified_fingerprint": "30b49290a820",
+   "verified_on": "2026-11-25"
+  },
+  "wilson_law_likelihood_ratio_in_time": {
+   "environment": "proposition",
+   "file": "chapters/c13_progress.tex",
+   "fingerprint": "93a512b80394",
+   "label": "prop:wilsonflow",
+   "number": "13.6",
+   "page": "217",
+   "printed": "Proposition 13.6",
+   "verified_fingerprint": "93a512b80394",
+   "verified_on": "2026-11-25"
+  },
+  "wilson_times_wilson": {
+   "environment": "proposition",
+   "file": "chapters/c10_zeros.tex",
+   "fingerprint": "ebea12215f98",
+   "label": "prop:wilsonwilson",
+   "number": "10.6",
+   "page": "165",
+   "printed": "Proposition 10.6",
+   "verified_fingerprint": "ebea12215f98",
+   "verified_on": "2026-11-25"
+  },
+  "windows_for_the_gap": {
+   "environment": "proposition",
+   "file": "chapters/c11_theta.tex",
+   "fingerprint": "6bb5e00e08d0",
+   "label": "prop:windowgap",
+   "number": "11.5",
+   "page": "185",
+   "printed": "Proposition 11.5",
+   "verified_fingerprint": "6bb5e00e08d0",
+   "verified_on": "2026-11-25"
+  },
+  "yang_mills_ggc": {
+   "environment": "proposition",
+   "file": "chapters/c03_routes.tex",
+   "fingerprint": "f8b260d64de0",
+   "label": "prop:ymggc",
+   "number": "3.1",
+   "page": "30",
+   "printed": "Proposition 3.1",
+   "verified_fingerprint": "f8b260d64de0",
+   "verified_on": "2026-11-25"
+  },
+  "zeros_on_fixed_rays": {
+   "environment": "theorem",
+   "file": "chapters/c15_neighbours.tex",
+   "fingerprint": "0a362aafb6e9",
+   "label": "thm:sector",
+   "number": "15.3",
+   "page": "261",
+   "printed": "Theorem 15.3",
+   "verified_fingerprint": "0a362aafb6e9",
+   "verified_on": "2026-11-25"
+  }
+ },
+ "updated": "2026-11-25",
+ "zenodo": {
+  "draft": {
+   "doi": "10.5281/zenodo.24546905",
+   "html": "https://zenodo.org/deposit/24546905",
+   "id": 24546905,
+   "reserved_on": "2026-11-25",
+   "version": "1.0.0"
+  }
+ }
+}
