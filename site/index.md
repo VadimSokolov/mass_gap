@@ -2,7 +2,7 @@
 
 By Nick Polson and [Vadim Sokolov](https://orcid.org/0000-0002-6618-2965).
 
-[![PDF](https://vsokolov.org/books/icon-pdf.svg)](https://github.com/VadimSokolov/mass_gap/releases/download/v1.0.0/mass_gap.pdf "PDF") [![Source on GitHub](https://vsokolov.org/books/icon-github.svg)](https://github.com/VadimSokolov/mass_gap/tree/v1.0.0 "Source on GitHub")
+[![PDF](https://vsokolov.org/books/icon-pdf.svg)](https://github.com/VadimSokolov/mass_gap/releases/download/v1.0.0/mass_gap.pdf "PDF") [![Source on GitHub](https://vsokolov.org/books/icon-github.svg)](https://github.com/VadimSokolov/mass_gap/tree/v1.0.0 "Source on GitHub") [![DOI 10.5281/zenodo.24546905](https://zenodo.org/badge/DOI/10.5281/zenodo.24546905.svg)](https://doi.org/10.5281/zenodo.24546905)
 
 ## Description
 

@@ -27,6 +27,7 @@
  "date_released": "2026-11-25",
  "publisher": "Independently published",
  "doi": "10.5281/zenodo.24546905",
+ "concept_doi": "10.5281/zenodo.24546904",
  "language": "en",
  "keywords": [
   "Yang Mills mass gap",
@@ -67,6 +68,9 @@
   "repository": "https://github.com/VadimSokolov/mass_gap",
   "source": "https://github.com/VadimSokolov/mass_gap/tree/v1.0.0",
   "doi": "https://doi.org/10.5281/zenodo.24546905",
+  "concept_doi": "https://doi.org/10.5281/zenodo.24546904",
+  "zenodo": "https://zenodo.org/records/24546905",
+  "doi_badge": "https://zenodo.org/badge/DOI/10.5281/zenodo.24546905.svg",
   "icon_pdf": "https://vsokolov.org/books/icon-pdf.svg",
   "icon_github": "https://vsokolov.org/books/icon-github.svg"
  },
